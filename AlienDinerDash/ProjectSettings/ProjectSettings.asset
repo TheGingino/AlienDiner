@@ -4,7 +4,7 @@
 PlayerSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 26
-  productGUID: 3ad7088d3d15c714e8d20ab4c2a47b70
+  productGUID: 077c493a97dd784469737cfc1371fb1a
   AndroidProfiler: 0
   AndroidFilterTouchesWhenObscured: 0
   AndroidEnableSustainedPerformanceMode: 0
@@ -848,10 +848,10 @@ PlayerSettings:
   apiCompatibilityLevel: 6
   activeInputHandler: 0
   windowsGamepadBackendHint: 0
-  cloudProjectId: 36b0322b-3ba3-4927-ae38-41ee14caf674
+  cloudProjectId: 1fba1057-ba91-4645-9327-5c62e103b141
   framebufferDepthMemorylessMode: 0
   qualitySettingsNames: []
-  projectName: AlienDinerDash
+  projectName: AlienDinerDash 2026-02-10_14-19-04
   organizationId: theshackle
   cloudEnabled: 0
   legacyClampBlendShapeWeights: 0
