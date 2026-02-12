@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.EventSystems;
 
 public class Character : MonoBehaviour
 {
@@ -18,17 +19,30 @@ public class Character : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetMouseButtonDown(0)) // for now mouse for testing, switch the input to touch for android. (not sure yet if that works!!!)
+        if (Input.touchCount > 0)
         {
-            // create ray from the Cam to the mouse pointer
-            Ray _ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+            Touch touch = Input.GetTouch(0);
 
-            if (Physics.Raycast(_ray, out RaycastHit hit, groundLayer))
+            if (touch.phase == TouchPhase.Began)
             {
-                if (NavMesh.SamplePosition(hit.point, out NavMeshHit navMeshHit, 100f, NavMesh.AllAreas))
-                {
-                    _agent.SetDestination(navMeshHit.position);
-                }
+                MoveToPosision(touch.position);
+            }
+            
+        }
+        if (Input.GetMouseButtonDown(0)) // Pc/ editor testing
+        {
+            MoveToPosision(Input.mousePosition);
+        }
+    }
+
+    private void MoveToPosision(Vector3 screenPosistion)
+    {
+        Ray _ray = Camera.main.ScreenPointToRay(screenPosistion);
+        if (Physics.Raycast(_ray, out RaycastHit hit, groundLayer))
+        {
+            if (NavMesh.SamplePosition(hit.point, out NavMeshHit navMeshHit, 100f, NavMesh.AllAreas))
+            {
+                _agent.SetDestination(navMeshHit.position);
             }
         }
     }
