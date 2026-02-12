@@ -11,6 +11,11 @@ public class TapMarker : MonoBehaviour
 
     private float timer;
 
+    private void OnEnable()
+    {
+        timer = 0f;
+    }
+
     private void Update()
     {
         timer += Time.deltaTime;
@@ -20,7 +25,7 @@ public class TapMarker : MonoBehaviour
 
         if (timer >= lifetime)
         {
-            Destroy(gameObject);
+            gameObject.SetActive(false); // trows the game object back to the pool
         }
     }
 }

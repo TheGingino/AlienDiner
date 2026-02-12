@@ -158,6 +158,8 @@ MonoBehaviour:
   groundLayer:
     serializedVersion: 2
     m_Bits: 64
+  TapmarkerPrefab: {fileID: 2169391274928870487, guid: 0dc1623135ce6114fb2e17f5a8c73945,
+    type: 3}
 --- !u!195 &120751459
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -800,8 +802,8 @@ MonoBehaviour:
   m_TileSize: 256
   m_OverrideVoxelSize: 0
   m_VoxelSize: 0.16666667
-  m_MinRegionArea: 2
-  m_NavMeshData: {fileID: 23800000, guid: 2508e49680c8a26409eec3cd9f85ee89, type: 2}
+  m_MinRegionArea: 4
+  m_NavMeshData: {fileID: 23800000, guid: e81e7984d383eb64e8b30b785e90759e, type: 2}
   m_BuildHeightMesh: 1
 --- !u!65 &1492671973
 BoxCollider:
