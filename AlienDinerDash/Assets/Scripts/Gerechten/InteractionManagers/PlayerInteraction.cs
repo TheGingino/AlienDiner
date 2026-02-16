@@ -20,13 +20,24 @@ public class PlayerInteraction : MonoBehaviour
         _isBusy = true;
 
         LockPlayer();
+        station.ShowProgress();
 
-        yield return new WaitForSeconds(station.InteractionDuration);
+        float timer = 0f;
 
+        while (timer < station.InteractionDuration)
+        {
+            timer += Time.deltaTime;
+
+            float normalized = Mathf.Clamp01(timer / station.InteractionDuration);
+            station.UpdateProgress(normalized);
+
+            yield return null;
+        }
+
+        station.HideProgress();
         station.OnInteractionComplete();
 
         UnlockPlayer();
-
         _isBusy = false;
     }
 
