@@ -24,7 +24,7 @@ public class CustomerSO : ScriptableObject
                 customerTimer = 20;
                 customerMoney = 15;
                 break;
-            case CustomerType.VIP:
+            case CustomerType.PATIENT:
                 customerTimer = 40;
                 customerMoney = 25;
                 break;
@@ -41,6 +41,6 @@ public enum CustomerType
 {
     AVERAGE,
     ANNOYING,
-    VIP,
+    PATIENT,
     DRIVETHROUGH
 }

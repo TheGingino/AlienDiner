@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b4db17cd2a9fc794cbe3b182dbf2b6d4, type: 3}
   m_Name: AnnoyingCustomer
   m_EditorClassIdentifier: 
-  customerType: 3
+  customerType: 1
   customerPrefab: {fileID: 3401127426954914692, guid: 17944dff87031dc47b9c2e759949ac5c, type: 3}
-  customerTimer: 0
+  customerTimer: 15
   customerFoodTimer: 5
   customerMoney: 0

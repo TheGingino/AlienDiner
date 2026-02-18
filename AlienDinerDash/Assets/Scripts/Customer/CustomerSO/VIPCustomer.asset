@@ -14,6 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   customerType: 2
   customerPrefab: {fileID: 3401127426954914692, guid: 6c4ae294b4de5314693f724d61a9c983, type: 3}
-  customerTimer: 0
+  customerTimer: 15
   customerFoodTimer: 5
   customerMoney: 0

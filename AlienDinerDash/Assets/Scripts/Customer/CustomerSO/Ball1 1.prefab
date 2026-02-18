@@ -408,6 +408,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   customerSO: {fileID: 11400000, guid: 03291dce8d592ca41bb1b18ba81a144e, type: 2}
+  hasBeenServed: 0
   speed: 5
   reachDistance: 0.1
   customerTimerSlider: {fileID: 1351666503537312529}
@@ -570,7 +571,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 6449166372615667408}
   m_Direction: 0
   m_MinValue: 0
-  m_MaxValue: 1
+  m_MaxValue: 30
   m_WholeNumbers: 0
   m_Value: 0
   m_OnValueChanged:
