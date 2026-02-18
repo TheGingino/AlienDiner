@@ -32,7 +32,7 @@ public class Table : MonoBehaviour
             if (_occupied[i]) continue;
 
             _occupied[i] = true;
-            customer.SnapToSeat(seats[i]);
+            customer.SnapToSeat(seats[i], this);
             return true;
         }
 

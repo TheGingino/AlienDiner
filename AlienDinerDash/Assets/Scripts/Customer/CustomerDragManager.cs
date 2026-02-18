@@ -64,7 +64,7 @@ public class CustomerDragManager : MonoBehaviour
         {
             Table table = hit.collider.GetComponent<Table>();
 
-            if (table != null && table.FreeSeat()) // bool still needs to be added in table script 
+            if (table != null && table.HasFreeSeat()) // bool still needs to be added in table script 
             {
                 table.TrySeatCustomer(_draggedCustomer);
             }
