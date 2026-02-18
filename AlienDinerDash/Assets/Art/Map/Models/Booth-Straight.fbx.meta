@@ -3,7 +3,17 @@ guid: 8aa873fd7c6414d4c861a9dcdd9df313
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Booth T SHAPE
+    second: {fileID: 2100000, guid: 66a51d7b5f690ff40804c5f0468cbc67, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Tables
+    second: {fileID: 2100000, guid: 292ff16a0d194ba4981965acd2dec6a3, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
