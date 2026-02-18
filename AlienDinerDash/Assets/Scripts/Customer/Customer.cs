@@ -23,7 +23,7 @@ public class Customer : MonoBehaviour
     //[SerializeField] private int itemsOrdered = 0;
 
     [Header("Waypoint to leave")] private WaypointToLeave _waypointToLeave;
-    private int nextWaypointIndex;
+    private int _nextWaypointIndex;
 
     [SerializeField] private float speed = 5f;
     [SerializeField] private float reachDistance = 0.1f;
@@ -39,7 +39,9 @@ public class Customer : MonoBehaviour
         _waypointToLeave = FindObjectOfType<WaypointToLeave>();
         customerTimerSlider = FindObjectOfType<Slider>();
 
-        customerTimerSlider.value = customerSO.customerFoodTimer;
+        customerTimerSlider.maxValue = customerSO.customerTimer + customerSO.customerFoodTimer;
+        customerTimerSlider.value = customerSO.customerTimer + customerSO.customerFoodTimer;
+        Debug.Log(customerTimerSlider.value);
     }
 
     private void Update()
@@ -53,8 +55,7 @@ public class Customer : MonoBehaviour
 
     private IEnumerator CustomerState()
     {
-        float waitTime = customerSO.customerTimer;
-        Debug.Log(waitTime);
+        float waitTime = customerSO.customerFoodTimer;
         switch (customerSO.customerType)
         {
             case CustomerType.ANNOYING:
@@ -100,16 +101,16 @@ public class Customer : MonoBehaviour
             waitTime -= Time.deltaTime;
             yield return null;
         }
-
-        CustomerType customerType = CustomerType.ANNOYING;
         
-        if (!hasBeenServed && customerTimerSlider.value <= 0 && customerType == CustomerType.ANNOYING)
+        if (!hasBeenServed && customerTimerSlider.value <= 0)
         {
-            Debug.Log("Customer got tired of waiting and left!");
-            currentState = CustomerStates.LEAVING;
-            LeaveRestaurant();
+            if (customerSO.customerType == CustomerType.ANNOYING)
+            {
+                Debug.Log("Customer got tired of waiting and left!");
+                currentState = CustomerStates.LEAVING;
+                LeaveRestaurant();
+            }
         }
-
     }
 
     public void ServeFood()
@@ -125,22 +126,24 @@ public class Customer : MonoBehaviour
     [ContextMenu("Testing the ability to leave the restaurant")]
     private void LeaveRestaurant()
     {
+        int moneyEarned = customerSO.customerMoney;
+
         Debug.Log("Customer is leaving");
         StartCoroutine(MoveToExit());
     }
 
     private IEnumerator MoveToExit()
     {
-        while (nextWaypointIndex < _waypointToLeave.waypointToLeave.Length)
+        while (_nextWaypointIndex < _waypointToLeave.waypointToLeave.Length)
         {
             transform.position = Vector3.MoveTowards(transform.position,
-                _waypointToLeave.waypointToLeave[nextWaypointIndex].transform.position,
+                _waypointToLeave.waypointToLeave[_nextWaypointIndex].transform.position,
                 Time.deltaTime * speed);
 
             if (Vector3.Distance(transform.position,
-                    _waypointToLeave.waypointToLeave[nextWaypointIndex].transform.position) <= reachDistance)
+                    _waypointToLeave.waypointToLeave[_nextWaypointIndex].transform.position) <= reachDistance)
             {
-                nextWaypointIndex += 1;
+                _nextWaypointIndex += 1;
             }
 
             yield return null;
