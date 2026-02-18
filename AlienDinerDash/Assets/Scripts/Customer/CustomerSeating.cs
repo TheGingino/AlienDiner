@@ -4,14 +4,11 @@ using UnityEngine;
 
 public class CustomerSeating : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public void SetDraggedPosition(Vector3 pos)
     {
         
     }
-
-    // Update is called once per frame
-    void Update()
+    public void SnapToSeat(Transform seat)
     {
         
     }

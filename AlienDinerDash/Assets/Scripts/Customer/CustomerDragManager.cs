@@ -52,7 +52,7 @@ public class CustomerDragManager : MonoBehaviour
         
         if (Physics.Raycast(ray, out RaycastHit hit, 50f, groundLayer))
         {
-            _draggedCustomer.setDraggedPosition(hit.point);  // SetDraggedPosistion need to be made in customerseating
+            _draggedCustomer.SetDraggedPosition(hit.point);  // SetDraggedPosistion need to be made in customerseating
         }
     }
 
@@ -64,10 +64,12 @@ public class CustomerDragManager : MonoBehaviour
         {
             Table table = hit.collider.GetComponent<Table>();
 
-            if (table != null && table.IsFree()) // bool still needs to be added in table script 
+            if (table != null && table.FreeSeat()) // bool still needs to be added in table script 
             {
-                
+                table.TrySeatCustomer(_draggedCustomer);
             }
         }
+
+        _draggedCustomer = null;
     }
 }

@@ -1,18 +1,48 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class Table : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    [SerializeField] private List<Transform> seats = new List<Transform>();
+
+    private bool[] _occupied;
+
+    private void Awake()
     {
-        
+        _occupied = new bool[seats.Count];
     }
 
-    // Update is called once per frame
-    void Update()
+    public bool HasFreeSeat()
     {
-        
+        for (int i = 0; i < _occupied.Length; i++)
+        {
+            if (!_occupied[i])
+                return true;
+        }
+
+        return false;
+    }
+
+    public bool TrySeatCustomer(CustomerSeating customer)
+    {
+        for (int i = 0; i < seats.Count; i++)
+        {
+            if (_occupied[i]) continue;
+
+            _occupied[i] = true;
+            customer.SnapToSeat(seats[i]);
+            return true;
+        }
+
+        return false;
+    }
+
+    public void FreeSeat(Transform seat)
+    {
+        int index = seats.IndexOf(seat);
+        if (index >= 0)
+            _occupied[index] = false;
     }
 }
