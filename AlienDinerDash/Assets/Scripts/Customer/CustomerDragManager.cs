@@ -40,9 +40,9 @@ public class CustomerDragManager : MonoBehaviour
     {
         Ray ray = _camera.ScreenPointToRay(screenpos);
 
-        if (Physics.Raycast(ray, out RaycastHit hit, 50f, customerLayer))
+        if (Physics.Raycast(ray, out RaycastHit hit, 100f, customerLayer)) // distance need to be tweaked for prefomance
         {
-            _draggedCustomer = hit.collider.GetComponent<CustomerSeating>(); // still working o na good script name 
+            _draggedCustomer = hit.collider.GetComponentInParent<CustomerSeating>(); // still working o na good script name 
         }
     }
 
@@ -50,7 +50,7 @@ public class CustomerDragManager : MonoBehaviour
     {
         Ray ray = _camera.ScreenPointToRay(screenpos);
         
-        if (Physics.Raycast(ray, out RaycastHit hit, 50f, groundLayer))
+        if (Physics.Raycast(ray, out RaycastHit hit, 100f, groundLayer)) // distance need to be tweaked for prefomance
         {
             _draggedCustomer.SetDraggedPosition(hit.point);  // SetDraggedPosistion need to be made in customerseating
         }
@@ -60,7 +60,7 @@ public class CustomerDragManager : MonoBehaviour
     {
         Ray ray = _camera.ScreenPointToRay(screenpos);
 
-        if (Physics.Raycast(ray, out RaycastHit hit, 50f, tableLayer))
+        if (Physics.Raycast(ray, out RaycastHit hit, 100f, tableLayer)) // distance need to be tweaked for prefomance
         {
             Table table = hit.collider.GetComponent<Table>();
 
