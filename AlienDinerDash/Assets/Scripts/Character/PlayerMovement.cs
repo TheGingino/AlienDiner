@@ -42,13 +42,12 @@ public class PlayerMovement : MonoBehaviour
     {
         Ray ray = _camera.ScreenPointToRay(screenPosistion);
         
-        if (Physics.Raycast(ray, out RaycastHit hit2))
+        // Ignore Station Clicks
+        if (Physics.Raycast(ray, out RaycastHit stationHit))
         {
-            InteractableObject station = hit2.collider.GetComponent<InteractableObject>();
-            if (station != null)
+            if (stationHit.collider.GetComponent<InteractableObject>() != null)
             {
-                MoveToInteraction(station);
-                return; // STOP. Do not process ground movement.
+                return; // station handles its own click
             }
         }
         

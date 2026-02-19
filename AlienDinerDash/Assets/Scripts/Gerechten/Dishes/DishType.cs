@@ -1,15 +1,11 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
-public class DishType : MonoBehaviour
+public enum DishType
 {
-   public enum DishTypes
-   {
-      None,
-      Fries,
-      Burger,
-      Milkshake,
-      Wrapped
-   }
+    None,
+    Fries,
+    Burger,
+    Milkshake,
+
+    PackedFries,
+    PackedBurger,
+    PackedMilkshake
 }

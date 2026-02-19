@@ -6,14 +6,26 @@ public class InteractableObject : MonoBehaviour
     [SerializeField] float _interactionDuration = 2f;
     [SerializeField] float _heightOffsetY = 1.5f;
     [SerializeField] GameObject _progressBarPrefab;
-    [SerializeField] static Transform _interactionWaypoint;
+    [SerializeField]  Transform _interactionWaypoint;
+    [SerializeField] StationType _stationType;
+    [SerializeField] DishType _dishType;
+    [SerializeField] GameObject _dishPrefab;
+
+  
+
 
     GameObject _currentProgressBar;
     Image _progressImage;
     Renderer _renderer;
 
     public float InteractionDuration => _interactionDuration;
-    public Transform InteractionWaypoint = _interactionWaypoint;
+    public Transform InteractionWaypoint => _interactionWaypoint;
+    public GameObject DishPrefab => _dishPrefab;
+    public StationType Type => _stationType;
+
+
+
+
 
     private void Awake()
     {
@@ -70,4 +82,48 @@ public class InteractableObject : MonoBehaviour
     {
         Debug.Log("Interaction complete " + name);
     }
+    
+    public enum StationType
+    {
+        CookingStation,
+        PackingStation,
+        TrashCan
+    }
+
+    public DishType ProcessDish(DishType inputDish)
+    {
+        switch (_stationType)
+        {
+            case StationType.CookingStation:
+                return _dishType;
+            
+            case StationType.PackingStation:
+                return  GetPackedVersion(inputDish);
+            
+            case StationType.TrashCan:
+                return DishType.None;
+            
+            default:
+                return DishType.None;
+        }
+    }
+
+    DishType GetPackedVersion(DishType dish)
+    {
+        switch (dish)
+        {
+            case DishType.Burger:
+                return DishType.PackedBurger;
+            
+            case DishType.Fries:
+                return DishType.PackedFries;
+            
+            case DishType.Milkshake:
+                return DishType.PackedMilkshake;
+            
+            default:
+                return DishType.None;
+        }
+    }
+    
 }
