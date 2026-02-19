@@ -84,6 +84,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: blockout_1202
       objectReference: {fileID: 0}
+    - target: {fileID: 8247994413960396516, guid: 5cd0b2095cd7ab64790881d1b6b14bfd, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: c33503bac63629d47914d6ab23e33167, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects:
     - {fileID: 6919683763462532184, guid: 5cd0b2095cd7ab64790881d1b6b14bfd, type: 3}
