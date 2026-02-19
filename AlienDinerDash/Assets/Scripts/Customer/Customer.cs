@@ -150,6 +150,7 @@ public class Customer : MonoBehaviour
         }
         Destroy(gameObject);
     }
+    
 
     private void DecreaseSliderValue()
     {

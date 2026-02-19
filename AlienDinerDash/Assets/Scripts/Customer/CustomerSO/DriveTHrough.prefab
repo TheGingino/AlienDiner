@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 4413676911401954211}
   - component: {fileID: 3462405689484571519}
   - component: {fileID: 9170211598602925924}
-  - component: {fileID: -7817981148533384556}
+  - component: {fileID: 4650468830680287764}
   m_Layer: 0
   m_Name: DriveTHrough
   m_TagString: Untagged
@@ -106,7 +106,7 @@ SphereCollider:
   serializedVersion: 3
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &-7817981148533384556
+--- !u!114 &4650468830680287764
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -115,9 +115,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 3401127426954914692}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: eb153760d1b4d564bba29b49dc89ddb7, type: 3}
+  m_Script: {fileID: 11500000, guid: e27c748f7be08264a861199ac6bf3e1e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  customerSO: {fileID: 11400000, guid: 4610834a59d9bb043b430984878f193f, type: 2}
-  speed: 5
-  reachDistance: 0.1
+  hasBeenServed: 0

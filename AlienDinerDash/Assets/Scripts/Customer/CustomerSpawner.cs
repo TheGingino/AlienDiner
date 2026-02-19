@@ -3,7 +3,7 @@ using UnityEngine;
 public class CustomerSpawner : MonoBehaviour
 {
     [SerializeField] private Customer[] customerSO;
-    [SerializeField] private Customer driveThroughCustomerSO;
+    [SerializeField] private DriveThroughCustomer driveThroughCustomerSO;
 
     [SerializeField] private float spawnInterval = 5f;
     private float spawnTimer;
