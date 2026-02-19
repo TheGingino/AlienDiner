@@ -6,13 +6,14 @@ public class InteractableObject : MonoBehaviour
     [SerializeField] float _interactionDuration = 2f;
     [SerializeField] float _heightOffsetY = 1.5f;
     [SerializeField] GameObject _progressBarPrefab;
-    [SerializeField] DishType _dishType;
+    [SerializeField] static Transform _interactionWaypoint;
 
     GameObject _currentProgressBar;
     Image _progressImage;
     Renderer _renderer;
 
     public float InteractionDuration => _interactionDuration;
+    public Transform InteractionWaypoint = _interactionWaypoint;
 
     private void Awake()
     {

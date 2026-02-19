@@ -44,12 +44,15 @@ public class PlayerInteraction : MonoBehaviour
     void LockPlayer()
     {
         Debug.Log("Player Locked");
-        // disable movement input later
+        GetComponent<PlayerMovement>().LockPlayerMovement(false);
+
     }
 
     void UnlockPlayer()
     {
         Debug.Log("Player Unlocked");
+        GetComponent<PlayerMovement>().LockPlayerMovement(true);
+
     }
 
 }

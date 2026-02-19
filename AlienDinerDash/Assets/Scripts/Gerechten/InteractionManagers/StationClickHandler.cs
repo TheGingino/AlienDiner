@@ -3,16 +3,12 @@ using UnityEngine;
 public class StationClickHandler : MonoBehaviour
 {
     [SerializeField] PlayerInteraction _player;
+    [SerializeField] PlayerMovement _playerMovement;
 
     void OnMouseDown()
     {
         if (_player.IsBusy) return;
-
-        InteractableObject interactable = GetComponent<InteractableObject>();
-
-        if (interactable != null)
-        {
-            _player.StartInteraction(interactable);
-        }
+        
+        _playerMovement.MoveToInteraction(GetComponent<InteractableObject>());
     }
 }
