@@ -42,12 +42,7 @@ public class CustomerDragManager : MonoBehaviour
 
         if (Physics.Raycast(ray, out RaycastHit hit, 100f, customerLayer)) // distance need to be tweaked for prefomance
         {
-            CustomerSeating customer = hit.collider.GetComponentInParent<CustomerSeating>(); // still working on a good script name
-            
-            if (customer != null && !customer.IsSeated) 
-            {
-                _draggedCustomer = customer;
-            }
+            _draggedCustomer = hit.collider.GetComponentInParent<CustomerSeating>(); // still working o na good script name 
         }
     }
 
@@ -65,22 +60,14 @@ public class CustomerDragManager : MonoBehaviour
     {
         Ray ray = _camera.ScreenPointToRay(screenpos);
 
-        bool seated = false;
-
-        if (Physics.Raycast(ray, out RaycastHit hit, 100f, tableLayer)) // distance need to be tweaked for performance
+        if (Physics.Raycast(ray, out RaycastHit hit, 100f, tableLayer)) // distance need to be tweaked for prefomance
         {
-            Table table = hit.collider.GetComponent<Table>(); // if the structeur of the table changes instead of the collider on the table model but as a child change it to child  
+            Table table = hit.collider.GetComponent<Table>();
 
             if (table != null && table.HasFreeSeat()) // bool still needs to be added in table script 
             {
                 table.TrySeatCustomer(_draggedCustomer);
-                seated = true;
             }
-        }
-
-        if (!seated)
-        {
-            _draggedCustomer.ReturnToOrigin();
         }
 
         _draggedCustomer = null;
