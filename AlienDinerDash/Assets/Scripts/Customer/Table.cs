@@ -6,7 +6,6 @@ using UnityEngine;
 public class Table : MonoBehaviour
 {
     [SerializeField] private List<Transform> seats = new List<Transform>();
-
     private bool[] _occupied;
 
     private void Awake()
@@ -21,22 +20,33 @@ public class Table : MonoBehaviour
             if (!_occupied[i])
                 return true;
         }
-
         return false;
     }
 
-    public bool TrySeatCustomer(CustomerSeating customer)
+    public bool TrySeatCustomer(CustomerSeating customer, Vector3 dropPosition)
     {
+        int bestIndex = -1;
+        float bestDistance = float.MaxValue;
+        
         for (int i = 0; i < seats.Count; i++)
         {
             if (_occupied[i]) continue;
 
-            _occupied[i] = true;
-            customer.SnapToSeat(seats[i], this);
-            return true;
-        }
+            float dist = (dropPosition - seats[i].position).sqrMagnitude;
 
-        return false;
+            if (dist < bestDistance)
+            {
+                bestDistance = dist;
+                bestIndex = i;
+            }
+           
+        }
+        if (bestIndex == -1)
+            return false; 
+       
+        _occupied[bestIndex] = true;
+        customer.SnapToSeat(seats[bestIndex], this);
+        return true;
     }
 
     public void FreeSeat(Transform seat)

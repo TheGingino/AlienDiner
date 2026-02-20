@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -6,6 +7,16 @@ public class CustomerSeating : MonoBehaviour
 {
     private Transform _currentSeat;
     private Table _currentTable;
+
+    private Vector3 _originPosition;
+    private Quaternion _originRotation;
+
+    private void Start()
+    {
+        _originPosition = transform.position;
+        _originRotation = transform.rotation;
+    }
+
     public void SetDraggedPosition(Vector3 _pos)
     {
         transform.position = _pos;
@@ -20,8 +31,12 @@ public class CustomerSeating : MonoBehaviour
         transform.position = seat.position;
         transform.rotation = seat.rotation;
     }
-    
-    
+
+    public void ReturnToOrigin()
+    {
+        transform.position = _originPosition;
+        transform.rotation = _originRotation;
+    }
 
     public void leaveSeat()
     {

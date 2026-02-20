@@ -59,17 +59,29 @@ public class CustomerDragManager : MonoBehaviour
     private void EndDrag(Vector3 screenpos)
     {
         Ray ray = _camera.ScreenPointToRay(screenpos);
-
+        
         if (Physics.Raycast(ray, out RaycastHit hit, 100f, tableLayer)) // distance need to be tweaked for prefomance
         {
             Table table = hit.collider.GetComponent<Table>();
 
             if (table != null && table.HasFreeSeat()) // bool still needs to be added in table script 
             {
-                table.TrySeatCustomer(_draggedCustomer);
+                bool seated = table.TrySeatCustomer(_draggedCustomer , hit.point);
+                
+                if (!seated)
+                {
+                    _draggedCustomer.ReturnToOrigin();
+                }
+            }
+            else
+            {
+                _draggedCustomer.ReturnToOrigin();
             }
         }
-
+        else
+        {
+            _draggedCustomer.ReturnToOrigin();
+        }
         _draggedCustomer = null;
     }
 }
