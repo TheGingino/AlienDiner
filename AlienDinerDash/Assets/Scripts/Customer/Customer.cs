@@ -20,6 +20,7 @@ public class Customer : MonoBehaviour
 
     private bool _hasCoroutineStarted = false;
     [SerializeField] private bool hasBeenServed = false;
+    [SerializeField] private bool hasBeenSeated = false;
     //[SerializeField] private int itemsOrdered = 0;
 
     [Header("Waypoint to leave")] private WaypointToLeave _waypointToLeave;
@@ -32,6 +33,8 @@ public class Customer : MonoBehaviour
     private Slider customerTimerSlider;
 
     private float _sliderTime;
+    private DishType desiredDish;
+
 
 
     private void Start()
@@ -89,20 +92,23 @@ public class Customer : MonoBehaviour
     
     private IEnumerator CustomerBehavior(float waitTime)
     {
-        while (waitTime > 0)
+        if (!hasBeenSeated)
         {
-            DecreaseSliderValue();
-            if (hasBeenServed)
+            while (waitTime > 0)
             {
-                currentState = CustomerStates.SERVED;
-                Debug.Log("Customer received food!");
-                break;
+                DecreaseSliderValue();
+                if (hasBeenServed)
+                {
+                    currentState = CustomerStates.SERVED;
+                    Debug.Log("Customer received food!");
+                    break;
+                }
+                waitTime -= Time.deltaTime;
+                yield return null;
             }
-            waitTime -= Time.deltaTime;
-            yield return null;
         }
         
-        if (!hasBeenServed && customerTimerSlider.value <= 0)
+        if (!hasBeenServed && customerTimerSlider.value <= 0|| !hasBeenSeated)
         {
             if (customerSO.customerType == CustomerType.ANNOYING)
             {
@@ -122,7 +128,13 @@ public class Customer : MonoBehaviour
             Debug.Log("Customer received food!");
         }
     }
-
+    
+    public void SetDesiredDish(DishType dish)
+    {
+        desiredDish = dish;
+        Debug.Log($"Customer {name} wants: {desiredDish}");
+    }
+    
     [ContextMenu("Testing the ability to leave the restaurant")]
     private void LeaveRestaurant()
     {
