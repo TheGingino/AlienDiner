@@ -8,7 +8,6 @@ public class OrderingFood : MonoBehaviour
     private Customer _customer;
     private DishType[] _dishType;
 
-    [SerializeField] private UnityEvent onFoodSOrdered;
     [SerializeField] private UnityEvent onFoodServed;
 
     private void Start()
@@ -21,7 +20,6 @@ public class OrderingFood : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.E) && _customer != null)
         {
-            onFoodSOrdered.Invoke();
             Debug.Log("Food ordered for " + _customer.name);
         }
     }
@@ -38,14 +36,12 @@ public class OrderingFood : MonoBehaviour
     [ContextMenu("Order Food")]
     private void OrderFood()
     {
-         
         if (_dishType == null || _dishType.Length == 0 || _customer == null) return;
 
         var index = Random.Range(0, _dishType.Length);
         var chosenDish = _dishType[index];
         _customer.SetDesiredDish(chosenDish);
 
-        onFoodSOrdered.Invoke();
         Debug.Log("Dish ordered for " + _customer.name + ": " + chosenDish);
     }
 }

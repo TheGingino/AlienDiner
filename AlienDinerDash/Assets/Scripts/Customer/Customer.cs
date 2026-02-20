@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using JetBrains.Annotations;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.UI;
 
 public class Customer : MonoBehaviour
@@ -33,8 +34,9 @@ public class Customer : MonoBehaviour
     private Slider customerTimerSlider;
 
     private float _sliderTime;
-    private DishType desiredDish;
+    private DishType _desiredDish;
 
+    [SerializeField] private UnityEvent onFoodOrdered;
 
 
     private void Start()
@@ -107,6 +109,11 @@ public class Customer : MonoBehaviour
                 yield return null;
             }
         }
+
+        if (hasBeenSeated && !hasBeenServed)
+        {
+            onFoodOrdered.Invoke();
+        }
         
         if (!hasBeenServed && customerTimerSlider.value <= 0|| !hasBeenSeated)
         {
@@ -131,8 +138,8 @@ public class Customer : MonoBehaviour
     
     public void SetDesiredDish(DishType dish)
     {
-        desiredDish = dish;
-        Debug.Log($"Customer {name} wants: {desiredDish}");
+        _desiredDish = dish;
+        Debug.Log($"Customer {name} wants: {_desiredDish}");
     }
     
     [ContextMenu("Testing the ability to leave the restaurant")]
@@ -171,5 +178,10 @@ public class Customer : MonoBehaviour
             customerTimerSlider.value -= Time.deltaTime;
         }
         //Debug.Log("Customer timer: " + customerTimerSlider.value);
+    }
+
+    public void SetSeatedBool(bool _hasBeenSeated)
+    {
+        hasBeenSeated = _hasBeenSeated;
     }
 }
