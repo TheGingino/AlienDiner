@@ -12,8 +12,10 @@ public class CustomerSO : ScriptableObject
     
     public int customerMoney;
     
-    private void Start()
+    private void OnEnable()
     {
+        if (customerTimer > 0 || customerMoney > 0) return;
+
         switch (customerType)
         {
             case CustomerType.AVERAGE:

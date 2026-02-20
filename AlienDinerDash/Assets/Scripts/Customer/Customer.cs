@@ -55,20 +55,20 @@ public class Customer : MonoBehaviour
 
     private IEnumerator CustomerState()
     {
-        float waitTime = customerSO.customerFoodTimer;
+        _sliderTime = customerTimerSlider.value;
         switch (customerSO.customerType)
         {
             case CustomerType.ANNOYING:
-                yield return StartCoroutine(AnnoyingCustomer(waitTime));
-                Debug.Log("Annoying customer finished waiting." + waitTime);
+                yield return StartCoroutine(AnnoyingCustomer(_sliderTime));
+                Debug.Log("Annoying customer finished waiting." + _sliderTime);
                 break;
             case CustomerType.AVERAGE:
-                yield return StartCoroutine(NormalCustomer(waitTime));
-                Debug.Log("Average customer finished waiting." + waitTime);
+                yield return StartCoroutine(NormalCustomer(_sliderTime));
+                Debug.Log("Average customer finished waiting." + _sliderTime);
                 break;
             case CustomerType.PATIENT:
-                yield return StartCoroutine(PatientCustomer(waitTime));
-                Debug.Log("Patient customer finished waiting." + waitTime);
+                yield return StartCoroutine(PatientCustomer(_sliderTime));
+                Debug.Log("Patient customer finished waiting." + _sliderTime);
                 break;
         }
     }

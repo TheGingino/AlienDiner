@@ -21,7 +21,6 @@ public class CustomerSpawner : MonoBehaviour
 
     private void Update()
     {
-        
         spawnTimer += Time.deltaTime;
         if (spawnTimer >= spawnInterval)
         {
