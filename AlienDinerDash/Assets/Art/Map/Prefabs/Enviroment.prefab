@@ -322,6 +322,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -4791300549530949414, guid: 2faec0a6442e5084e85107576ea16211, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: ae9d3af513e95ef4ebb12cae23ac709c, type: 2}
     - target: {fileID: 919132149155446097, guid: 2faec0a6442e5084e85107576ea16211, type: 3}
       propertyPath: m_Name
       value: Deep Fryer
