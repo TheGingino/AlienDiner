@@ -42,7 +42,12 @@ public class CustomerDragManager : MonoBehaviour
 
         if (Physics.Raycast(ray, out RaycastHit hit, 100f, customerLayer)) // distance need to be tweaked for prefomance
         {
-            _draggedCustomer = hit.collider.GetComponentInParent<CustomerSeating>(); // still working o na good script name 
+            CustomerSeating customer = hit.collider.GetComponentInParent<CustomerSeating>(); // still working o na good script name 
+
+            if (customer != null && customer.CanBeDragged())
+            {
+                _draggedCustomer = customer;
+            }
         }
     }
 

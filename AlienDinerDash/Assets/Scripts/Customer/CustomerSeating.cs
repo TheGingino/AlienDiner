@@ -11,10 +11,27 @@ public class CustomerSeating : MonoBehaviour
     private Vector3 _originPosition;
     private Quaternion _originRotation;
 
+    private bool _canBeDragged = true;
+
     private void Start()
     {
         _originPosition = transform.position;
         _originRotation = transform.rotation;
+    }
+
+    private void Update() // seating test to see if the seat is given free when customer leaves
+    {
+        if (Input.GetKeyDown(KeyCode.L))
+        {
+            LeaveSeat();
+            ReturnToOrigin();
+            Debug.Log("seat freed!");
+        }
+    }
+
+    public bool CanBeDragged()
+    {
+        return _canBeDragged;
     }
 
     public void SetDraggedPosition(Vector3 _pos)
@@ -30,6 +47,9 @@ public class CustomerSeating : MonoBehaviour
 
         transform.position = seat.position;
         transform.rotation = seat.rotation;
+
+        _canBeDragged = false;
+        //GetComponent<Collider>().enabled = false;
     }
 
     public void ReturnToOrigin()
@@ -38,7 +58,7 @@ public class CustomerSeating : MonoBehaviour
         transform.rotation = _originRotation;
     }
 
-    public void leaveSeat()
+    public void LeaveSeat()
     {
         if (_currentTable != null && _currentSeat != null)
         {
@@ -46,5 +66,8 @@ public class CustomerSeating : MonoBehaviour
         }
         _currentSeat = null;
         _currentTable = null;
+
+        _canBeDragged = false;
+        //GetComponent<Collider>().enabled = false;
     }
 }
