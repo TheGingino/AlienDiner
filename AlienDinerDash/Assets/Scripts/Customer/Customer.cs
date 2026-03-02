@@ -31,6 +31,10 @@ public class Customer : MonoBehaviour
 
     [Header("Visual Testing")] [SerializeField]
     private Slider customerTimerSlider;
+    
+    [Header ("Order Visuals")]
+    [SerializeField] private Image orderImage;
+    [SerializeField] private DishSpriteEntry[] dishSprites;
 
     private float _sliderTime;
     private DishType desiredDish;
@@ -41,6 +45,7 @@ public class Customer : MonoBehaviour
     {
         _waypointToLeave = FindObjectOfType<WaypointToLeave>();
         customerTimerSlider = FindObjectOfType<Slider>();
+        orderImage.enabled = false;
 
         customerTimerSlider.maxValue = customerSO.customerTimer + customerSO.customerFoodTimer;
         customerTimerSlider.value = customerSO.customerTimer + customerSO.customerFoodTimer;
@@ -133,6 +138,23 @@ public class Customer : MonoBehaviour
     {
         desiredDish = dish;
         Debug.Log($"Customer {name} wants: {desiredDish}");
+
+        if (orderImage != null)
+        {
+            orderImage.sprite = GetSpriteForDish(dish);
+            orderImage.enabled = orderImage.sprite != null;
+        }
+    }
+
+    private Sprite GetSpriteForDish(DishType dish)
+    {
+        foreach (var entry in dishSprites)
+        {
+            if (entry.dishType == dish)
+                return entry.sprite;
+        }
+
+        return null;
     }
     
     [ContextMenu("Testing the ability to leave the restaurant")]
@@ -171,5 +193,12 @@ public class Customer : MonoBehaviour
             customerTimerSlider.value -= Time.deltaTime;
         }
         //Debug.Log("Customer timer: " + customerTimerSlider.value);
+    }
+    
+    [System.Serializable]
+    public class DishSpriteEntry
+    {
+        public DishType dishType;
+        public Sprite sprite;
     }
 }

@@ -9,8 +9,6 @@ public class InteractableObject : MonoBehaviour
     [SerializeField]  Transform _interactionWaypoint;
     [SerializeField] StationType _stationType;
     [SerializeField] DishType _dishType;
-    [SerializeField] GameObject _dishPrefab;
-
   
 
 
@@ -20,7 +18,7 @@ public class InteractableObject : MonoBehaviour
 
     public float InteractionDuration => _interactionDuration;
     public Transform InteractionWaypoint => _interactionWaypoint;
-    public GameObject DishPrefab => _dishPrefab;
+   
     public StationType Type => _stationType;
 
 

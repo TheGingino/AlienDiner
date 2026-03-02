@@ -6,22 +6,24 @@ using Random = UnityEngine.Random;
 public class OrderingFood : MonoBehaviour
 {
     private Customer _customer;
-    private DishType[] _dishType;
+    private bool _hasOrdered = false;
 
     [SerializeField] private UnityEvent onFoodSOrdered;
     [SerializeField] private UnityEvent onFoodServed;
+    [SerializeField] DishType[] _orderableDishes;
+
 
     private void Start()
     {
         _customer = GetComponentInParent<Customer>();
-        _dishType = Enum.GetValues(typeof(DishType)) as DishType[];
     }
 
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.E) && _customer != null)
         {
-            onFoodSOrdered.Invoke();
+            OrderFood();
+            //onFoodSOrdered.Invoke();
             Debug.Log("Food ordered for " + _customer.name);
         }
     }
@@ -36,16 +38,25 @@ public class OrderingFood : MonoBehaviour
     }
 
     [ContextMenu("Order Food")]
-    private void OrderFood()
+    public void OrderFood()
     {
-         
-        if (_dishType == null || _dishType.Length == 0 || _customer == null) return;
+        if (_hasOrdered == true)
+            return;
+        
+        Debug.Log("ORDER IN");
 
-        var index = Random.Range(0, _dishType.Length);
-        var chosenDish = _dishType[index];
+        if (_orderableDishes == null || _orderableDishes.Length == 0 || _customer == null)
+            return;
+
+        var index = Random.Range(0, _orderableDishes.Length);
+        var chosenDish = _orderableDishes[index];
+
         _customer.SetDesiredDish(chosenDish);
 
         onFoodSOrdered.Invoke();
+
         Debug.Log("Dish ordered for " + _customer.name + ": " + chosenDish);
+        _hasOrdered = true;
     }
+
 }
