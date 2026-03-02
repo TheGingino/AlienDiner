@@ -311,6 +311,8 @@ MonoBehaviour:
   - {fileID: 2097666006}
   - {fileID: 614051760}
   - {fileID: 2087955465}
+  driveThroughWaypointToLeave:
+  - {fileID: 0}
 --- !u!4 &764569455
 Transform:
   m_ObjectHideFlags: 0
@@ -327,6 +329,7 @@ Transform:
   - {fileID: 2097666007}
   - {fileID: 614051761}
   - {fileID: 2087955466}
+  - {fileID: 1679640062}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &858706976
@@ -362,8 +365,8 @@ MonoBehaviour:
   - {fileID: 4600500452216612423, guid: 17944dff87031dc47b9c2e759949ac5c, type: 3}
   - {fileID: -8178260362466965505, guid: 9b65d7a8299d2d5458373f9f4ad4d5b3, type: 3}
   - {fileID: -3411486058818261720, guid: 6c4ae294b4de5314693f724d61a9c983, type: 3}
-  driveThroughCustomerSO: {fileID: -7817981148533384556, guid: 5d488fa75ca3512418b1247cb45236e8, type: 3}
-  spawnInterval: 5
+  driveThroughCustomerSO: {fileID: 4650468830680287764, guid: 5d488fa75ca3512418b1247cb45236e8, type: 3}
+  spawnInterval: 15
   spawnPoint: {fileID: 209437269}
   driveThroughSpawnPoint: {fileID: 1044912013}
   spawnDriveThrough: 0
@@ -412,6 +415,37 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1679640061
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1679640062}
+  m_Layer: 0
+  m_Name: DriveThrough Waypoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1679640062
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1679640061}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 9.84, y: 0, z: 8.89}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 764569455}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1730452167
 GameObject:
