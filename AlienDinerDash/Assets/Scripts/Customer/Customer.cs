@@ -9,7 +9,9 @@ public class Customer : MonoBehaviour
     [Header("Customer Settings")] [SerializeField]
     private CustomerSO customerSO;
 
-    private enum CustomerStates
+    public CustomerSO CustomerSO => customerSO;
+
+    public enum CustomerStates
     {
         HUNGRY,
         SERVED,
@@ -108,6 +110,7 @@ public class Customer : MonoBehaviour
             {
                 Debug.Log("Customer got tired of waiting and left!");
                 currentState = CustomerStates.LEAVING;
+                
                 LeaveRestaurant();
             }
         }
@@ -126,9 +129,10 @@ public class Customer : MonoBehaviour
     [ContextMenu("Testing the ability to leave the restaurant")]
     private void LeaveRestaurant()
     {
-        int moneyEarned = customerSO.customerMoney;
-
         Debug.Log("Customer is leaving");
+                        
+        DroppingMoney droppingMoney = GetComponent<DroppingMoney>();
+        droppingMoney.DropMoney();
         StartCoroutine(MoveToExit());
     }
 
