@@ -62,12 +62,14 @@ public class CustomerSeating : MonoBehaviour
     {
         if (_currentTable != null && _currentSeat != null)
         {
-            _currentTable.FreeSeat(_currentSeat);
+            _currentTable.FreeSeat(_currentSeat); 
+           
+            _currentSeat = null;
+            _currentTable = null;
+                                                 
+            _canBeDragged = false;
         }
-        _currentSeat = null;
-        _currentTable = null;
-
-        _canBeDragged = false;
+       
         //GetComponent<Collider>().enabled = false;
     }
 }
