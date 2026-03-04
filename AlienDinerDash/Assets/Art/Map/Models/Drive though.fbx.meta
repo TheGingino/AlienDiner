@@ -18,7 +18,7 @@ ModelImporter:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Screen
-    second: {fileID: 2100000, guid: 570ce4bf90fd44d4691474b5fa9e92b1, type: 2}
+    second: {fileID: 2100000, guid: 624c94c60267359429c0b371fec8556b, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
@@ -28,7 +28,7 @@ ModelImporter:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Window
-    second: {fileID: 2100000, guid: 8fc4e62c41025d044851c6571ca0cc5a, type: 2}
+    second: {fileID: 2100000, guid: 02ef40ef197dbd141abac180f5e09d03, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
