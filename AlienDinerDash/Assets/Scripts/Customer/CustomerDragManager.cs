@@ -8,9 +8,12 @@ public class CustomerDragManager : MonoBehaviour
     [SerializeField] private LayerMask customerLayer;
     [SerializeField] private LayerMask tableLayer;
     [SerializeField] private LayerMask groundLayer;
+    [SerializeField] private LayerMask seatLayer;
+    
 
     private Camera _camera;
     private CustomerSeating _draggedCustomer;
+    private SeatHighLight _currentHighLight;
 
     private void Start()
     {
@@ -67,11 +70,16 @@ public class CustomerDragManager : MonoBehaviour
 
         if (Physics.Raycast(ray, out RaycastHit hit, 100f, customerLayer)) // distance need to be tweaked for prefomance
         {
-            CustomerSeating customer = hit.collider.GetComponentInParent<CustomerSeating>(); // still working o na good script name 
+            CustomerSeating customer = hit.collider.GetComponentInParent<CustomerSeating>();
 
             if (customer != null && customer.CanBeDragged())
             {
                 _draggedCustomer = customer;
+                
+                //visual 
+                CustomerVisualFeedback visual = _draggedCustomer.GetComponent<CustomerVisualFeedback>();
+                if(visual != null)
+                    visual.OnDragStart();
             }
         }
     }
@@ -79,10 +87,10 @@ public class CustomerDragManager : MonoBehaviour
     private void Drag(Vector3 screenpos)
     {
         Ray ray = _camera.ScreenPointToRay(screenpos);
-        
+
         if (Physics.Raycast(ray, out RaycastHit hit, 100f, groundLayer)) // distance need to be tweaked for prefomance
         {
-            _draggedCustomer.SetDraggedPosition(hit.point);  // SetDraggedPosistion need to be made in customerseating
+            _draggedCustomer.SetDraggedPosition(hit.point); // SetDraggedPosistion need to be made in customerseating
         }
     }
 
@@ -112,6 +120,11 @@ public class CustomerDragManager : MonoBehaviour
         {
             _draggedCustomer.ReturnToOrigin();
         }
-        _draggedCustomer = null;
+       
+        // visual
+        CustomerVisualFeedback visual = _draggedCustomer.GetComponent<CustomerVisualFeedback>();
+        if (visual != null)
+            visual.OnDragEnd();
+        
     }
 }
