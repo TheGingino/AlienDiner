@@ -9,7 +9,9 @@ public class Customer : MonoBehaviour
     [Header("Customer Settings")] [SerializeField]
     private CustomerSO customerSO;
 
-    private enum CustomerStates
+    public CustomerSO CustomerSO => customerSO;
+
+    public enum CustomerStates
     {
         HUNGRY,
         SERVED,
@@ -25,23 +27,27 @@ public class Customer : MonoBehaviour
     [Header("Waypoint to leave")] private WaypointToLeave _waypointToLeave;
     private int _nextWaypointIndex;
 
-    [SerializeField] private float speed = 5f;
+    [SerializeField] private float speed = 2f;
     [SerializeField] private float reachDistance = 0.1f;
 
     [Header("Visual Testing")] [SerializeField]
     private Slider customerTimerSlider;
-
     private float _sliderTime;
-
-
+    
+    [SerializeField] private Animator _animator;
+    
     private void Start()
     {
         _waypointToLeave = FindObjectOfType<WaypointToLeave>();
         customerTimerSlider = FindObjectOfType<Slider>();
-
+        _animator = GetComponent<Animator>();
+        if (!_animator)
+        {
+            Debug.LogError("Animator component not assigned in the inspector.");
+        }
         customerTimerSlider.maxValue = customerSO.customerTimer + customerSO.customerFoodTimer;
         customerTimerSlider.value = customerSO.customerTimer + customerSO.customerFoodTimer;
-        Debug.Log(customerTimerSlider.value);
+        //Debug.Log(customerTimerSlider.value);
     }
 
     private void Update()
@@ -55,20 +61,20 @@ public class Customer : MonoBehaviour
 
     private IEnumerator CustomerState()
     {
-        float waitTime = customerSO.customerFoodTimer;
+        _sliderTime = customerTimerSlider.value;
         switch (customerSO.customerType)
         {
             case CustomerType.ANNOYING:
-                yield return StartCoroutine(AnnoyingCustomer(waitTime));
-                Debug.Log("Annoying customer finished waiting." + waitTime);
+                yield return StartCoroutine(AnnoyingCustomer(_sliderTime));
+                Debug.Log("Annoying customer finished waiting." + _sliderTime);
                 break;
             case CustomerType.AVERAGE:
-                yield return StartCoroutine(NormalCustomer(waitTime));
-                Debug.Log("Average customer finished waiting." + waitTime);
+                yield return StartCoroutine(NormalCustomer(_sliderTime));
+                Debug.Log("Average customer finished waiting." + _sliderTime);
                 break;
             case CustomerType.PATIENT:
-                yield return StartCoroutine(PatientCustomer(waitTime));
-                Debug.Log("Patient customer finished waiting." + waitTime);
+                yield return StartCoroutine(PatientCustomer(_sliderTime));
+                Debug.Log("Patient customer finished waiting." + _sliderTime);
                 break;
         }
     }
@@ -94,6 +100,7 @@ public class Customer : MonoBehaviour
             DecreaseSliderValue();
             if (hasBeenServed)
             {
+                _animator.SetBool("Sit", true);
                 currentState = CustomerStates.SERVED;
                 Debug.Log("Customer received food!");
                 break;
@@ -108,6 +115,7 @@ public class Customer : MonoBehaviour
             {
                 Debug.Log("Customer got tired of waiting and left!");
                 currentState = CustomerStates.LEAVING;
+                
                 LeaveRestaurant();
             }
         }
@@ -126,14 +134,16 @@ public class Customer : MonoBehaviour
     [ContextMenu("Testing the ability to leave the restaurant")]
     private void LeaveRestaurant()
     {
-        int moneyEarned = customerSO.customerMoney;
-
         Debug.Log("Customer is leaving");
+                        
+        DroppingMoney droppingMoney = GetComponent<DroppingMoney>();
+        droppingMoney.DropMoney();
         StartCoroutine(MoveToExit());
     }
 
     private IEnumerator MoveToExit()
     {
+        _animator.SetBool("Walk", true);
         while (_nextWaypointIndex < _waypointToLeave.waypointToLeave.Length)
         {
             transform.position = Vector3.MoveTowards(transform.position,
@@ -148,8 +158,10 @@ public class Customer : MonoBehaviour
 
             yield return null;
         }
+        _animator.SetBool("Walk", false);
         Destroy(gameObject);
     }
+    
 
     private void DecreaseSliderValue()
     {

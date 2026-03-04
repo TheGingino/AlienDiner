@@ -41,6 +41,16 @@ public class PlayerMovement : MonoBehaviour
     private void MoveToPosision(Vector3 screenPosistion)
     {
         Ray ray = _camera.ScreenPointToRay(screenPosistion);
+        
+        // Ignore Station Clicks
+        if (Physics.Raycast(ray, out RaycastHit stationHit))
+        {
+            if (stationHit.collider.GetComponent<InteractableObject>() != null)
+            {
+                return; // station handles its own click
+            }
+        }
+        
         if (Physics.Raycast(ray, out RaycastHit hit,100f, groundLayer)) // navMesh radius can be made smaller when you know the size of the playing feeld (smaller is better optimalisation)
         {
             if (NavMesh.SamplePosition(hit.point, out NavMeshHit navMeshHit, 100f, NavMesh.AllAreas))//navMesh radius can be made smaller when you know the size of the playing feeld
@@ -55,5 +65,38 @@ public class PlayerMovement : MonoBehaviour
                 }
             }
         }
+    }
+
+    public void MoveToInteraction(InteractableObject station)
+    {
+        if (_agent == null) return;
+
+        _agent.SetDestination(station.InteractionWaypoint.position);
+
+        StartCoroutine(CheckArrival(station));
+    }
+
+    IEnumerator CheckArrival(InteractableObject station)
+    {
+        while (_agent.pathPending)
+            yield return null;
+        
+        while (_agent.remainingDistance > _agent.stoppingDistance)
+            yield return null;
+        
+        while (_agent.velocity.sqrMagnitude > 0.01f)
+            yield return null;
+        
+        _agent.Warp(station.InteractionWaypoint.position);
+        _agent.isStopped = true;
+        GetComponent<PlayerInteraction>().StartInteraction(station);
+    }
+    
+    public void LockPlayerMovement(bool enabled)
+    {
+        if (_agent == null) return;
+
+        _agent.isStopped = !enabled;
+
     }
 }

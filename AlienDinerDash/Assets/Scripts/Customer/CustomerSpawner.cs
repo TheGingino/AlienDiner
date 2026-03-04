@@ -3,7 +3,7 @@ using UnityEngine;
 public class CustomerSpawner : MonoBehaviour
 {
     [SerializeField] private Customer[] customerSO;
-    [SerializeField] private Customer driveThroughCustomerSO;
+    [SerializeField] private DriveThroughCustomer driveThroughCustomerSO;
 
     [SerializeField] private float spawnInterval = 5f;
     private float spawnTimer;
@@ -21,21 +21,16 @@ public class CustomerSpawner : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.C))
-        {
-            SpawnCustomer(); 
-        }
-        
         spawnTimer += Time.deltaTime;
         if (spawnTimer >= spawnInterval)
         {
-            //SpawnCustomer(); 
+            SpawnCustomer(); 
             SpawnDriveThrough(); 
             spawnTimer = 0f; 
         }
     }
 
-    public void SpawnCustomer()
+    private void SpawnCustomer()
     {
         if (customerSO == null || customerSO.Length == 0) return;
         
