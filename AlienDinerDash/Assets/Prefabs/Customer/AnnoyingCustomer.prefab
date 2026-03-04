@@ -88,8 +88,9 @@ GameObject:
   - component: {fileID: 3462405689484571519}
   - component: {fileID: 9170211598602925924}
   - component: {fileID: 4600500452216612423}
+  - component: {fileID: 4536468100418942648}
   m_Layer: 0
-  m_Name: Ball1
+  m_Name: AnnoyingCustomer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -203,6 +204,21 @@ MonoBehaviour:
   speed: 5
   reachDistance: 0.1
   customerTimerSlider: {fileID: 4386237580275082643}
+--- !u!114 &4536468100418942648
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3401127426954914692}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 60d3c5962189e314490cabc6280cd9e5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rewardSystem: {fileID: 0}
+  moneyToDrop: 0
+  moneyPrefab: {fileID: 4120276296711117132, guid: 34e6320c07096f44abfe214a7bc2e322, type: 3}
 --- !u!1 &3849945813007482362
 GameObject:
   m_ObjectHideFlags: 0
