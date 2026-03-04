@@ -43,11 +43,11 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: Main_Character|A_Idle_MC
-      takeName: Main_Character|A_Idle_MC
+      name: Main_Character|A_Idle
+      takeName: Main_Character|A_Idle
       internalID: -5104534566780226790
       firstFrame: 0
-      lastFrame: 34
+      lastFrame: 27
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
