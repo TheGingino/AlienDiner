@@ -3,7 +3,12 @@ guid: 0266964271803634ea9d0efd83c15da5
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Stove
+    second: {fileID: 2100000, guid: d263cf708957d164bbda104a92b215f4, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
