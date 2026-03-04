@@ -3,7 +3,12 @@ guid: 29df30e6566983043aa489f5a797bced
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Mixer
+    second: {fileID: 2100000, guid: 5d8ec6deb38742249b246952ab1bf18a, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

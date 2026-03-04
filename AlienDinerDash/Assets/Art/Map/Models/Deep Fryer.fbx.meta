@@ -3,7 +3,12 @@ guid: 2faec0a6442e5084e85107576ea16211
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: DeepFry
+    second: {fileID: 2100000, guid: 839ac6e1ded9335439d36d8e146ff00f, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
