@@ -3,7 +3,17 @@ guid: 2a75d8e9290feef4a90e215f5ebb4393
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Bar vloer
+    second: {fileID: 2100000, guid: cd243fe0b93702c408cbfe998735bcea, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Bar vloer.001
+    second: {fileID: 2100000, guid: cd243fe0b93702c408cbfe998735bcea, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
