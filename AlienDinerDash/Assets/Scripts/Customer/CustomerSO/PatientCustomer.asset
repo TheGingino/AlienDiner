@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b4db17cd2a9fc794cbe3b182dbf2b6d4, type: 3}
-  m_Name: VIPCustomer
+  m_Name: PatientCustomer
   m_EditorClassIdentifier: 
   customerType: 2
   customerPrefab: {fileID: 3401127426954914692, guid: 6c4ae294b4de5314693f724d61a9c983, type: 3}

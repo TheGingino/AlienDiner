@@ -27,23 +27,27 @@ public class Customer : MonoBehaviour
     [Header("Waypoint to leave")] private WaypointToLeave _waypointToLeave;
     private int _nextWaypointIndex;
 
-    [SerializeField] private float speed = 5f;
+    [SerializeField] private float speed = 2f;
     [SerializeField] private float reachDistance = 0.1f;
 
     [Header("Visual Testing")] [SerializeField]
     private Slider customerTimerSlider;
-
     private float _sliderTime;
-
-
+    
+    [SerializeField] private Animator _animator;
+    
     private void Start()
     {
         _waypointToLeave = FindObjectOfType<WaypointToLeave>();
         customerTimerSlider = FindObjectOfType<Slider>();
-
+        _animator = GetComponent<Animator>();
+        if (!_animator)
+        {
+            Debug.LogError("Animator component not assigned in the inspector.");
+        }
         customerTimerSlider.maxValue = customerSO.customerTimer + customerSO.customerFoodTimer;
         customerTimerSlider.value = customerSO.customerTimer + customerSO.customerFoodTimer;
-        Debug.Log(customerTimerSlider.value);
+        //Debug.Log(customerTimerSlider.value);
     }
 
     private void Update()
@@ -96,6 +100,7 @@ public class Customer : MonoBehaviour
             DecreaseSliderValue();
             if (hasBeenServed)
             {
+                _animator.SetBool("Sit", true);
                 currentState = CustomerStates.SERVED;
                 Debug.Log("Customer received food!");
                 break;
@@ -138,6 +143,7 @@ public class Customer : MonoBehaviour
 
     private IEnumerator MoveToExit()
     {
+        _animator.SetBool("Walk", true);
         while (_nextWaypointIndex < _waypointToLeave.waypointToLeave.Length)
         {
             transform.position = Vector3.MoveTowards(transform.position,
@@ -152,6 +158,7 @@ public class Customer : MonoBehaviour
 
             yield return null;
         }
+        _animator.SetBool("Walk", false);
         Destroy(gameObject);
     }
     

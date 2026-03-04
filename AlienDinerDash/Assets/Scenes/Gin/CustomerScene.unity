@@ -599,9 +599,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   customerSO:
-  - {fileID: 4600500452216612423, guid: 17944dff87031dc47b9c2e759949ac5c, type: 3}
-  - {fileID: -8178260362466965505, guid: 9b65d7a8299d2d5458373f9f4ad4d5b3, type: 3}
-  - {fileID: -3411486058818261720, guid: 6c4ae294b4de5314693f724d61a9c983, type: 3}
+  - {fileID: -2850854486748489298, guid: 754291678a48d094e955b542b709ca62, type: 3}
+  - {fileID: 8130970927475960708, guid: be829061fbfc03d42b8c19efc80c0d60, type: 3}
+  - {fileID: 1888189947891009206, guid: cbfad51cbc31c304f8af04421f472635, type: 3}
   driveThroughCustomerSO: {fileID: 4650468830680287764, guid: 5d488fa75ca3512418b1247cb45236e8, type: 3}
   spawnInterval: 15
   spawnPoint: {fileID: 209437269}
