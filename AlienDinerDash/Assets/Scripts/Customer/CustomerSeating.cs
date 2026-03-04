@@ -49,7 +49,6 @@ public class CustomerSeating : MonoBehaviour
         transform.rotation = seat.rotation;
 
         _canBeDragged = false;
-        //GetComponent<Collider>().enabled = false;
     }
 
     public void ReturnToOrigin()
@@ -69,7 +68,5 @@ public class CustomerSeating : MonoBehaviour
                                                  
             _canBeDragged = false;
         }
-       
-        //GetComponent<Collider>().enabled = false;
     }
 }

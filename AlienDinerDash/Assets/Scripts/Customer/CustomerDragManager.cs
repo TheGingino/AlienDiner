@@ -1,8 +1,6 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting;
-using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
 public class CustomerDragManager : MonoBehaviour
@@ -26,6 +24,7 @@ public class CustomerDragManager : MonoBehaviour
 
     private void HandleInput()
     {
+        // PC input
         if (Input.GetMouseButtonDown(0))
             StartDrag(Input.mousePosition);
 
@@ -34,6 +33,32 @@ public class CustomerDragManager : MonoBehaviour
 
         if (Input.GetMouseButtonUp(0) && _draggedCustomer != null)
             EndDrag(Input.mousePosition);
+        
+        // Mobile input
+
+        if (Input.touchCount > 0)
+        {
+            Touch touch = Input.GetTouch(0);
+
+            switch (touch.phase)
+            {
+                case TouchPhase.Began:
+                    StartDrag(touch.position);
+                    break;
+                
+                case TouchPhase.Moved:
+                case TouchPhase.Stationary:
+                    if(_draggedCustomer != null)
+                        Drag(touch.position);
+                    break;
+                
+                case TouchPhase.Ended:
+                case TouchPhase.Canceled:
+                    if(_draggedCustomer != null)
+                        EndDrag(touch.position);
+                    break;
+            }
+        }
     }
 
     private void StartDrag(Vector3 screenpos)
@@ -69,7 +94,7 @@ public class CustomerDragManager : MonoBehaviour
         {
             Table table = hit.collider.GetComponent<Table>();
 
-            if (table != null && table.HasFreeSeat()) // bool still needs to be added in table script 
+            if (table != null && table.HasFreeSeat())
             {
                 bool seated = table.TrySeatCustomer(_draggedCustomer , hit.point);
                 
