@@ -5,15 +5,14 @@ using UnityEngine;
 
 public class CustomerDragManager : MonoBehaviour
 {
+    [SerializeField] private SeatHoverManager _seatHoverManager;
+   
     [SerializeField] private LayerMask customerLayer;
     [SerializeField] private LayerMask tableLayer;
     [SerializeField] private LayerMask groundLayer;
-    [SerializeField] private LayerMask seatLayer;
-    
 
     private Camera _camera;
     private CustomerSeating _draggedCustomer;
-    private SeatHighLight _currentHighLight;
 
     private void Start()
     {
@@ -92,6 +91,9 @@ public class CustomerDragManager : MonoBehaviour
         {
             _draggedCustomer.SetDraggedPosition(hit.point); // SetDraggedPosistion need to be made in customerseating
         }
+        //visual update
+        if(_seatHoverManager != null)
+            _seatHoverManager.UpdateHover(screenpos);
     }
 
     private void EndDrag(Vector3 screenpos)
@@ -125,6 +127,8 @@ public class CustomerDragManager : MonoBehaviour
         CustomerVisualFeedback visual = _draggedCustomer.GetComponent<CustomerVisualFeedback>();
         if (visual != null)
             visual.OnDragEnd();
-        
+        // seat visual
+        if(_seatHoverManager != null)
+            _seatHoverManager.ClearHighLight();
     }
 }

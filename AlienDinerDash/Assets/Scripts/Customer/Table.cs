@@ -49,6 +49,18 @@ public class Table : MonoBehaviour
         return true;
     }
 
+    public bool IsSeatOccupied(Transform seat)
+    {
+        int index = seats.IndexOf(seat);
+
+        if (index >= 0)
+        {
+            return _occupied[index];
+        }
+
+        return true;
+    }
+
     public void FreeSeat(Transform seat)
     {
         int index = seats.IndexOf(seat);
