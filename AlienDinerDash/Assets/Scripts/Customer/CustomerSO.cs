@@ -14,26 +14,30 @@ public class CustomerSO : ScriptableObject
     
     private void OnEnable()
     {
-        if (customerTimer > 0 || customerMoney > 0) return;
-
         switch (customerType)
         {
             case CustomerType.AVERAGE:
-                customerTimer = 30;
+                customerTimer = 30f;
                 customerMoney = 10;
                 break;
             case CustomerType.ANNOYING:
-                customerTimer = 20;
+                customerTimer = 20f;
                 customerMoney = 15;
                 break;
             case CustomerType.PATIENT:
-                customerTimer = 40;
+                customerTimer = 40f;
                 customerMoney = 25;
                 break;
             case CustomerType.DRIVETHROUGH:
-                customerTimer = 25;
+                customerTimer = 25f;
                 customerMoney = 12;
                 break;
+        }
+
+        if (customerFoodTimer <= 0f)
+        {
+            // default food timer to the visible customer timer unless explicitly configured
+            customerFoodTimer = customerTimer;
         }
     }
 }
