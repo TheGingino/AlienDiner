@@ -34,12 +34,17 @@ public class Customer : MonoBehaviour
     private Slider customerTimerSlider;
     private float _sliderTime;
     
+    [Header ("Order Visuals")]
+    [SerializeField] private Image orderImage;
+    [SerializeField] private DishSpriteEntry[] dishSprites;
+    
     [SerializeField] private Animator _animator;
     private GameObject[] customerWaypoints;
     private void Start()
     {
         _waypointToLeave = FindObjectOfType<WaypointToLeave>();
         customerTimerSlider = FindObjectOfType<Slider>();
+        orderImage.enabled = false;
         
         _animator = GetComponent<Animator>();
         if (!_animator)
@@ -174,5 +179,38 @@ public class Customer : MonoBehaviour
             customerTimerSlider.value -= Time.deltaTime;
         }
         //Debug.Log("Customer timer: " + customerTimerSlider.value);
+    }
+    
+    private DishType desiredDish;
+
+    public void SetDesiredDish(DishType dish)
+    {
+        desiredDish = dish;
+
+        if (orderImage != null)
+        {
+            orderImage.sprite = GetSpriteForDish(dish);
+            orderImage.enabled = true;
+        }
+
+        Debug.Log($"Customer {name} wants: {desiredDish}");
+    }
+    
+    private Sprite GetSpriteForDish(DishType dish)
+    {
+        foreach (var entry in dishSprites)
+        {
+            if (entry.dishType == dish)
+                return entry.sprite;
+        }
+
+        return null;
+    }
+    
+    [System.Serializable]
+    public class DishSpriteEntry
+    {
+        public DishType dishType;
+        public Sprite sprite;
     }
 }
