@@ -458,7 +458,7 @@ GameObject:
   - component: {fileID: 463298482}
   - component: {fileID: 463298481}
   - component: {fileID: 463298486}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Plane
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1833,12 +1833,16 @@ PrefabInstance:
       objectReference: {fileID: 2038002338}
     - target: {fileID: 8570373709305196236, guid: 8106a11e42c219b4d83c3b2db71a405c, type: 3}
       propertyPath: spawnInterval
-      value: 25
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 8570373709305196236, guid: 8106a11e42c219b4d83c3b2db71a405c, type: 3}
       propertyPath: customerSO.Array.size
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 8570373709305196236, guid: 8106a11e42c219b4d83c3b2db71a405c, type: 3}
+      propertyPath: driveThroughCustomerSO
+      value: 
+      objectReference: {fileID: 987461553}
     - target: {fileID: 8570373709305196236, guid: 8106a11e42c219b4d83c3b2db71a405c, type: 3}
       propertyPath: driveThroughSpawnPoint
       value: 
@@ -1885,7 +1889,7 @@ Transform:
   m_GameObject: {fileID: 2038002337}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 8.56, y: 1, z: 0.21}
+  m_LocalPosition: {x: 6.98, y: 1, z: 0.21}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
