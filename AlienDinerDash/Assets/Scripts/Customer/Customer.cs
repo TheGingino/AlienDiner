@@ -9,7 +9,9 @@ public class Customer : MonoBehaviour
     [Header("Customer Settings")] [SerializeField]
     private CustomerSO customerSO;
 
-    private enum CustomerStates
+    public CustomerSO CustomerSO => customerSO;
+
+    public enum CustomerStates
     {
         HUNGRY,
         SERVED,
@@ -25,23 +27,31 @@ public class Customer : MonoBehaviour
     [Header("Waypoint to leave")] private WaypointToLeave _waypointToLeave;
     private int _nextWaypointIndex;
 
-    [SerializeField] private float speed = 5f;
+    [SerializeField] private float speed = 2f;
     [SerializeField] private float reachDistance = 0.1f;
 
     [Header("Visual Testing")] [SerializeField]
     private Slider customerTimerSlider;
-
     private float _sliderTime;
-
-
+    
+    [SerializeField] private Animator _animator;
+    private GameObject[] customerWaypoints;
     private void Start()
     {
         _waypointToLeave = FindObjectOfType<WaypointToLeave>();
         customerTimerSlider = FindObjectOfType<Slider>();
-
+        
+        _animator = GetComponent<Animator>();
+        if (!_animator)
+        {
+            Debug.LogError("Animator component not assigned in the inspector.");
+        }
+        
+        customerWaypoints = _waypointToLeave.insideWaypointToLeave;
+        
         customerTimerSlider.maxValue = customerSO.customerTimer + customerSO.customerFoodTimer;
         customerTimerSlider.value = customerSO.customerTimer + customerSO.customerFoodTimer;
-        Debug.Log(customerTimerSlider.value);
+        //Debug.Log(customerTimerSlider.value);
     }
 
     private void Update()
@@ -94,6 +104,7 @@ public class Customer : MonoBehaviour
             DecreaseSliderValue();
             if (hasBeenServed)
             {
+                _animator.SetBool("Sit", true);
                 currentState = CustomerStates.SERVED;
                 Debug.Log("Customer received food!");
                 break;
@@ -108,6 +119,7 @@ public class Customer : MonoBehaviour
             {
                 Debug.Log("Customer got tired of waiting and left!");
                 currentState = CustomerStates.LEAVING;
+                customerWaypoints = _waypointToLeave.waypointToLeave;
                 LeaveRestaurant();
             }
         }
@@ -126,28 +138,31 @@ public class Customer : MonoBehaviour
     [ContextMenu("Testing the ability to leave the restaurant")]
     private void LeaveRestaurant()
     {
-        int moneyEarned = customerSO.customerMoney;
-
         Debug.Log("Customer is leaving");
+                        
+        DroppingMoney droppingMoney = GetComponent<DroppingMoney>();
+        droppingMoney.DropMoney();
         StartCoroutine(MoveToExit());
     }
 
     private IEnumerator MoveToExit()
     {
-        while (_nextWaypointIndex < _waypointToLeave.waypointToLeave.Length)
+        _animator.SetBool("Walk", true);
+        while (_nextWaypointIndex < customerWaypoints.Length)
         {
             transform.position = Vector3.MoveTowards(transform.position,
-                _waypointToLeave.waypointToLeave[_nextWaypointIndex].transform.position,
+                customerWaypoints[_nextWaypointIndex].transform.position,
                 Time.deltaTime * speed);
 
             if (Vector3.Distance(transform.position,
-                    _waypointToLeave.waypointToLeave[_nextWaypointIndex].transform.position) <= reachDistance)
+                    customerWaypoints[_nextWaypointIndex].transform.position) <= reachDistance)
             {
                 _nextWaypointIndex += 1;
             }
 
             yield return null;
         }
+        _animator.SetBool("Walk", false);
         Destroy(gameObject);
     }
     
