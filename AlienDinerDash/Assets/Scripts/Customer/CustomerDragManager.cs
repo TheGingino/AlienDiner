@@ -130,5 +130,6 @@ public class CustomerDragManager : MonoBehaviour
         // seat visual
         if(_seatHoverManager != null)
             _seatHoverManager.ClearHighLight();
+        _draggedCustomer = null;
     }
 }
