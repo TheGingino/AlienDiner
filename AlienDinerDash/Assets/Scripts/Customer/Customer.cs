@@ -35,16 +35,20 @@ public class Customer : MonoBehaviour
     private float _sliderTime;
     
     [SerializeField] private Animator _animator;
-    
+    private GameObject[] customerWaypoints;
     private void Start()
     {
         _waypointToLeave = FindObjectOfType<WaypointToLeave>();
         customerTimerSlider = FindObjectOfType<Slider>();
+        
         _animator = GetComponent<Animator>();
         if (!_animator)
         {
             Debug.LogError("Animator component not assigned in the inspector.");
         }
+        
+        customerWaypoints = _waypointToLeave.insideWaypointToLeave;
+        
         customerTimerSlider.maxValue = customerSO.customerTimer + customerSO.customerFoodTimer;
         customerTimerSlider.value = customerSO.customerTimer + customerSO.customerFoodTimer;
         //Debug.Log(customerTimerSlider.value);
@@ -115,7 +119,7 @@ public class Customer : MonoBehaviour
             {
                 Debug.Log("Customer got tired of waiting and left!");
                 currentState = CustomerStates.LEAVING;
-                
+                customerWaypoints = _waypointToLeave.waypointToLeave;
                 LeaveRestaurant();
             }
         }
@@ -144,14 +148,14 @@ public class Customer : MonoBehaviour
     private IEnumerator MoveToExit()
     {
         _animator.SetBool("Walk", true);
-        while (_nextWaypointIndex < _waypointToLeave.waypointToLeave.Length)
+        while (_nextWaypointIndex < customerWaypoints.Length)
         {
             transform.position = Vector3.MoveTowards(transform.position,
-                _waypointToLeave.waypointToLeave[_nextWaypointIndex].transform.position,
+                customerWaypoints[_nextWaypointIndex].transform.position,
                 Time.deltaTime * speed);
 
             if (Vector3.Distance(transform.position,
-                    _waypointToLeave.waypointToLeave[_nextWaypointIndex].transform.position) <= reachDistance)
+                    customerWaypoints[_nextWaypointIndex].transform.position) <= reachDistance)
             {
                 _nextWaypointIndex += 1;
             }
