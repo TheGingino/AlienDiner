@@ -5,8 +5,6 @@ public class DroppingMoney : MonoBehaviour
     [SerializeField] private RewardSystem rewardSystem;
     [SerializeField] private int moneyToDrop;
     
-    private Customer.CustomerStates currentState = Customer.CustomerStates.LEAVING;
-    
     [SerializeField] private Money moneyPrefab;
 
     private void Start()
