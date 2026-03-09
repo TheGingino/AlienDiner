@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class CustomerSeating : MonoBehaviour
 {
@@ -12,8 +13,8 @@ public class CustomerSeating : MonoBehaviour
     private Quaternion _originRotation;
 
     private bool _canBeDragged = true;
-
-    [SerializeField] OrderingFood _orderingFood;
+    
+    [SerializeField] private UnityEvent hasBeenSeated;
 
     private void Start()
     {
@@ -51,8 +52,7 @@ public class CustomerSeating : MonoBehaviour
         transform.rotation = seat.rotation;
 
         _canBeDragged = false;
-        
-        _orderingFood.OrderFood();
+        hasBeenSeated.Invoke();
     }
 
     public void ReturnToOrigin()

@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using JetBrains.Annotations;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.UI;
 
 public class Customer : MonoBehaviour
@@ -10,6 +11,9 @@ public class Customer : MonoBehaviour
     private CustomerSO customerSO;
 
     public CustomerSO CustomerSO => customerSO;
+    
+    [SerializeField] private UnityEvent hasFinishedEating;
+
 
     public enum CustomerStates
     {
@@ -164,7 +168,8 @@ public class Customer : MonoBehaviour
             {
                 _nextWaypointIndex += 1;
             }
-
+            hasFinishedEating.Invoke();
+            
             yield return null;
         }
         _animator.SetBool("Walk", false);
