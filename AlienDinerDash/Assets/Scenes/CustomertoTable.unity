@@ -133,7 +133,7 @@ GameObject:
   - component: {fileID: 65893906}
   - component: {fileID: 65893908}
   - component: {fileID: 65893907}
-  m_Layer: 14
+  m_Layer: 8
   m_Name: Seat_3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -222,13 +222,13 @@ MonoBehaviour:
   _seatHoverManager: {fileID: 738348016}
   customerLayer:
     serializedVersion: 2
-    m_Bits: 8192
+    m_Bits: 512
   tableLayer:
     serializedVersion: 2
-    m_Bits: 2048
+    m_Bits: 128
   groundLayer:
     serializedVersion: 2
-    m_Bits: 4096
+    m_Bits: 64
 --- !u!4 &87008787
 Transform:
   m_ObjectHideFlags: 0
@@ -258,7 +258,7 @@ GameObject:
   - component: {fileID: 111889955}
   - component: {fileID: 111889954}
   - component: {fileID: 111889953}
-  m_Layer: 13
+  m_Layer: 9
   m_Name: customer (7)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -291,6 +291,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5fbefecc6cc32f742bf1caaa27264e84, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hasBeenSeated:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!136 &111889955
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -423,7 +426,7 @@ GameObject:
   - component: {fileID: 267760445}
   - component: {fileID: 267760447}
   - component: {fileID: 267760446}
-  m_Layer: 14
+  m_Layer: 8
   m_Name: Seat_4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -583,7 +586,7 @@ GameObject:
   - component: {fileID: 323953973}
   - component: {fileID: 323953975}
   - component: {fileID: 323953974}
-  m_Layer: 14
+  m_Layer: 8
   m_Name: Seat_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -654,7 +657,7 @@ GameObject:
   - component: {fileID: 404700713}
   - component: {fileID: 404700712}
   - component: {fileID: 404700711}
-  m_Layer: 13
+  m_Layer: 9
   m_Name: customer (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -687,6 +690,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5fbefecc6cc32f742bf1caaa27264e84, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hasBeenSeated:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!136 &404700713
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -789,7 +795,7 @@ GameObject:
   - component: {fileID: 736341970}
   - component: {fileID: 736341969}
   - component: {fileID: 736341968}
-  m_Layer: 13
+  m_Layer: 9
   m_Name: customer (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -822,6 +828,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5fbefecc6cc32f742bf1caaa27264e84, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hasBeenSeated:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!136 &736341970
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -956,7 +965,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   seatLayer:
     serializedVersion: 2
-    m_Bits: 16384
+    m_Bits: 256
 --- !u!1 &783578941
 GameObject:
   m_ObjectHideFlags: 0
@@ -971,7 +980,7 @@ GameObject:
   - component: {fileID: 783578944}
   - component: {fileID: 783578943}
   - component: {fileID: 783578942}
-  m_Layer: 13
+  m_Layer: 9
   m_Name: customer (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1004,6 +1013,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5fbefecc6cc32f742bf1caaa27264e84, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hasBeenSeated:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!136 &783578944
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -1106,7 +1118,7 @@ GameObject:
   - component: {fileID: 798609475}
   - component: {fileID: 798609474}
   - component: {fileID: 798609473}
-  m_Layer: 13
+  m_Layer: 9
   m_Name: customer (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1139,6 +1151,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5fbefecc6cc32f742bf1caaa27264e84, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hasBeenSeated:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!136 &798609475
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -1237,7 +1252,7 @@ GameObject:
   m_Component:
   - component: {fileID: 822156412}
   - component: {fileID: 822156413}
-  m_Layer: 14
+  m_Layer: 7
   m_Name: SeatHighLight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1325,7 +1340,7 @@ GameObject:
   - component: {fileID: 1150919390}
   - component: {fileID: 1150919389}
   - component: {fileID: 1150919388}
-  m_Layer: 13
+  m_Layer: 9
   m_Name: customer (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1358,6 +1373,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5fbefecc6cc32f742bf1caaa27264e84, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hasBeenSeated:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!136 &1150919390
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -1456,7 +1474,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1174367652}
   - component: {fileID: 1174367653}
-  m_Layer: 14
+  m_Layer: 0
   m_Name: SeatHighLight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1544,7 +1562,7 @@ GameObject:
   - component: {fileID: 1330559358}
   - component: {fileID: 1330559357}
   - component: {fileID: 1330559356}
-  m_Layer: 13
+  m_Layer: 9
   m_Name: customer (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1577,6 +1595,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5fbefecc6cc32f742bf1caaa27264e84, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hasBeenSeated:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!136 &1330559358
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -1675,7 +1696,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1337965620}
   - component: {fileID: 1337965621}
-  m_Layer: 14
+  m_Layer: 7
   m_Name: SeatHighLight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1760,7 +1781,7 @@ GameObject:
   - component: {fileID: 1470840599}
   - component: {fileID: 1470840601}
   - component: {fileID: 1470840600}
-  m_Layer: 14
+  m_Layer: 8
   m_Name: Seat_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1831,7 +1852,7 @@ GameObject:
   - component: {fileID: 1851926015}
   - component: {fileID: 1851926014}
   - component: {fileID: 1851926019}
-  m_Layer: 13
+  m_Layer: 9
   m_Name: customer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1850,6 +1871,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5fbefecc6cc32f742bf1caaa27264e84, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hasBeenSeated:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!136 &1851926015
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -1961,7 +1985,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1867524523}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Seats_transform
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1993,7 +2017,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1930628531}
   - component: {fileID: 1930628532}
-  m_Layer: 14
+  m_Layer: 7
   m_Name: SeatHighLight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2215,7 +2239,7 @@ GameObject:
   - component: {fileID: 8271032589142940847}
   - component: {fileID: 8205661567498464918}
   - component: {fileID: 8271032589142940848}
-  m_Layer: 12
+  m_Layer: 6
   m_Name: Floor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2250,7 +2274,7 @@ GameObject:
   - component: {fileID: 7203157335034024538}
   - component: {fileID: 9204923776323488408}
   - component: {fileID: 9204923776323488409}
-  m_Layer: 11
+  m_Layer: 7
   m_Name: Table1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2268,7 +2292,7 @@ GameObject:
   - component: {fileID: 6843455288603292179}
   - component: {fileID: 6704970880426342034}
   - component: {fileID: 1993900940968049699}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Seats_table1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
