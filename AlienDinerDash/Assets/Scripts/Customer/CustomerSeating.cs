@@ -13,6 +13,8 @@ public class CustomerSeating : MonoBehaviour
 
     private bool _canBeDragged = true;
 
+    [SerializeField] OrderingFood _orderingFood;
+
     private void Start()
     {
         _originPosition = transform.position;
@@ -49,6 +51,8 @@ public class CustomerSeating : MonoBehaviour
         transform.rotation = seat.rotation;
 
         _canBeDragged = false;
+        
+        _orderingFood.OrderFood();
     }
 
     public void ReturnToOrigin()
