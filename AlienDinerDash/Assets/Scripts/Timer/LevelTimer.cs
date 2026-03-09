@@ -9,7 +9,8 @@ public class LevelTimer : MonoBehaviour
     public float duration = 180f;
 
     private float elapsedTime;
-
+    
+    
     void Start()
     {
         elapsedTime = 0f;
@@ -41,5 +42,13 @@ public class LevelTimer : MonoBehaviour
     void OnTimerFinished()
     {
         Debug.Log("Timer finished!");
+    }
+    
+    public void OnCustomerLeftAngry()
+    {
+        // Example: Reduce remaining time by 10 seconds when a customer is served
+        duration -= 10f;
+        if (duration < 0f)
+            duration = 0f;
     }
 }

@@ -619,6 +619,24 @@ MonoBehaviour:
   speed: 5
   reachDistance: 0.1
   customerTimerSlider: {fileID: 3721760305586238888}
+  hasFinishedEating:
+    m_PersistentCalls:
+      m_Calls: []
+  hasLeftAngry:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 8943448250018946366, guid: 1d30c3e6f3bdba94d923f7b06a50209b, type: 3}
+        m_TargetAssemblyTypeName: LevelTimer, Assembly-CSharp
+        m_MethodName: OnCustomerLeftAngry
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   _animator: {fileID: 0}
 --- !u!114 &991252729026483058
 MonoBehaviour:
