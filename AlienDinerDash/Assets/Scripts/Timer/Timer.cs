@@ -67,6 +67,7 @@ public class Timer : MonoBehaviour
     public void ApplyPenalty()
     {
         currentTime -= 10f;
+        Debug.Log("Applied penalty! Current time: " + currentTime);
         if (currentTime < 0)
         {
             currentTime = 0;

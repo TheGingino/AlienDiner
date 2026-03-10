@@ -46,7 +46,6 @@ public class Customer : MonoBehaviour
     [SerializeField] private UnityEvent hasLeftAngry;
     public UnityEvent HasLeftAngry => hasLeftAngry;
     
-    
     [SerializeField] private Animator _animator;
     private void Start()
     {
