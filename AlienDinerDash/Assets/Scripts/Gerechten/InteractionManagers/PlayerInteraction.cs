@@ -166,6 +166,8 @@ public class PlayerInteraction : MonoBehaviour
                 GetComponent<PlayerMovement>().LockPlayerMovement(true);
                 return;
             }
+            
+            GetComponent<PlayerMovement>().LockPlayerMovement(true);
         }
     }
 }
