@@ -143,7 +143,7 @@ public class PlayerInteraction : MonoBehaviour
         if (!IsHoldingDish)
             return;
 
-        Collider[] hits = Physics.OverlapSphere(tableTransform.position, 3f);
+        Collider[] hits = Physics.OverlapSphere(tableTransform.position, 2f);
 
         foreach (Collider hit in hits)
         {
