@@ -6,6 +6,7 @@ using Random = UnityEngine.Random;
 public class OrderingFood : MonoBehaviour
 {
     private Customer _customer;
+    private DriveThroughCustomer _driveThroughCustomer;
     private bool _hasOrdered = false;
 
     [SerializeField] private UnityEvent onFoodSOrdered;
@@ -13,9 +14,12 @@ public class OrderingFood : MonoBehaviour
     [SerializeField] DishType[] _orderableDishes;
 
 
-    private void Start()
+    private void Awake()
     {
         _customer = GetComponentInParent<Customer>();
+        _driveThroughCustomer = GetComponent<DriveThroughCustomer>();
+
+        Debug.Log("DriveThroughCustomer found: " + _driveThroughCustomer);
     }
 
     private void Update()
@@ -23,7 +27,6 @@ public class OrderingFood : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.E) && _customer != null)
         {
             OrderFood();
-            //onFoodSOrdered.Invoke();
             Debug.Log("Food ordered for " + _customer.name);
         }
     }
@@ -33,30 +36,36 @@ public class OrderingFood : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             onFoodServed.Invoke();
-            Debug.Log("Player entered ordering area for " + _customer.name);
+
+            if (_customer != null)
+                Debug.Log("Player entered ordering area for " + _customer.name);
         }
     }
 
     [ContextMenu("Order Food")]
     public void OrderFood()
     {
-        if (_hasOrdered == true)
+        if (_hasOrdered)
             return;
-        
-        Debug.Log("ORDER IN");
 
-        if (_orderableDishes == null || _orderableDishes.Length == 0 || _customer == null)
+        if (_orderableDishes == null || _orderableDishes.Length == 0)
             return;
 
         var index = Random.Range(0, _orderableDishes.Length);
         var chosenDish = _orderableDishes[index];
 
-        _customer.SetDesiredDish(chosenDish);
+        if (_customer != null)
+        {
+            _customer.SetDesiredDish(chosenDish);
+            Debug.Log("Dish ordered for " + _customer.name + ": " + chosenDish);
+        }
+        else if (_driveThroughCustomer != null)
+        {
+            _driveThroughCustomer.SetDesiredDish(chosenDish);
+            Debug.Log("Drive-through ordered: " + chosenDish);
+        }
 
         onFoodSOrdered.Invoke();
-
-        Debug.Log("Dish ordered for " + _customer.name + ": " + chosenDish);
         _hasOrdered = true;
     }
-
 }

@@ -133,6 +133,11 @@ public class Customer : MonoBehaviour
             }
         }
     }
+    
+    public bool IsWaitingFor(DishType dish)
+    {
+        return currentState == CustomerStates.HUNGRY && desiredDish == dish;
+    }
 
     public void ServeFood()
     {
@@ -140,7 +145,9 @@ public class Customer : MonoBehaviour
         {
             hasBeenServed = true;
             currentState = CustomerStates.SERVED;
+            orderImage.enabled = false;
             Debug.Log("Customer received food!");
+            StartCoroutine(EatThenLeave());
         }
     }
 
@@ -174,6 +181,16 @@ public class Customer : MonoBehaviour
         }
         _animator.SetBool("Walk", false);
         Destroy(gameObject);
+    }
+    
+    IEnumerator EatThenLeave()
+    {
+        yield return new WaitForSeconds(5f);
+
+        currentState = CustomerStates.LEAVING;
+        customerWaypoints = _waypointToLeave.waypointToLeave;
+
+        LeaveRestaurant();
     }
     
 
