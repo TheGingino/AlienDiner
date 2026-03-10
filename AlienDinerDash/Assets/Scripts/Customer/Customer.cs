@@ -40,7 +40,7 @@ public class Customer : MonoBehaviour
     [Header("Events")]    
     [SerializeField] private UnityEvent hasFinishedEating;
     [SerializeField] private UnityEvent hasLeftAngry;
-
+    public UnityEvent HasLeftAngry => hasLeftAngry;
     
     
     [SerializeField] private Animator _animator;
@@ -50,16 +50,12 @@ public class Customer : MonoBehaviour
         customerTimerSlider = FindObjectOfType<Slider>();
         
         _animator = GetComponent<Animator>();
-        if (!_animator)
-        {
-            Debug.LogError("Animator component not assigned in the inspector.");
-        }
-        
         customerWaypoints = _waypointToLeave.insideWaypointToLeave;
         
-        customerTimerSlider.maxValue = customerSO.customerTimer + customerSO.customerFoodTimer;
-        customerTimerSlider.value = customerSO.customerTimer + customerSO.customerFoodTimer;
-        //Debug.Log(customerTimerSlider.value);
+        customerTimerSlider.maxValue = 10;
+        customerTimerSlider.value = 10;
+        
+        Timer.RegisterCustomer(this);
     }
 
     private void Update()
@@ -78,15 +74,15 @@ public class Customer : MonoBehaviour
         {
             case CustomerType.ANNOYING:
                 yield return StartCoroutine(AnnoyingCustomer(_sliderTime));
-                Debug.Log("Annoying customer finished waiting." + _sliderTime);
+                //Debug.Log("Annoying customer finished waiting." + _sliderTime);
                 break;
             case CustomerType.AVERAGE:
                 yield return StartCoroutine(NormalCustomer(_sliderTime));
-                Debug.Log("Average customer finished waiting." + _sliderTime);
+                //Debug.Log("Average customer finished waiting." + _sliderTime);
                 break;
             case CustomerType.PATIENT:
                 yield return StartCoroutine(PatientCustomer(_sliderTime));
-                Debug.Log("Patient customer finished waiting." + _sliderTime);
+                //Debug.Log("Patient customer finished waiting." + _sliderTime);
                 break;
         }
     }
@@ -147,7 +143,6 @@ public class Customer : MonoBehaviour
     [ContextMenu("Testing the ability to leave the restaurant")]
     private void LeaveRestaurant()
     {
-        Debug.Log("Customer is leaving");
         DroppingMoney droppingMoney = GetComponent<DroppingMoney>();
         droppingMoney.DropMoney();
         StartCoroutine(MoveToExit());

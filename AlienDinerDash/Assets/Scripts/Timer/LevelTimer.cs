@@ -1,54 +1,74 @@
+using System;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
 public class LevelTimer : MonoBehaviour
 {
-    public Image clockImage;
-    public TMP_Text countdownText;
-    public float duration = 180f;
-
-    private float elapsedTime;
+    [SerializeField] private Image clockImage;
+    [SerializeField] private TMP_Text countdownText;
+    [SerializeField] private float startTime = 180f;
     
+    private float currentTime;
+    private bool isRunning = false;
     
-    void Start()
+    public event Action OnTimerEnd;
+    
+    private void Start()
     {
-        elapsedTime = 0f;
-        clockImage.fillAmount = 0f;
-        countdownText.text = Mathf.CeilToInt(duration).ToString();
+        Debug.Log("LevelTimer Start() called");
+        currentTime = startTime;
+        UpdateUI();
+        StartTimer();
+        Debug.Log($"Timer started. IsRunning: {isRunning}, CurrentTime: {currentTime}");
     }
-
-    void Update()
+    
+    private void Update()
     {
-        if (elapsedTime >= duration)
-            return;
+        if (!isRunning) return;
 
-        elapsedTime += Time.deltaTime;
+        currentTime -= Time.deltaTime;
+        Debug.Log($"Current Time: {MathF.Floor(currentTime)}"); // Add this line
 
-        // Fill clock UP
-        clockImage.fillAmount = elapsedTime / duration;
-
-        // Countdown text
-        float remaining = duration - elapsedTime;
-        countdownText.text = Mathf.CeilToInt(remaining).ToString();
-
-        if (elapsedTime >= duration)
+        if (currentTime <= 0)
         {
-            countdownText.text = "0";
-            OnTimerFinished();
+            currentTime = 0;
+            isRunning = false;
+            OnTimerEnd?.Invoke();
+        }
+
+        UpdateUI();
+    }
+    
+    private void UpdateUI()
+    {
+        int minutes = Mathf.FloorToInt(currentTime / 60);
+        int seconds = Mathf.FloorToInt(currentTime % 60);
+        countdownText.text = $"{minutes:00}:{seconds:00}";
+        
+        clockImage.fillAmount = currentTime / startTime;
+        if (Input.anyKeyDown)
+        {
+            ApplyPenalty();
         }
     }
-
-    void OnTimerFinished()
+    
+    public void ApplyPenalty()
     {
-        Debug.Log("Timer finished!");
+        currentTime -=  currentTime * 0.1f;
+        if (currentTime < 0)
+            currentTime = 0;
+        
+        UpdateUI();
     }
     
-    public void OnCustomerLeftAngry()
+    public void StartTimer()
     {
-        // Example: Reduce remaining time by 10 seconds when a customer is served
-        duration -= 10f;
-        if (duration < 0f)
-            duration = 0f;
+        isRunning = true;
+    }
+    
+    public void StopTimer()
+    {
+        isRunning = false;
     }
 }

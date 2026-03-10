@@ -3268,6 +3268,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: LevelTimer
       objectReference: {fileID: 0}
+    - target: {fileID: 7081129174044269961, guid: 1d30c3e6f3bdba94d923f7b06a50209b, type: 3}
+      propertyPath: timerText
+      value: 
+      objectReference: {fileID: 393274265}
+    - target: {fileID: 7081129174044269961, guid: 1d30c3e6f3bdba94d923f7b06a50209b, type: 3}
+      propertyPath: clockImage
+      value: 
+      objectReference: {fileID: 1878489802}
     - target: {fileID: 8943448250018946366, guid: 1d30c3e6f3bdba94d923f7b06a50209b, type: 3}
       propertyPath: clockImage
       value: 
@@ -3438,6 +3446,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f19ffed8b6a483247ac30f444647d665, type: 3}
+--- !u!114 &1878489802 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3342867870655213155, guid: 5b1621764272a644b9a39795915ef046, type: 3}
+  m_PrefabInstance: {fileID: 201875969}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1936831053
 PrefabInstance:
   m_ObjectHideFlags: 0

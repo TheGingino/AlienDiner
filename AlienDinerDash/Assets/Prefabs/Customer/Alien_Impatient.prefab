@@ -625,9 +625,9 @@ MonoBehaviour:
   hasLeftAngry:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 8943448250018946366, guid: 1d30c3e6f3bdba94d923f7b06a50209b, type: 3}
-        m_TargetAssemblyTypeName: LevelTimer, Assembly-CSharp
-        m_MethodName: OnCustomerLeftAngry
+      - m_Target: {fileID: 7081129174044269961, guid: 1d30c3e6f3bdba94d923f7b06a50209b, type: 3}
+        m_TargetAssemblyTypeName: Timer, Assembly-CSharp
+        m_MethodName: ApplyPenalty
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -651,7 +651,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rewardSystem: {fileID: 0}
-  moneyToDrop: 0
   moneyPrefab: {fileID: 4120276296711117132, guid: 34e6320c07096f44abfe214a7bc2e322, type: 3}
 --- !u!136 &3146483595616120116
 CapsuleCollider:

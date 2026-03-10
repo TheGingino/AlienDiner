@@ -3,10 +3,10 @@ using UnityEngine;
 public class DroppingMoney : MonoBehaviour
 {
     [SerializeField] private RewardSystem rewardSystem;
-    [SerializeField] private int moneyToDrop;
-    
     [SerializeField] private Money moneyPrefab;
 
+    private int moneyToDrop;
+    
     private void Start()
     {
         rewardSystem = FindObjectOfType<RewardSystem>();
