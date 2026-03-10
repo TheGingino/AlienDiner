@@ -740,7 +740,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rewardSystem: {fileID: 0}
-  moneyToDrop: 0
   moneyPrefab: {fileID: 4120276296711117132, guid: 34e6320c07096f44abfe214a7bc2e322, type: 3}
 --- !u!136 &-4644339203594711484
 CapsuleCollider:
