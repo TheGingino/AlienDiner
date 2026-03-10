@@ -114,8 +114,6 @@ public class PlayerInteraction : MonoBehaviour
             Destroy(_heldDishObject);
             _heldDishObject = null;
         }
-
-        Debug.Log("Dish thrown away.");
     }
     
     GameObject GetPrefabForDish(DishType dish)
@@ -139,5 +137,37 @@ public class PlayerInteraction : MonoBehaviour
 
         transform.rotation = Quaternion.LookRotation(direction);
     }
+    
+    public void TryServeCustomersAtTable(Transform tableTransform)
+    {
+        if (!IsHoldingDish)
+            return;
 
+        Collider[] hits = Physics.OverlapSphere(tableTransform.position, 2f);
+
+        foreach (Collider hit in hits)
+        {
+            Customer customer = hit.GetComponent<Customer>();
+
+            if (customer != null && customer.IsWaitingFor(_heldDish))
+            {
+                customer.ServeFood();
+                ClearDish();
+                GetComponent<PlayerMovement>().LockPlayerMovement(true);
+                return;
+            }
+
+            DriveThroughCustomer driveCustomer = hit.GetComponent<DriveThroughCustomer>();
+
+            if (driveCustomer != null && driveCustomer.IsWaitingFor(_heldDish))
+            {
+                driveCustomer.ServeFood();
+                ClearDish();
+                GetComponent<PlayerMovement>().LockPlayerMovement(true);
+                return;
+            }
+            
+            GetComponent<PlayerMovement>().LockPlayerMovement(true);
+        }
+    }
 }

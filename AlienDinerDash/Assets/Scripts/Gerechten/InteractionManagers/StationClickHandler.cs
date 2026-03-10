@@ -13,7 +13,7 @@ public class StationClickHandler : MonoBehaviour
             return;
         Debug.Log("Holding dish? " + _player.IsHoldingDish);
 
-        // NEW CHECK
+      
         if (_player.IsHoldingDish &&
             station.Type == InteractableObject.StationType.CookingStation)
         {
@@ -28,12 +28,8 @@ public class StationClickHandler : MonoBehaviour
             Debug.Log("Nothing to throw away.");
             return;
         }
-
-       
         
         _playerMovement.MoveToInteraction(station);
-        
-
        
     }
 }

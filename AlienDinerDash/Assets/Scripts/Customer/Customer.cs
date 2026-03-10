@@ -37,6 +37,10 @@ public class Customer : MonoBehaviour
     private Slider customerTimerSlider;
     private float _sliderTime;
     
+    [Header ("Order Visuals")]
+    [SerializeField] private Image orderImage;
+    [SerializeField] private DishSpriteEntry[] dishSprites;
+    
     [Header("Events")]    
     [SerializeField] private UnityEvent hasFinishedEating;
     [SerializeField] private UnityEvent hasLeftAngry;
@@ -48,6 +52,7 @@ public class Customer : MonoBehaviour
     {
         _waypointToLeave = FindObjectOfType<WaypointToLeave>();
         customerTimerSlider = FindObjectOfType<Slider>();
+        orderImage.enabled = false;
         
         _animator = GetComponent<Animator>();
         customerWaypoints = _waypointToLeave.insideWaypointToLeave;
@@ -129,6 +134,11 @@ public class Customer : MonoBehaviour
             }
         }
     }
+    
+    public bool IsWaitingFor(DishType dish)
+    {
+        return currentState == CustomerStates.HUNGRY && desiredDish == dish;
+    }
 
     public void ServeFood()
     {
@@ -136,7 +146,9 @@ public class Customer : MonoBehaviour
         {
             hasBeenServed = true;
             currentState = CustomerStates.SERVED;
+            orderImage.enabled = false;
             Debug.Log("Customer received food!");
+            StartCoroutine(EatThenLeave());
         }
     }
 
@@ -172,6 +184,16 @@ public class Customer : MonoBehaviour
         Destroy(gameObject);
     }
     
+    IEnumerator EatThenLeave()
+    {
+        yield return new WaitForSeconds(5f);
+
+        currentState = CustomerStates.LEAVING;
+        customerWaypoints = _waypointToLeave.waypointToLeave;
+
+        LeaveRestaurant();
+    }
+    
 
     private void DecreaseSliderValue()
     {
@@ -180,5 +202,38 @@ public class Customer : MonoBehaviour
             customerTimerSlider.value -= Time.deltaTime;
         }
         //Debug.Log("Customer timer: " + customerTimerSlider.value);
+    }
+    
+    private DishType desiredDish;
+
+    public void SetDesiredDish(DishType dish)
+    {
+        desiredDish = dish;
+
+        if (orderImage != null)
+        {
+            orderImage.sprite = GetSpriteForDish(dish);
+            orderImage.enabled = true;
+        }
+
+        Debug.Log($"Customer {name} wants: {desiredDish}");
+    }
+    
+    private Sprite GetSpriteForDish(DishType dish)
+    {
+        foreach (var entry in dishSprites)
+        {
+            if (entry.dishType == dish)
+                return entry.sprite;
+        }
+
+        return null;
+    }
+    
+    [System.Serializable]
+    public class DishSpriteEntry
+    {
+        public DishType dishType;
+        public Sprite sprite;
     }
 }

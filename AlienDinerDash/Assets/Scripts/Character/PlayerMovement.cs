@@ -67,29 +67,33 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-    public void MoveToInteraction(InteractableObject station)
+    void MoveToTarget(Transform target, Action OnArrive)
     {
         if (_agent == null) return;
 
-        _agent.SetDestination(station.InteractionWaypoint.position);
+        _agent.isStopped = false; 
+        StopAllCoroutines();   
 
-        StartCoroutine(CheckArrival(station));
+        _agent.SetDestination(target.position);
+
+        StartCoroutine(CheckArrival(target, OnArrive));
     }
 
-    IEnumerator CheckArrival(InteractableObject station)
+    IEnumerator CheckArrival(Transform target, Action OnArrive)
     {
         while (_agent.pathPending)
             yield return null;
-        
+
         while (_agent.remainingDistance > _agent.stoppingDistance)
             yield return null;
-        
+
         while (_agent.velocity.sqrMagnitude > 0.01f)
             yield return null;
-        
-        _agent.Warp(station.InteractionWaypoint.position);
+
+        _agent.Warp(target.position);
         _agent.isStopped = true;
-        GetComponent<PlayerInteraction>().StartInteraction(station);
+
+        OnArrive?.Invoke();
     }
     
     public void LockPlayerMovement(bool enabled)
@@ -98,5 +102,21 @@ public class PlayerMovement : MonoBehaviour
 
         _agent.isStopped = !enabled;
 
+    }
+    
+    public void MoveToInteraction(InteractableObject station)
+    {
+        MoveToTarget(station.InteractionWaypoint, () =>
+        {
+            GetComponent<PlayerInteraction>().StartInteraction(station);
+        });
+    }
+    
+    public void MoveToTable(Transform servepoint, Transform tableTransform)
+    {
+        MoveToTarget(servepoint, () =>
+        {
+            GetComponent<PlayerInteraction>().TryServeCustomersAtTable(tableTransform);
+        });
     }
 }
