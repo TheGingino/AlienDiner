@@ -36,7 +36,7 @@ public class RewardSystem : MonoBehaviour
         moneyText.text = "Money: " + money;
         customerServedText.text = "Customers Served: " + customerServed;
         
-        Debug.Log("Money: " + money + " | Customers Served: " + customerServed);
+        //Debug.Log("Money: " + money + " | Customers Served: " + customerServed);
     }
     
      public void IncrementCustomerServed()
