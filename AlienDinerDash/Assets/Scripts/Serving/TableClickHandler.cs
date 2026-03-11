@@ -2,10 +2,16 @@ using UnityEngine;
 
 public class TableClickHandler : MonoBehaviour
 {
-    [SerializeField] PlayerMovement _playerMovement;
-    [SerializeField] PlayerInteraction _player;
+    private PlayerInteraction _player;
+    private PlayerMovement _playerMovement;
     [SerializeField] Transform _servePoint;
 
+    private void Awake()
+    {
+        _player = FindObjectOfType<PlayerInteraction>();
+        _playerMovement = FindObjectOfType<PlayerMovement>();
+    }
+    
     void OnMouseDown()
     {
         if (_player.IsBusy)
