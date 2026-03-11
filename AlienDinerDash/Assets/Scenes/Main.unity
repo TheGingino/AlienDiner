@@ -1525,7 +1525,53 @@ Transform:
   - {fileID: 1906573698}
   m_Father: {fileID: 1532286080}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+<<<<<<< fix-drive-through-leave
+--- !u!1 &659352440 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1535098575269131492, guid: ee708e28e7a9e4747a72a8a48597b53c, type: 3}
+  m_PrefabInstance: {fileID: 1227448227}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &659352441 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2163439390312869470, guid: ee708e28e7a9e4747a72a8a48597b53c, type: 3}
+  m_PrefabInstance: {fileID: 1227448227}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &659352442
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 659352440}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c5b40e115a8f22b4a8103a44249f35c9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _interactionDuration: 2
+  _heightOffsetY: 1.5
+  _progressBarPrefab: {fileID: 7521591586435378108, guid: 3677bba98d0ec9d4ebbb4544836500a2, type: 3}
+  _interactionWaypoint: {fileID: 2143318634}
+  _stationType: 0
+  _dishType: 3
+--- !u!114 &659352443
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 659352440}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8ebb12148a80e0b429d7f903624aac64, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _player: {fileID: 1378891592}
+  _playerMovement: {fileID: 1378891590}
+--- !u!65 &659352444
+=======
 --- !u!65 &604479458
+>>>>>>> Develop
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2502,9 +2548,23 @@ PrefabInstance:
       value: 2.59
       objectReference: {fileID: 0}
     - target: {fileID: 2675906508580262555, guid: 24caf735ab180674a890b03670f69ee5, type: 3}
+<<<<<<< fix-drive-through-leave
+      propertyPath: driveThroughWaypointToLeave.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2675906508580262555, guid: 24caf735ab180674a890b03670f69ee5, type: 3}
       propertyPath: driveThroughWaypointToLeave.Array.data[0]
       value: 
       objectReference: {fileID: 1143090040}
+    - target: {fileID: 2675906508580262555, guid: 24caf735ab180674a890b03670f69ee5, type: 3}
+      propertyPath: driveThroughWaypointToLeave.Array.data[1]
+      value: 
+      objectReference: {fileID: 0}
+=======
+      propertyPath: driveThroughWaypointToLeave.Array.data[0]
+      value: 
+      objectReference: {fileID: 1143090040}
+>>>>>>> Develop
     - target: {fileID: 4467645519109695115, guid: 24caf735ab180674a890b03670f69ee5, type: 3}
       propertyPath: m_Name
       value: Waypoint
@@ -2519,7 +2579,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5653924491579276120, guid: 24caf735ab180674a890b03670f69ee5, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -5.83
+      value: 24.69
       objectReference: {fileID: 0}
     - target: {fileID: 5653924491579276120, guid: 24caf735ab180674a890b03670f69ee5, type: 3}
       propertyPath: m_LocalPosition.y
@@ -5173,6 +5233,8 @@ Transform:
   - {fileID: 950703613}
   m_Father: {fileID: 781134637}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+<<<<<<< fix-drive-through-leave
+=======
 --- !u!65 &2026584582
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5217,6 +5279,7 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6286592248355721640, guid: ce202cbf2282bdd4585068207cbe4582, type: 3}
   m_PrefabInstance: {fileID: 879438238}
   m_PrefabAsset: {fileID: 0}
+>>>>>>> Develop
 --- !u!1 &2038002337
 GameObject:
   m_ObjectHideFlags: 0
