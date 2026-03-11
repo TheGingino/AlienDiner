@@ -2201,6 +2201,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _orderingFood: {fileID: 0}
+  _orderingFood: {fileID: 0}
   hasBeenServed: 0
 --- !u!135 &987461554
 SphereCollider:
