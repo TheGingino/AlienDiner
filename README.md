@@ -14,76 +14,167 @@ Maak ook een overzicht van alle onderdelen met een link naar de map waarin deze 
 
 Bijv..
 
-Student X:
-  * [Wave System](https://github.com/erwinhenraat/VoorbeeldExamenRepo/tree/master/src/some)
-  * [Some other mechanic X](https://github.com/erwinhenraat/VoorbeeldExamenRepo/tree/master/src/mechanic_x)
-  * [Some other mechanic Y](https://github.com/erwinhenraat/VoorbeeldExamenRepo/tree/master/src/mechanic_y)
-Student Y:
-  * Water Shader
-  * [Some textured and rigged model](https://github.com/erwinhenraat/VoorbeeldExamenRepo/tree/master/assets/monsters)
+Gino Schaap:
+  * [Customer Types](https://github.com/erwinhenraat/VoorbeeldExamenRepo/tree/master/src/some)
+  * [Customer Spawning](https://github.com/erwinhenraat/VoorbeeldExamenRepo/tree/master/src/mechanic_x)
+  * [Customer Behavior](https://github.com/erwinhenraat/VoorbeeldExamenRepo/tree/master/src/mechanic_y)
+  * [LevelTimer V2] 
 
-Student Z:
+Julie Jaasma:
   * [Some beautifull script](https://github.com/erwinhenraat/VoorbeeldExamenRepo/tree/master/src/beautifull)
   * Some other Game object
 
+Nikki van Wijngaarden:
+ * Audio
+ * 
+Kiana Hiemstra:
+  * Water Shader
+  * [Some textured and rigged model](https://github.com/erwinhenraat/VoorbeeldExamenRepo/tree/master/assets/monsters)
 
-## Wave System by Student X
+Bo Bakker:
+ * Character Model
+ * Customer Models
+
+Robin van Wandelen:
+ * UI Shenan
+ * 
+
+ Gui
+ * IDK
+
+Min van der Veen:
+ * Keuken Instrumenten
+
+## Customers and Customer SO
 
 Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line.
 
 ![Animation](https://user-images.githubusercontent.com/1262745/217570184-90dc4701-d60d-4816-80d0-5007fdd3f6be.gif)
 
-### flowchart voor enemy wave system:
+### flowchart voor CustomerSO:
 ```mermaid
-flowchart TD
+classDiagram
+    class CustomerSO {
+        +CustomerType customerType
+        +GameObject customerPrefab
+        +float customerTimer
+        +float customerFoodTimer
+        +int customerMoney
+        -OnEnable()
+    }
 
-start((Start)) -->|wait 10 seconds| spawn_w(spawn wave)
-spawn_w --> checken(check enemies in list)
-checken --> spawn_e(spawn enemies at once)
-spawn_e --> reached_base{enemy reached base?}
-reached_base -->|yes| lose_life(player loses a life)
-reached_base -->|no| money(player makes money)
-lose_life --> wave_done{wave done?}
-money --> wave_done
-wave_done -->|no| reached_base
-no_more_waves{no more waves?} -->|no more| more_lev(more levels?)
-wave_done -->|yes| no_more_waves
-no_more_waves -->|still waves| next_wave(goto next wave)
-next_wave --> start_wave
-start_wave --> spawn_w
-more_lev -->|yes, there's more| next_lev(start next level)
-more_lev -->|no more levels| end_d((end))
-next_lev --> start
-
+    class CustomerType {
+        <<enumeration>>
+        AVERAGE
+        ANNOYING
+        PATIENT
+        DRIVETHROUGH
+    }
+    CustomerSO --> CustomerType : uses
 
 
 ```
+
+### Flowchart Customer
+```mermaid
+flowchart TD
+    A([Customer Spawned]) --> B[Start]
+    B --> C[Find WaypointToLeave\nFind Slider\nGet Animator\nRegister with Timer]
+    C --> D{Update Loop}
+
+    D -->|State == HUNGRY\n& coroutine not started| E[StartCoroutine CustomerState\nSet _hasCoroutineStarted = true]
+    D -->|Otherwise| D
+
+    E --> F{Check customerType}
+    F -->|ANNOYING| G[AnnoyingCustomer]
+    F -->|AVERAGE| H[NormalCustomer]
+    F -->|PATIENT| I[PatientCustomer]
+
+    G & H & I --> J[CustomerBehavior Loop\nwaitTime > 0]
+
+    J --> K[DecreaseSliderValue]
+    K --> L{hasBeenServed?}
+
+    L -->|Yes| M[Animator: Sit = true\nState = SERVED\nBreak loop]
+    L -->|No| N[waitTime -= deltaTime]
+    N --> J
+
+    J -->|waitTime <= 0| O{!hasBeenServed\n& slider <= 0\n& ANNOYING type?}
+    O -->|Yes| P[State = LEAVING\nSet angry waypoints\nInvoke hasLeftAngry]
+    O -->|No| Q([End - Customer stays idle])
+
+    P --> R[LeaveRestaurant\nStartCoroutine MoveToExit]
+
+    M --> S[ServeFood called externally]
+    S --> T[hasBeenServed = true\nState = SERVED\nHide orderImage\nStartCoroutine EatThenLeave]
+
+    T --> U[Wait 5 seconds]
+    U --> V[State = LEAVING\nSet normal waypoints\nDropMoney\nLeaveRestaurant]
+    V --> R
+
+    R --> W[Animator: Walk = true]
+    W --> X{Reached all\nwaypoints?}
+    X -->|No| Y[MoveTowards next waypoint\nRotate towards waypoint]
+    Y --> X
+    X -->|Yes| Z[Animator: Walk = false]
+    Z --> AA([Destroy gameObject])
+
+    style A fill:#4CAF50,color:#fff
+    style AA fill:#f44336,color:#fff
+    style Q fill:#9E9E9E,color:#fff
+    style M fill:#2196F3,color:#fff
+    style P fill:#FF9800,color:#fff
+    style V fill:#9C27B0,color:#fff
+```
+
 ### class diagram voor game entities:
 
 ```mermaid
 classDiagram
+    class WaypointToLeave {
+        +GameObject[] waypointToLeave
+        +GameObject[] insideWaypointToLeave
+        +GameObject[] driveThroughWaypointToLeave
+    }
 
-Unit <|-- Tower:Is A
-Unit <|-- Monster
-Unit <|-- Boss
-Unit : +int life
-Unit : +int speed
-Unit : +bool alive
-Unit: +isMovable()
-Unit: +Destroy()
-class Tower{
-+String turretType
-+target()
-+shoot()
-}
-class Monster{
--int reward
--regenerates()
-}
-class Boss{
-+bool is_unique
-+specialSkill()
-}
+```
+
+### Class Diagram voor Reward System
+```mermaid
+classDiagram
+    class RewardSystem {
+        -int money
+        -int customerServed
+        -TextMeshProUGUI moneyText
+        -TextMeshProUGUI customerServedText
+        +AddMoney(int amount)
+        +IncrementCustomerServed()
+        -UpdateUI()
+    }
+
+    class Timer {
+        -Image clockImage
+        -TextMeshProUGUI timerText
+        -float startTime
+        -float currentTime
+        -bool isRunning
+        -static Timer _instance
+        +static RegisterCustomer(Customer)
+        +ApplyPenalty()
+        -UpdateDisplay()
+        -OnTimerComplete()
+    }
+
+    class Customer {
+        +CustomerSO CustomerSO
+        +UnityEvent HasLeftAngry
+        +ServeFood()
+        +SetDesiredDish(DishType)
+        +IsWaitingFor(DishType) bool
+    }
+
+    Timer --> Customer : listens to HasLeftAngry
+    RewardSystem ..> Customer : tracks served
 ```
 
 
