@@ -9,6 +9,8 @@ public class Customer : MonoBehaviour
 {
     [Header("Customer Settings")] [SerializeField]
     private CustomerSO customerSO;
+
+    private CustomerSeating _customerSeating;
     public CustomerSO CustomerSO => customerSO;
     
     public enum CustomerStates
@@ -51,6 +53,7 @@ public class Customer : MonoBehaviour
     {
         _waypointToLeave = FindObjectOfType<WaypointToLeave>();
         customerTimerSlider = FindObjectOfType<Slider>();
+        _customerSeating = GetComponent<CustomerSeating>();
         orderImage.enabled = false;
         
         _animator = GetComponent<Animator>();
@@ -196,6 +199,9 @@ public class Customer : MonoBehaviour
 
     private void DecreaseSliderValue()
     {
+        if (_customerSeating != null && _customerSeating.IsSeated)
+            return;
+        
         if (customerTimerSlider.value >= 0) 
         {
             customerTimerSlider.value -= Time.deltaTime;

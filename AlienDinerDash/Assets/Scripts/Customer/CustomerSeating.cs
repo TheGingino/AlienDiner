@@ -15,6 +15,7 @@ public class CustomerSeating : MonoBehaviour
     private bool _canBeDragged = true;
     
     [SerializeField] private UnityEvent hasBeenSeated;
+    public bool IsSeated;
 
     private void Start()
     {
@@ -45,6 +46,7 @@ public class CustomerSeating : MonoBehaviour
     }
     public void SnapToSeat(Transform seat, Table table)
     {
+        IsSeated = true;
         _currentSeat = seat;
         _currentTable = table;
 
@@ -65,6 +67,7 @@ public class CustomerSeating : MonoBehaviour
     {
         if (_currentTable != null && _currentSeat != null)
         {
+            IsSeated = false;
             _currentTable.FreeSeat(_currentSeat); 
            
             _currentSeat = null;
