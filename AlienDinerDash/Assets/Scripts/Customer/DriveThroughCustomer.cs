@@ -15,27 +15,31 @@ public class DriveThroughCustomer : MonoBehaviour
 
     [SerializeField] private bool hasBeenServed;
 
-    private DishType _desiredDish; // NEW
+    private DishType _desiredDish;
 
+    private void Awake()
+    {
+        _waypointToLeave = FindObjectOfType<WaypointToLeave>();
+    }
 
     private void Start()
     {
         _orderingFood.OrderFood();
     }
 
-    // NEW
+   
     public void SetDesiredDish(DishType dish)
     {
         _desiredDish = dish;
     }
 
-    // NEW
+  
     public bool IsWaitingFor(DishType dish)
     {
         return !hasBeenServed && _desiredDish == dish;
     }
 
-    // NEW
+    
     public void ServeFood()
     {
         if (hasBeenServed)
