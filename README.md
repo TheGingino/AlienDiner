@@ -51,7 +51,7 @@ Latin professor at Hampden-Sydney College in Virginia, looked up one of the more
 
 ![Animation](https://user-images.githubusercontent.com/1262745/217570184-90dc4701-d60d-4816-80d0-5007fdd3f6be.gif)
 
-### flowchart voor CustomerSO:
+### Flowchart voor CustomerSO:
 ```mermaid
 classDiagram
     class CustomerSO {
@@ -127,7 +127,7 @@ flowchart TD
     style V fill:#9C27B0,color:#fff
 ```
 
-### class diagram voor game entities:
+### Class Diagram voor de Waypoints:
 
 ```mermaid
 classDiagram
