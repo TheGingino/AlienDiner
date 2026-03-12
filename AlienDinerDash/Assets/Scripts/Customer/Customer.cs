@@ -49,6 +49,8 @@ public class Customer : MonoBehaviour
     public UnityEvent HasLeftAngry => hasLeftAngry;
     
     [SerializeField] private Animator _animator;
+
+    [SerializeField] private AudioClip[] _customerSFX; 
     private void Start()
     {
         _waypointToLeave = FindObjectOfType<WaypointToLeave>();

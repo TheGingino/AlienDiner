@@ -739,6 +739,8 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   _animator: {fileID: 0}
+  _customerSFX:
+  - {fileID: 8300000, guid: 4960c3085992b8b438bc2c7db394f30e, type: 3}
 --- !u!114 &991252729026483058
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -803,6 +805,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  IsSeated: 0
 --- !u!114 &5900424934335886239
 MonoBehaviour:
   m_ObjectHideFlags: 0
