@@ -649,8 +649,10 @@ Heel erg simpel model als de grond voor de scene.
 ## Food models by Gui
 
 ### Fries model
+<img width="309" height="331" alt="Screenshot 2026-03-12 234603" src="https://github.com/user-attachments/assets/90469176-265c-439c-a340-210f688746f0" />
 
 ### Milkshake model
+<img width="209" height="347" alt="Screenshot 2026-03-12 234541" src="https://github.com/user-attachments/assets/0649fdfb-3f89-4c18-b1a7-4abce643184d" />
 
 ## Textures by Gui
 
