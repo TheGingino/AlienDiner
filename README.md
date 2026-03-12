@@ -14,6 +14,8 @@ Gino Schaap:
   * [Customer Behavior](https://github.com/TheGingino/AlienDiner/blob/Develop/AlienDinerDash/Assets/Scripts/Customer/Customer.cs)
   * [LevelTimer V2](https://github.com/TheGingino/AlienDiner/blob/Develop/AlienDinerDash/Assets/Scripts/Timer/LevelTimer.cs)
   * [WinLoseScreen](https://github.com/TheGingino/AlienDiner/blob/Develop/AlienDinerDash/Assets/Scripts/UI/WinLoseScreen.cs)
+  * [Failure Consequence](https://github.com/TheGingino/AlienDiner/blob/Develop/AlienDinerDash/Assets/Scripts/Timer/Timer.cs)
+
 
 Julie Jaasma:
   * [Cooking stations](https://github.com/TheGingino/AlienDiner/blob/Develop/AlienDinerDash/Assets/Scripts/Gerechten/InteractionManagers/InteractableObject.cs)
@@ -57,7 +59,7 @@ Robin van Wandelen:
 Min van der Veen:
  * Blockout
  * Keuken Instrumenten
- * Iutside enviroment
+ * Outside enviroment
  * Props
    
 
@@ -481,7 +483,9 @@ Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots 
 
 ## Blockout by Min
 
-Robin had een paar schetsen gemaakt van layouts van een diner. De gekozen layout daarvan heb ik snel een blockout van gemaakt en goed opgelet op scale. Ik heb me goed aan de schets gehouden. 
+Robin had een paar schetsen gemaakt van layouts van een diner. De gekozen layout daarvan heb ik snel een blockout van gemaakt en goed opgelet op scale. Ik heb me goed aan de schets gehouden.
+
+![example](https://github.com/TheGingino/AlienDiner/blob/a5e0d8ca64fd295598d2a6987804b9de64ff244c/GitVisuals/Min/Blockout.png)
 
 ## Keuken Instrumenten by Min
 In het begin had ik Robin de keuze gegeven tussen de diner en de keuken kant. Het maakte mij niet uit en Robin koos voor de diner kant dus ik dee de keuken kant. Dat houd in: Koelkast, fornuis, frituur, milkshame machine, werkbank 1 en 2, drive through packing station, bar vloer, bar, barstoel. We moeten alles aan een 1950 retero thema houden.
@@ -489,57 +493,89 @@ In het begin had ik Robin de keuze gegeven tussen de diner en de keuken kant. He
 ### Koelkast
 Ik begon met het koelkast model. Mid priority voor de keuken, heeft geen interactie met de speler of customer. 
 
+![example](https://github.com/TheGingino/AlienDiner/blob/fddb86c7bcb46472bb6f68d69645d3fe3b3a2ee1/GitVisuals/Min/Koelkast.png)
+
 ### Fornuis
 Na de koelkast ben ik begonnen met de high priority models. Je kan er mee interacten als speler want daar kook je de burger. 
 
+![example](https://github.com/TheGingino/AlienDiner/blob/fddb86c7bcb46472bb6f68d69645d3fe3b3a2ee1/GitVisuals/Min/Fornuis.png)
+
 ### Frituur
 Met dit model kan de speler interacten want daar maak je de frietjes.
-  
+
+![example](https://github.com/TheGingino/AlienDiner/blob/fddb86c7bcb46472bb6f68d69645d3fe3b3a2ee1/GitVisuals/Min/Frituur.png)
+
 ### Milkshake Machine
 Met dit model kan de speler interacten want daar maak je de milkshake.
+
+![example](https://github.com/TheGingino/AlienDiner/blob/fddb86c7bcb46472bb6f68d69645d3fe3b3a2ee1/GitVisuals/Min/Milkshake%20machine.png)
   
 ### Werkbank 1 en 2
 Naast de interactable modellen heb ik meer surfaces nodig. Op werkbank 1 staat de milkshake machine en op werkbank 2 staat de drive through packing station.
+
+![example](https://github.com/TheGingino/AlienDiner/blob/fddb86c7bcb46472bb6f68d69645d3fe3b3a2ee1/GitVisuals/Min/Werkbank%201.png)
+![example](https://github.com/TheGingino/AlienDiner/blob/fddb86c7bcb46472bb6f68d69645d3fe3b3a2ee1/GitVisuals/Min/Werkbank%202.png)
   
 ### Drive through packing station
 Wij hadden als twist een drive through. Dus er moest ook een packing station waar de speler het eten moet inpakken. Met dit model kan de speler interacten want daar pak je het eten in. 
+
+![example](https://github.com/TheGingino/AlienDiner/blob/d0eb05e7e86c9f88571b5380fa4c0d4a45965d7b/GitVisuals/Min/Packing%20station.png)
  
 ### Bar vloer, Bar en de Barstoel
 Je hebt een klein opstapje in de vloer om de area van de keuken en diner area uit elkaar te houden. Daarnaast moest de bar en de barstoelen. De customer kan interacten om daar te zitten en eten.
+
+![example](https://github.com/TheGingino/AlienDiner/blob/d0eb05e7e86c9f88571b5380fa4c0d4a45965d7b/GitVisuals/Min/Bar%2C%20vloer%20en%20barstoel.png)
  
 ## Props by Min
 Daarnaas had ik nog 1,5 weken over nadat ik de blockout en keuken allemaal af had had ik ook een paar props gedaan voor de diner kant. 
 
 ### Burger
-We hebben 3 gerechten. Ik heb de burger gekozen. Het is een hersen burger met een plakje kaas
+We hebben 3 gerechten. Ik heb de burger gekozen. Het is een hersen burger met een plakje kaas.
+
+![example](https://github.com/TheGingino/AlienDiner/blob/9e0bac80c999ad32988393c762097d10ef630a75/GitVisuals/Min/Burger.png)
   
 ### Dirty dishes + geld
 Als de customer klaar is met eten dan lopen ze weg. Ze laten dan wel een vies bord met geld achter.
+
+![example](https://github.com/TheGingino/AlienDiner/blob/9e0bac80c999ad32988393c762097d10ef630a75/GitVisuals/Min/Bord%20met%20geld.png)
   
 ### Prullenbak 
-Als je eten heb gemaakt wat verkeerd is/ niet het goede gerecht dan kan je het hier weg gooien. Met dit model kan de speler interacten want je kan gerechten weggooien
+Als je eten heb gemaakt wat verkeerd is/ niet het goede gerecht dan kan je het hier weg gooien. Met dit model kan de speler interacten want je kan gerechten weggooien.
+
+![example](https://github.com/TheGingino/AlienDiner/blob/9e0bac80c999ad32988393c762097d10ef630a75/GitVisuals/Min/Prullenbak.png)
   
 ### Juke box
 Decoratief model waar de background music uit komt.
+
+![example](https://github.com/TheGingino/AlienDiner/blob/0c82d3196dc05c579197a6aec28207bea2b675e7/GitVisuals/Min/Juke%20box.png)
   
-### Bell
+### Deur bell
 Decoratief model wat ringt als er een customer binnen komt.
+
+![example](https://github.com/TheGingino/AlienDiner/blob/0c82d3196dc05c579197a6aec28207bea2b675e7/GitVisuals/Min/Deur%20bel.png)
   
 ## Outside Environmnet by Min
 Ik was snel klaar met de props dus op het laatst wist ik even niet meer wat ik zou doen. Niet voor lang want Bo had me verteld dat er ook nog een outside environment worden zouden gemodeld. Dus ik heb zelf designs gemaakt wat een beetje Alien environment is.
 
 ### Boom
 Decoratief model. Ik had een paar bloem en planten modellen gemaakt. Ik heb dan een boomstam gemaakt en alles een beetje geprobeerd welke compositie het best past. 
+
+![example](https://github.com/TheGingino/AlienDiner/blob/0c82d3196dc05c579197a6aec28207bea2b675e7/GitVisuals/Min/Boom.png)
   
 ### Struik
 Decoratief model. Ik had een paar bloem en planten modellen gemaakt. Ik heb dan een boomstam gemaakt en alles een beetje geprobeerd welke compositie het best past.   
 
+![example](https://github.com/TheGingino/AlienDiner/blob/ccc58ca2afd7dff9a7d329f72f6828b0bf510e51/GitVisuals/Min/Struik.png)
+
 ### Stenen
 Decoratief model. Ik heb beide ronde en vierkante stenen geprobeerd. Ik heb gekozen voor de vierkante stenen.
+
+![example](https://github.com/TheGingino/AlienDiner/blob/3e83031fc376445640b6d47ce448918e3aa78631/GitVisuals/Min/Stenen.png)
   
 ### Eiland
 Heel erg simpel model als de grond voor de scene.
 
+![example](https://github.com/TheGingino/AlienDiner/blob/d2283807121b68cd6e2676a4860a23806a8e12bb/GitVisuals/Min/Eiland.png)
 
 
 ## Character models by Bo
@@ -548,14 +584,22 @@ Voor het spel zijn er minstens 3 klanten nodig en 1 main character. Daarvan heb 
 ### Main character
 Dit is de main character. Met deze character speelt de speler en kan de speler klanten bedienen. 
 
+<img width="200" height="350" alt="Screenshot 2026-03-12 224757" src="https://github.com/user-attachments/assets/0087f1bd-05d7-4dcf-b8de-607371bfbcfa" />
+
 ### Neutral klant
 Deze klant is de basis-type klant. Hij ziet er neutraal uit en gedraagt zich ook zo.
+
+<img width="325" height="355" alt="Screenshot 2026-03-12 224735" src="https://github.com/user-attachments/assets/ecc646d5-b6bc-4126-bb23-56ff8bd861fc" />
 
 ### Geduldige klant
 Dit is een klant die langer wacht op hun bestellingen en minder snel boos wordt. Ik heb ronde vormen gebruikt om een vriendelijkere uitstraling te geven.
 
+<img width="325" height="350" alt="Screenshot 2026-03-12 224840" src="https://github.com/user-attachments/assets/28e456ba-149a-469a-bd1a-b37272aa77e2" />
+
 ### Ongeduldige klant
 Deze klant zal erg snel boos worden en sneller weglopen uit het restaurant. Ik heb hem een driehoekige bouw gegeven en een boos gezicht zodat hij ongeduldigheid uitstraalt.
+
+<img width="325" height="350" alt="Screenshot 2026-03-12 224855" src="https://github.com/user-attachments/assets/9372b681-d83c-4396-a2f9-1dc3cf373c47" />
 
 ## Character animations by Bo 
 
@@ -572,11 +616,13 @@ Dit is de animatie van de aliens die eten.
 
 ### Drive through window
 Dit is het raam waardoor aliens in een UFO eten kunnen bestellen. 
-<img width="692" height="535" alt="Screenshot 2026-03-12 224603" src="https://github.com/user-attachments/assets/4fcf85c0-486f-4259-b46a-18210a889e43" />
+
+<img width="300" height="250" alt="Screenshot 2026-03-12 224603" src="https://github.com/user-attachments/assets/4fcf85c0-486f-4259-b46a-18210a889e43" />
 
 ### UFO 
 Dit is het model van de UFO. In dit model zit de alien die bij de drive through besteld. 
-<img width="406" height="235" alt="Screenshot 2026-03-12 224134" src="https://github.com/user-attachments/assets/e208f3da-406d-4dd1-8ff3-5b0db649e0ad" /> <img width="330" height="255" alt="Screenshot 2026-03-12 224127" src="https://github.com/user-attachments/assets/b704bb82-00b7-4ca0-942e-92960d7aa292" />
+
+<img width="200" height="165" alt="Screenshot 2026-03-12 224134" src="https://github.com/user-attachments/assets/e208f3da-406d-4dd1-8ff3-5b0db649e0ad" /> <img width="330" height="255" alt="Screenshot 2026-03-12 224127" src="https://github.com/user-attachments/assets/b704bb82-00b7-4ca0-942e-92960d7aa292" />
 
 
 
