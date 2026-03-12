@@ -509,7 +509,7 @@ Je hebt een klein opstapje in de vloer om de area van de keuken en diner area ui
 <img width="650" height="324" alt="Bar, vloer en barstoel" src="https://github.com/user-attachments/assets/3791b87d-987c-4145-b8e0-e390cea446ac" />
 
 ## Props by Min
-Daarnaas had ik nog 1,5 weken over nadat ik de blockout en keuken allemaal af had had ik ook een paar props gedaan voor de diner kant. 
+Daarnaast had ik nog 1,5 weken over nadat ik de blockout en keuken allemaal af had had ik ook een paar props gedaan voor de diner kant. 
 
 ### Burger
 We hebben 3 gerechten. Ik heb de burger gekozen. Het is een hersen burger met een plakje kaas.
