@@ -568,6 +568,7 @@ Dit is de animatie van de aliens die eten.
 
 ### Drive through window
 Dit is het raam waardoor aliens in een UFO eten kunnen bestellen. 
+<img width="692" height="535" alt="Screenshot 2026-03-12 224603" src="https://github.com/user-attachments/assets/4fcf85c0-486f-4259-b46a-18210a889e43" />
 
 ### UFO 
 Dit is het model van de UFO. In dit model zit de alien die bij de drive through besteld. 
