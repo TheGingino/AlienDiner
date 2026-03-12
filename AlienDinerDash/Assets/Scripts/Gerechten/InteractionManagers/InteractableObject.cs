@@ -10,6 +10,7 @@ public class InteractableObject : MonoBehaviour
     [SerializeField] private ParticleSystem[] _interactionParticles;
     [SerializeField] StationType _stationType;
     [SerializeField] DishType _dishType;
+    [SerializeField] AudioSource _prepareSFX;
     
     GameObject _currentProgressBar;
     Image _progressImage;
@@ -41,7 +42,8 @@ public class InteractableObject : MonoBehaviour
 
         _progressImage = _currentProgressBar.GetComponentInChildren<Image>();
         _progressImage.fillAmount = 0f;
-        
+       
+       _prepareSFX.Play();
        PlayParticles();
     }
 
