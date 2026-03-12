@@ -58,13 +58,9 @@ Robin van Wandelen:
 
 Min van der Veen:
  * Keuken Instrumenten
- * Buiten enviroment models
- * Jukebox model
- * Block-out
- * Dirty dishes model
- * Burger model
- * Prullenbak
- * Bar/barstoelen model
+ * Iutside enviroment
+ * Props
+ * 
 
 
 ## Customers and Customer SO by Gino Schaap
