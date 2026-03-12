@@ -181,6 +181,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Blockout
       objectReference: {fileID: 0}
+    - target: {fileID: 7617410020141364283, guid: 4e17d27164bada84c8f3c43c5203ee6f, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
