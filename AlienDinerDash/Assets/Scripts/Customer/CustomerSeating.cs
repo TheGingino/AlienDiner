@@ -51,10 +51,20 @@ public class CustomerSeating : MonoBehaviour
         _currentTable = table;
 
         transform.position = seat.position;
-        transform.rotation = seat.rotation;
+
+        Vector3 directionToTable = table.transform.position - seat.position;
+        directionToTable.y = 0f;
+        
+        if (directionToTable != Vector3.zero)
+            transform.rotation = Quaternion.LookRotation(directionToTable);
+        else
+        {
+            transform.rotation = seat.rotation;
+        }
 
         _canBeDragged = false;
         hasBeenSeated.Invoke();
+        
     }
 
     public void ReturnToOrigin()
