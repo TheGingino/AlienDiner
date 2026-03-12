@@ -165,6 +165,9 @@ public class Customer : MonoBehaviour
     [ContextMenu("Testing the ability to leave the restaurant")]
     private void LeaveRestaurant()
     {
+        if (_customerSeating != null)
+            _customerSeating.LeaveSeat();
+        
         StartCoroutine(MoveToExit());
     }
 
