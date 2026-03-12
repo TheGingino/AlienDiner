@@ -161,6 +161,11 @@ classDiagram
 ## Reward System by Gino Schaap
 Dit is de manier hoe het hoeveelheid geld dat je hebt gemaakt en de hoeveelheid customers op je scherm staat die zich aanpast als er wat bij komt
 
+## Failure Consequence
+Als speler gaat er tijd van je klok af als een klant boos weg loopt als een negatief effect in het spel
+
+[DecreaseTimerGif](https://github.com/TheGingino/AlienDiner/blob/Develop/GitVisuals/Gino/DecreaseTimer.gif)
+
 ## Timer V2 by Gino Schaap
 De timer is er als een tijds limiet voor de speler zodat ze lichtelijk gehaast de klankten moeten serven en geld moeten verzamelen voordat de tijd voorbij is
 
