@@ -7,6 +7,7 @@ public class InteractableObject : MonoBehaviour
     [SerializeField] float _heightOffsetY = 1.5f;
     [SerializeField] GameObject _progressBarPrefab;
     [SerializeField]  Transform _interactionWaypoint;
+    [SerializeField] private ParticleSystem[] _interactionParticles;
     [SerializeField] StationType _stationType;
     [SerializeField] DishType _dishType;
     
@@ -22,6 +23,8 @@ public class InteractableObject : MonoBehaviour
     private void Awake()
     {
         _renderer = GetComponent<Renderer>();
+       StopParticles();
+        
     }
 
     public void ShowProgress()
@@ -38,6 +41,8 @@ public class InteractableObject : MonoBehaviour
 
         _progressImage = _currentProgressBar.GetComponentInChildren<Image>();
         _progressImage.fillAmount = 0f;
+        
+       PlayParticles();
     }
 
     Vector3 GetTopCenterPosition()
@@ -68,6 +73,7 @@ public class InteractableObject : MonoBehaviour
             Destroy(_currentProgressBar);
             _progressImage = null;
         }
+        StopParticles();
     }
 
     public void OnInteractionComplete()
@@ -96,4 +102,26 @@ public class InteractableObject : MonoBehaviour
         }
     }
     
+    
+    void PlayParticles()
+    {
+        if (_interactionParticles == null) return;
+
+        foreach (var particle in _interactionParticles)
+        {
+            if (particle != null)
+                particle.Play();
+        }
+    }
+    
+    void StopParticles()
+    {
+        if (_interactionParticles == null) return;
+
+        foreach (var particle in _interactionParticles)
+        {
+            if (particle != null)
+                particle.Stop();
+        }
+    }
 }
