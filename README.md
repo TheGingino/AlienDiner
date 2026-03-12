@@ -606,11 +606,17 @@ Deze klant zal erg snel boos worden en sneller weglopen uit het restaurant. Ik h
 ### Walking
 Dit is de alien en de main character die lopen. Het enige verschil tussen de twee is dat de main character een dienblad vast heeft.
 
+![walk_1](https://github.com/user-attachments/assets/f5b2eb2d-1aee-4749-a108-a3e3b2b6808b) ![walk_2](https://github.com/user-attachments/assets/59547995-c824-43b7-9030-453a18ec79d7)
+
 ### Sitting down
 Dit is de animatie van het gaan zitten. 
 
+![sit_1](https://github.com/user-attachments/assets/0d2d34a1-caa1-416b-aa21-45fd67c70d11)
+
 ### Eating
 Dit is de animatie van de aliens die eten. 
+
+![Eat_1](https://github.com/user-attachments/assets/8051998a-4a3b-44c9-b766-2f1b1dc79b4e)
 
 ## Drive through models by Bo
 
