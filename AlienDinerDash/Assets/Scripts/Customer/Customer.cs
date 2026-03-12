@@ -49,7 +49,9 @@ public class Customer : MonoBehaviour
     
     [SerializeField] private Animator _animator;
 
-    [SerializeField] private AudioClip[] _customerSFX; 
+    [SerializeField] private AudioClip[] _customerSFX;
+    [SerializeField] private AudioSource sfxSource;
+
     private void Start()
     {
         _waypointToLeave = FindObjectOfType<WaypointToLeave>();
@@ -163,6 +165,11 @@ public class Customer : MonoBehaviour
 
     private IEnumerator MoveToExit()
     {
+        sfxSource.clip = _customerSFX[0];
+
+        sfxSource.loop = true;
+        sfxSource.Play();
+
         _animator.SetBool("Walk", true);
         while (_nextWaypointIndex < customerWaypoints.Length)
         {
@@ -187,6 +194,9 @@ public class Customer : MonoBehaviour
     
     IEnumerator EatThenLeave()
     {
+
+        sfxSource.clip = _customerSFX[3];
+
         yield return new WaitForSeconds(5f);
 
         currentState = CustomerStates.LEAVING;
