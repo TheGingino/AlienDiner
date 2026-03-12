@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: DriverThroughCustomer
   m_EditorClassIdentifier: 
   customerType: 3
-  customerPrefab: {fileID: 3401127426954914692, guid: 5d488fa75ca3512418b1247cb45236e8, type: 3}
-  customerTimer: 0
+  customerPrefab: {fileID: 6636073589799370478, guid: a03330ee9e1c6b244bb8a5a943a06978, type: 3}
+  customerTimer: 25
   customerFoodTimer: 5
-  customerMoney: 0
+  customerMoney: 12
