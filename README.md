@@ -548,6 +548,95 @@ Deze particle system laat zien dat de jukebox aan staat en muziek maakt.
 
 ![jukebox particle](https://github.com/user-attachments/assets/b5f5a91a-f138-491f-a22e-9372c0516401)
 
+## Food models by Gui
+
+### Fries model
+
+De fries worden gemaakt in de fryer en vervolgens geserveerd aan de klanten
+
+<img width="309" height="331" alt="Screenshot 2026-03-12 234603" src="https://github.com/user-attachments/assets/90469176-265c-439c-a340-210f688746f0" />
+
+### Milkshake model
+
+De milkshake wordt gemaakt in de milkshake machine en vervolgens geserveerd aan de klanten
+
+<img width="209" height="347" alt="Screenshot 2026-03-12 234541" src="https://github.com/user-attachments/assets/0649fdfb-3f89-4c18-b1a7-4abce643184d" />
+
+## Textures by Gui
+
+### Food (Milkshake, Burger, Fries)
+
+texture voor het eten
+
+<img width="500" height="250" alt="image" src="https://github.com/user-attachments/assets/d337aa82-dfed-4814-89bd-4acf54e1c6cc" />
+
+### Aliens (main, patient, neutral, impatient)
+
+Texture voor de verschillende alien-types
+
+<img width="500" height="300" alt="image" src="https://github.com/user-attachments/assets/5509faed-795e-4ca6-98ab-3992297adf12" />
+
+### Enviroment 
+
+Texture voor de muren, vloer, deur en ramen
+
+<img width="400" height="200" alt="image" src="https://github.com/user-attachments/assets/9e7f77b4-2d90-42a9-a654-043997e8c9b3" />
+
+### Kitchen appliences (fridge, stove, milkshake, fryer)
+
+Texture voor de verschillende stations
+
+<img width="400" height="200" alt="image" src="https://github.com/user-attachments/assets/5ce1dde7-a8b8-4120-9cf5-352ab1c37a82" />
+
+### Packingstation
+
+Texture voor het inpakstation
+
+<img width="500" height="200" alt="image" src="https://github.com/user-attachments/assets/2bd29aa2-9986-44c1-8bae-2b7a3f1aac7c" />
+
+### Plant
+
+texture voor de kamerplant
+
+<img width="250" height="400" alt="image" src="https://github.com/user-attachments/assets/d1f1458d-1a25-42fe-945b-2cbbf9e68ed0" />
+
+### Bar + Stool
+
+Texture voor  texture voor de bar en stoeltjes
+
+<img width="400" height="200" alt="image" src="https://github.com/user-attachments/assets/9e7f77b4-2d90-42a9-a654-043997e8c9b3" /> <img width="400" height="250" alt="image" src="https://github.com/user-attachments/assets/5af6efc2-f822-4938-b1cb-af854fa3908d" />
+
+### Jukebox
+
+Texture voor de jukebox die muziek speelt
+
+<img width="300" height="430" alt="image" src="https://github.com/user-attachments/assets/3c5e5277-06bd-4ebd-ac0a-67d87a680b30" />
+
+### Bel
+
+Texture voor het belletje bij de deur
+
+<img width="300" height="300" alt="image" src="https://github.com/user-attachments/assets/35faf5f9-e0d3-4dde-9e98-d2505290c770" />
+
+### Outside props
+
+Texture voor de props die buiten te zien zijn
+
+<img width="500" height="400" alt="image" src="https://github.com/user-attachments/assets/2c3efadc-4a59-4d58-8487-9816b24f3995" />
+<img width="400" height="400" alt="image" src="https://github.com/user-attachments/assets/db8daa94-5655-444b-a7ab-f6ddf2d7f250" /> <img width="400" height="550" alt="image" src="https://github.com/user-attachments/assets/f946a003-09dc-4a79-b900-2b1135ea741c" />
+
+### Dirty dishes + money 
+
+Texture voor Dirty dishes + money
+
+<img width="400" height="250" alt="image" src="https://github.com/user-attachments/assets/96aae27e-7fad-4859-bead-316c8b4194f3" />
+
+### UFO 
+
+Texture voor UFO
+
+<img width="500" height="250" alt="image" src="https://github.com/user-attachments/assets/3177c4c0-e3cd-41db-a37d-fd6779fc0015" />
+
 
 
 ## Blockout by Min
@@ -645,95 +734,6 @@ Decoratief model. Ik heb beide ronde en vierkante stenen geprobeerd. Ik heb geko
 Heel erg simpel model als de grond voor de scene.
 
 <img width="650" height="324" alt="Eiland" src="https://github.com/user-attachments/assets/5a5b98b5-55e6-4548-b9ec-1d2949f25a2d" />
-
-## Food models by Gui
-
-### Fries model
-
-De fries worden gemaakt in de fryer en vervolgens geserveerd aan de klanten
-
-<img width="309" height="331" alt="Screenshot 2026-03-12 234603" src="https://github.com/user-attachments/assets/90469176-265c-439c-a340-210f688746f0" />
-
-### Milkshake model
-
-De milkshake wordt gemaakt in de milkshake machine en vervolgens geserveerd aan de klanten
-
-<img width="209" height="347" alt="Screenshot 2026-03-12 234541" src="https://github.com/user-attachments/assets/0649fdfb-3f89-4c18-b1a7-4abce643184d" />
-
-## Textures by Gui
-
-### Food (Milkshake, Burger, Fries)
-
-texture voor het eten
-
-<img width="500" height="250" alt="image" src="https://github.com/user-attachments/assets/d337aa82-dfed-4814-89bd-4acf54e1c6cc" />
-
-### Aliens (main, patient, neutral, impatient)
-
-Texture voor de verschillende alien-types
-
-<img width="500" height="300" alt="image" src="https://github.com/user-attachments/assets/5509faed-795e-4ca6-98ab-3992297adf12" />
-
-### Enviroment 
-
-Texture voor de muren, vloer, deur en ramen
-
-<img width="400" height="200" alt="image" src="https://github.com/user-attachments/assets/9e7f77b4-2d90-42a9-a654-043997e8c9b3" />
-
-### Kitchen appliences (fridge, stove, milkshake, fryer)
-
-Texture voor de verschillende stations
-
-<img width="400" height="200" alt="image" src="https://github.com/user-attachments/assets/5ce1dde7-a8b8-4120-9cf5-352ab1c37a82" />
-
-### Packingstation
-
-Texture voor het inpakstation
-
-<img width="500" height="200" alt="image" src="https://github.com/user-attachments/assets/2bd29aa2-9986-44c1-8bae-2b7a3f1aac7c" />
-
-### Plant
-
-texture voor de kamerplant
-
-<img width="250" height="400" alt="image" src="https://github.com/user-attachments/assets/d1f1458d-1a25-42fe-945b-2cbbf9e68ed0" />
-
-### Bar + Stool
-
-Texture voor  texture voor de bar en stoeltjes
-
-<img width="400" height="200" alt="image" src="https://github.com/user-attachments/assets/9e7f77b4-2d90-42a9-a654-043997e8c9b3" /> <img width="400" height="250" alt="image" src="https://github.com/user-attachments/assets/5af6efc2-f822-4938-b1cb-af854fa3908d" />
-
-### Jukebox
-
-Texture voor de jukebox die muziek speelt
-
-<img width="300" height="430" alt="image" src="https://github.com/user-attachments/assets/3c5e5277-06bd-4ebd-ac0a-67d87a680b30" />
-
-### Bel
-
-Texture voor het belletje bij de deur
-
-<img width="300" height="300" alt="image" src="https://github.com/user-attachments/assets/35faf5f9-e0d3-4dde-9e98-d2505290c770" />
-
-### Outside props
-
-Texture voor de props die buiten te zien zijn
-
-<img width="500" height="400" alt="image" src="https://github.com/user-attachments/assets/2c3efadc-4a59-4d58-8487-9816b24f3995" />
-<img width="400" height="400" alt="image" src="https://github.com/user-attachments/assets/db8daa94-5655-444b-a7ab-f6ddf2d7f250" /> <img width="400" height="550" alt="image" src="https://github.com/user-attachments/assets/f946a003-09dc-4a79-b900-2b1135ea741c" />
-
-### Dirty dishes + money 
-
-Texture voor Dirty dishes + money
-
-<img width="400" height="250" alt="image" src="https://github.com/user-attachments/assets/96aae27e-7fad-4859-bead-316c8b4194f3" />
-
-### UFO 
-
-Texture voor UFO
-
-<img width="500" height="250" alt="image" src="https://github.com/user-attachments/assets/3177c4c0-e3cd-41db-a37d-fd6779fc0015" />
 
 
 
