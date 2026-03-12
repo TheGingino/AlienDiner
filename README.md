@@ -57,10 +57,11 @@ Robin van Wandelen:
  * Fries/milkshake model
 
 Min van der Veen:
+ * Blockout
  * Keuken Instrumenten
  * Iutside enviroment
  * Props
- * 
+   
 
 
 ## Customers and Customer SO by Gino Schaap
