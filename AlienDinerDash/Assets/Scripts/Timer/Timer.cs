@@ -1,6 +1,6 @@
 using TMPro;
 using UnityEngine;
-using UnityEngine.SceneManagement;
+using UnityEngine.Events;
 using UnityEngine.UI;
 
 public class Timer : MonoBehaviour
@@ -9,10 +9,13 @@ public class Timer : MonoBehaviour
     [SerializeField] private TextMeshProUGUI timerText;
     [SerializeField] private float startTime = 180f;
 
-    private float currentTime;
-    private bool isRunning = false;
+    private float _currentTime;
+    private bool _isRunning = false;
 
     private static Timer _instance;
+    
+    public UnityEvent onLevelFinished;
+
 
     void Awake()
     {
@@ -21,8 +24,8 @@ public class Timer : MonoBehaviour
 
     void Start()
     {
-        currentTime = startTime;
-        isRunning = true;
+        _currentTime = startTime;
+        _isRunning = true;
         UpdateDisplay();
     }
 
@@ -36,14 +39,14 @@ public class Timer : MonoBehaviour
 
     void Update()
     {
-        if (!isRunning) return;
+        if (!_isRunning) return;
 
-        currentTime -= Time.deltaTime;
+        _currentTime -= Time.deltaTime;
 
-        if (currentTime <= 0)
+        if (_currentTime <= 0)
         {
-            currentTime = 0;
-            isRunning = false;
+            _currentTime = 0;
+            _isRunning = false;
             OnTimerComplete();
         }
 
@@ -54,29 +57,29 @@ public class Timer : MonoBehaviour
     {
         if (timerText != null)
         {
-            timerText.text = "" + Mathf.CeilToInt(currentTime);
+            timerText.text = "" + Mathf.CeilToInt(_currentTime);
         }
 
         if (clockImage != null)
         {
-            clockImage.fillAmount = currentTime / startTime;
+            clockImage.fillAmount = _currentTime / startTime;
         }
     }
 
     public void ApplyPenalty()
     {
-        currentTime -= 10f;
-        Debug.Log("Applied penalty! Current time: " + currentTime);
-        if (currentTime < 0)
+        _currentTime -= 10f;
+        Debug.Log("Applied penalty! Current time: " + _currentTime);
+        if (_currentTime < 0)
         {
-            currentTime = 0;
+            _currentTime = 0;
         }
         UpdateDisplay();
     }
 
     private void OnTimerComplete()
     {
-        Debug.Log("Timer has ended!");
-        SceneManager.LoadScene("GameOverScene");
+        Debug.Log("Timer completed!");
+        onLevelFinished.Invoke();
     }
 }

@@ -30,8 +30,7 @@ public class Customer : MonoBehaviour
     private WaypointToLeave _waypointToLeave;
     private int _nextWaypointIndex;
     private GameObject[] customerWaypoints;
-
-
+    
     [SerializeField] private float speed = 2f;
     [SerializeField] private float reachDistance = 0.1f;
 

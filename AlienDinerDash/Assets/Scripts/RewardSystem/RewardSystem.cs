@@ -4,16 +4,20 @@ using UnityEngine;
 
 public class RewardSystem : MonoBehaviour
 {
-    [SerializeField] private int money;
-    [SerializeField] private int customerServed;
+    [SerializeField] private int _money;
+    [SerializeField] private int _customerServed;
+    
+    public int money => _money;
+    public int customerServed => _customerServed;
     
     private TextMeshProUGUI moneyText;
     private TextMeshProUGUI customerServedText;
     
+    
     private void Start()
     {
-        money = 0;
-        customerServed = 0;
+        _money = 0;
+        _customerServed = 0;
     }
 
     private void Update()
@@ -23,8 +27,8 @@ public class RewardSystem : MonoBehaviour
 
     public void AddMoney(int amount)
     {
-        money += amount;
-        Debug.Log("Money: " + money);
+        _money += amount;
+        Debug.Log("Money: " + _money);
         UpdateUI();
     }
 
@@ -41,7 +45,7 @@ public class RewardSystem : MonoBehaviour
     
      public void IncrementCustomerServed()
     {
-        customerServed++;
+        _customerServed++;
         Debug.Log("Customers Served: " + customerServed);
         UpdateUI();
     }
