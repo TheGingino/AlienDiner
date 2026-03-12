@@ -48,7 +48,49 @@ Bo Bakker:
  
 
 Robin van Wandelen:
- * UI onderdelen
+ * Start Scherm
+Dit word aan de speler laten zien om het spel te laten starten
+  <img width="1920" height="1080" alt="StartScreen" src="https://github.com/user-attachments/assets/fb7ec1bc-fdbe-460f-9b2c-d5bbcfab98e9" />
+
+ *
+ 
+ * Burger UI
+   Dit word gebruikt voor als de klanten een burger bestellen.
+
+   <img width="299" height="196" alt="Burger" src="https://github.com/user-attachments/assets/f7a9e1ea-cec3-47a1-a666-a85d6bda5045" />
+
+
+
+ * Fries UI
+   Dit word gebruikt voor als de klanten fries bestellen
+
+   <img width="299" height="196" alt="Friet" src="https://github.com/user-attachments/assets/b8069ef9-f77a-4679-8a75-2e8c697eabf6" />
+
+
+
+* Milkshake UI
+  Dit word gebruikt voor als de klanten een milkshake bestellen
+
+  <img width="299" height="196" alt="Milkshake" src="https://github.com/user-attachments/assets/6bce0a6f-d6af-4de8-b1d7-bd7e12ff00b0" />
+
+
+* Money UI
+  Dit word gebruikt voor als de klanten betalen of betaald hebben zodat het duidelijker voor de player is
+
+  <img width="299" height="196" alt="Money" src="https://github.com/user-attachments/assets/7db0698c-d24c-4765-9983-a0d9247af87f" />
+
+
+* Menu UI
+  Dit word gebruikt om te laten zien dat de klanten bezig zijn met het bedenken van hun orders
+
+  <img width="299" height="196" alt="Ready to order" src="https://github.com/user-attachments/assets/4497ef57-2bf8-498b-b322-95b8f8208c2a" />
+
+* Timer UI
+  Dit word gebruikt om aan de player duidelijk te maken hoelang het level nog duurt
+  Hierbij is de klok verdeelt in 2 aparte layers zodat het makkelijker is voor de developer om de timer werkend te maken en hierbij het in het midden kan zetten
+
+  <img width="244" height="269" alt="UpperLayer_Timer" src="https://github.com/user-attachments/assets/dc44af06-2218-43f6-b6fd-78c6e068beb6" />
+  <img width="163" height="163" alt="Underlayer_Timerpng" src="https://github.com/user-attachments/assets/ace764dd-cea9-41b5-9625-63587387c628" />
  * Booth models
  * Ramen/deur model
  
