@@ -553,7 +553,7 @@ Deze particle system laat zien dat de jukebox aan staat en muziek maakt.
 ![jukebox particle](https://github.com/user-attachments/assets/b5f5a91a-f138-491f-a22e-9372c0516401)
 
 ## Posters 
-Deze posters hangen als decoratie aan de muur van het restaurant.\
+Deze posters hangen als decoratie aan de muur van het restaurant.
 
 <img width="500" height="260" alt="image" src="https://github.com/user-attachments/assets/c982db4d-06e3-4d90-90b3-14e4857c1441" />
 
