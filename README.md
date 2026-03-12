@@ -673,7 +673,7 @@ Heel erg simpel model als de grond voor de scene.
 <img width="250" height="400" alt="image" src="https://github.com/user-attachments/assets/d1f1458d-1a25-42fe-945b-2cbbf9e68ed0" />
 
 ### Bar + Stool
-<img width="400" height="200" alt="image" src="https://github.com/user-attachments/assets/9e7f77b4-2d90-42a9-a654-043997e8c9b3" /> <img width="400" height="200" alt="image" src="https://github.com/user-attachments/assets/5af6efc2-f822-4938-b1cb-af854fa3908d" />
+<img width="400" height="200" alt="image" src="https://github.com/user-attachments/assets/9e7f77b4-2d90-42a9-a654-043997e8c9b3" /> <img width="400" height="250" alt="image" src="https://github.com/user-attachments/assets/5af6efc2-f822-4938-b1cb-af854fa3908d" />
 
 ### Jukebox
 <img width="300" height="430" alt="image" src="https://github.com/user-attachments/assets/3c5e5277-06bd-4ebd-ac0a-67d87a680b30" />
@@ -682,8 +682,8 @@ Heel erg simpel model als de grond voor de scene.
 <img width="300" height="300" alt="image" src="https://github.com/user-attachments/assets/35faf5f9-e0d3-4dde-9e98-d2505290c770" />
 
 ### Outside props
-<img width="500" height="300" alt="image" src="https://github.com/user-attachments/assets/2c3efadc-4a59-4d58-8487-9816b24f3995" />
-<img width="400" height="400" alt="image" src="https://github.com/user-attachments/assets/db8daa94-5655-444b-a7ab-f6ddf2d7f250" /> <img width="400" height="400" alt="image" src="https://github.com/user-attachments/assets/f946a003-09dc-4a79-b900-2b1135ea741c" />
+<img width="500" height="400" alt="image" src="https://github.com/user-attachments/assets/2c3efadc-4a59-4d58-8487-9816b24f3995" />
+<img width="400" height="400" alt="image" src="https://github.com/user-attachments/assets/db8daa94-5655-444b-a7ab-f6ddf2d7f250" /> <img width="400" height="550" alt="image" src="https://github.com/user-attachments/assets/f946a003-09dc-4a79-b900-2b1135ea741c" />
 
 ### Dirty dishes + money 
 <img width="400" height="250" alt="image" src="https://github.com/user-attachments/assets/96aae27e-7fad-4859-bead-316c8b4194f3" />
