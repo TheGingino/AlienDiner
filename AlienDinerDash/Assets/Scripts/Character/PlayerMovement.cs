@@ -13,16 +13,21 @@ public class PlayerMovement : MonoBehaviour
     
     [SerializeField] private LayerMask groundLayer;
     [SerializeField] private TapMarkerPool _tapMarkerPool;
+
+    [SerializeField] private Animator _animator;
     
 
     private void Start()
     {
         _agent = GetComponent<NavMeshAgent>();
+        _animator = GetComponentInChildren<Animator>();
         _camera = Camera.main;
     }
 
     private void Update()
-    {
+    {   
+        bool isMoving = _agent.velocity.sqrMagnitude > 0.01f;
+        _animator.SetBool("Walk", isMoving);
         if (Input.touchCount > 0)
         {
             Touch touch = Input.GetTouch(0);
@@ -30,6 +35,7 @@ public class PlayerMovement : MonoBehaviour
             if (touch.phase == TouchPhase.Began)
             {
                 MoveToPosision(touch.position);
+              
             }
         }
         if (Input.GetMouseButtonDown(0)) // Pc/ editor testing

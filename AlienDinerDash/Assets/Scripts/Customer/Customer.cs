@@ -9,6 +9,8 @@ public class Customer : MonoBehaviour
 {
     [Header("Customer Settings")] [SerializeField]
     private CustomerSO customerSO;
+
+    private CustomerSeating _customerSeating;
     public CustomerSO CustomerSO => customerSO;
     
     public enum CustomerStates
@@ -51,6 +53,7 @@ public class Customer : MonoBehaviour
     {
         _waypointToLeave = FindObjectOfType<WaypointToLeave>();
         customerTimerSlider = FindObjectOfType<Slider>();
+        _customerSeating = GetComponent<CustomerSeating>();
         orderImage.enabled = false;
         
         _animator = GetComponent<Animator>();
@@ -154,8 +157,6 @@ public class Customer : MonoBehaviour
     [ContextMenu("Testing the ability to leave the restaurant")]
     private void LeaveRestaurant()
     {
-        DroppingMoney droppingMoney = GetComponent<DroppingMoney>();
-        droppingMoney.DropMoney();
         StartCoroutine(MoveToExit());
     }
 
@@ -190,12 +191,15 @@ public class Customer : MonoBehaviour
         currentState = CustomerStates.LEAVING;
         customerWaypoints = _waypointToLeave.waypointToLeave;
 
+        GetMoney();
         LeaveRestaurant();
     }
     
-
     private void DecreaseSliderValue()
     {
+        if (_customerSeating != null && _customerSeating.IsSeated)
+            return;
+        
         if (customerTimerSlider.value >= 0) 
         {
             customerTimerSlider.value -= Time.deltaTime;
@@ -205,6 +209,7 @@ public class Customer : MonoBehaviour
     
     private DishType desiredDish;
 
+    [ContextMenu("Set desired dish for testing")]
     public void SetDesiredDish(DishType dish)
     {
         desiredDish = dish;
@@ -234,5 +239,15 @@ public class Customer : MonoBehaviour
     {
         public DishType dishType;
         public Sprite sprite;
+    }
+    
+    private void GetMoney()
+    {
+        int moneyValue = customerSO.customerMoney;
+        Debug.Log(moneyValue + " money value from customerSO.");
+        RewardSystem rewardSystem = FindObjectOfType<RewardSystem>();
+        
+        rewardSystem.AddMoney(moneyValue);
+        rewardSystem.IncrementCustomerServed();
     }
 }
