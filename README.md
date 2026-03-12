@@ -46,60 +46,11 @@ Bo Bakker:
  *  all particle systems
  *  Posters
  
-
 Robin van Wandelen:
- Dit word aan de speler laten zien om het spel te laten starten hierbij is de start knop apart gemaakt zodat ze interactable zijn.
-  <img width="960" height="540" alt="StartScreen" src="https://github.com/user-attachments/assets/fb7ec1bc-fdbe-460f-9b2c-d5bbcfab98e9" />
-  <img width="223" height="102" alt="Start" src="https://github.com/user-attachments/assets/98e7ab89-5b2d-49ab-b6e1-6960beaa47d3" />
+ * UI
+ * Ramen/deur models
 
-  * Win/Lose Screen UI
-  Hierbij word het scherm gebruikt om aan te geven of de speler het level heeft gehaald of gefaalt
-<img width="263" height="263" alt="Tutorial" src="https://github.com/user-attachments/assets/4a73b349-43ba-49b5-8784-acfec87162c8" />
-<img width="223" height="102" alt="hOME" src="https://github.com/user-attachments/assets/749fb301-f02d-4f94-a75d-87f5b8a867fe" />
-<img width="223" height="102" alt="retry" src="https://github.com/user-attachments/assets/85f87f5e-282d-47b1-a19d-bd2540b4afa5" />
- 
- * Burger UI
-   Dit word gebruikt voor als de klanten een burger bestellen.
-
-   <img width="299" height="196" alt="Burger" src="https://github.com/user-attachments/assets/f7a9e1ea-cec3-47a1-a666-a85d6bda5045" />
-
-
-
- * Fries UI
-   Dit word gebruikt voor als de klanten fries bestellen
-
-   <img width="299" height="196" alt="Friet" src="https://github.com/user-attachments/assets/b8069ef9-f77a-4679-8a75-2e8c697eabf6" />
-
-
-
-* Milkshake UI
-  Dit word gebruikt voor als de klanten een milkshake bestellen
-
-  <img width="299" height="196" alt="Milkshake" src="https://github.com/user-attachments/assets/6bce0a6f-d6af-4de8-b1d7-bd7e12ff00b0" />
-
-
-* Money UI
-  Dit word gebruikt voor als de klanten betalen of betaald hebben zodat het duidelijker voor de player is
-
-  <img width="299" height="196" alt="Money" src="https://github.com/user-attachments/assets/7db0698c-d24c-4765-9983-a0d9247af87f" />
-
-
-* Menu UI
-  Dit word gebruikt om te laten zien dat de klanten bezig zijn met het bedenken van hun orders
-
-  <img width="299" height="196" alt="Ready to order" src="https://github.com/user-attachments/assets/4497ef57-2bf8-498b-b322-95b8f8208c2a" />
-
-* Timer UI
-  Dit word gebruikt om aan de player duidelijk te maken hoelang het level nog duurt
-  Hierbij is de klok verdeelt in 2 aparte layers zodat het makkelijker is voor de developer om de timer werkend te maken en hierbij het in het midden kan zetten
-
-  <img width="244" height="269" alt="UpperLayer_Timer" src="https://github.com/user-attachments/assets/dc44af06-2218-43f6-b6fd-78c6e068beb6" />
-  <img width="163" height="163" alt="Underlayer_Timerpng" src="https://github.com/user-attachments/assets/ace764dd-cea9-41b5-9625-63587387c628" />
- * Booth models
- * Ramen/deur model
- 
-
- Gui
+ Guilherme Loures Oliveira
  * Alle textures
  * Food models
 
@@ -602,6 +553,70 @@ Deze particle system laat zien dat de jukebox aan staat en muziek maakt.
 Deze posters hangen als decoratie aan de muur van het restaurant.
 
 <img width="500" height="260" alt="image" src="https://github.com/user-attachments/assets/c982db4d-06e3-4d90-90b3-14e4857c1441" />
+
+## UI by Robin
+
+### Start screen
+ Dit word aan de speler laten zien om het spel te laten starten hierbij is de start knop apart gemaakt zodat ze interactable zijn.
+  <img width="960" height="540" alt="StartScreen" src="https://github.com/user-attachments/assets/fb7ec1bc-fdbe-460f-9b2c-d5bbcfab98e9" />
+  <img width="223" height="102" alt="Start" src="https://github.com/user-attachments/assets/98e7ab89-5b2d-49ab-b6e1-6960beaa47d3" />
+
+### Win/Lose Screen UI
+  Hierbij word het scherm gebruikt om aan te geven of de speler het level heeft gehaald of gefaalt
+<img width="263" height="263" alt="Tutorial" src="https://github.com/user-attachments/assets/4a73b349-43ba-49b5-8784-acfec87162c8" />
+<img width="223" height="102" alt="hOME" src="https://github.com/user-attachments/assets/749fb301-f02d-4f94-a75d-87f5b8a867fe" />
+<img width="223" height="102" alt="retry" src="https://github.com/user-attachments/assets/85f87f5e-282d-47b1-a19d-bd2540b4afa5" />
+ 
+### Burger UI
+   Dit word gebruikt voor als de klanten een burger bestellen.
+
+   <img width="299" height="196" alt="Burger" src="https://github.com/user-attachments/assets/f7a9e1ea-cec3-47a1-a666-a85d6bda5045" />
+
+
+
+ ### Fries UI
+   Dit word gebruikt voor als de klanten fries bestellen
+
+   <img width="299" height="196" alt="Friet" src="https://github.com/user-attachments/assets/b8069ef9-f77a-4679-8a75-2e8c697eabf6" />
+
+
+
+### Milkshake UI
+  Dit word gebruikt voor als de klanten een milkshake bestellen
+
+  <img width="299" height="196" alt="Milkshake" src="https://github.com/user-attachments/assets/6bce0a6f-d6af-4de8-b1d7-bd7e12ff00b0" />
+
+
+### Money UI
+  Dit word gebruikt voor als de klanten betalen of betaald hebben zodat het duidelijker voor de player is
+
+  <img width="299" height="196" alt="Money" src="https://github.com/user-attachments/assets/7db0698c-d24c-4765-9983-a0d9247af87f" />
+
+
+### Menu UI
+  Dit word gebruikt om te laten zien dat de klanten bezig zijn met het bedenken van hun orders
+
+  <img width="299" height="196" alt="Ready to order" src="https://github.com/user-attachments/assets/4497ef57-2bf8-498b-b322-95b8f8208c2a" />
+
+### Timer UI
+  Dit word gebruikt om aan de player duidelijk te maken hoelang het level nog duurt
+  Hierbij is de klok verdeelt in 2 aparte layers zodat het makkelijker is voor de developer om de timer werkend te maken en hierbij het in het midden kan zetten
+
+  <img width="244" height="269" alt="UpperLayer_Timer" src="https://github.com/user-attachments/assets/dc44af06-2218-43f6-b6fd-78c6e068beb6" />
+  <img width="163" height="163" alt="Underlayer_Timerpng" src="https://github.com/user-attachments/assets/ace764dd-cea9-41b5-9625-63587387c628" />
+
+## Booth models by Robin
+
+## Ramen/deur models by robin
+
+### Ramen
+
+Hier kun je zien of er een UFO aankomt bij de drive through
+
+### Deur
+
+Hier lopen de customers naar binnen en buiten
+ 
 
 ## Food models by Gui
 
