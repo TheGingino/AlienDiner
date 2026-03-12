@@ -207,8 +207,12 @@ classDiagram
     RewardSystem ..> Customer : tracks served
 ```
 
+![Timer](https://github.com/TheGingino/AlienDiner/blob/Develop/GitVisuals/Gino/TimerUI.gif)
+
 ## Win Lose Screen by Gino Schaap
 Dit scherm komt naar boven als de timer om is en hij laat het verdiende geld zien, of je genoeg klanten hebt geserveerd en er staat of je hebt gewonnen of hebt verloren.
+
+![WinLoseScreen](https://github.com/TheGingino/AlienDiner/blob/Develop/GitVisuals/Gino/LevelEnded.gif)
 
 ###
 ```mermaid
