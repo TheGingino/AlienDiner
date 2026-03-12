@@ -7,6 +7,7 @@ using UnityEngine.SceneManagement;
 public class WinLoseScreen : MonoBehaviour
 {
     [SerializeField] private GameObject winLoseScreen;
+    [SerializeField] private GameObject levelUI;
     [SerializeField] private int customersNeededToWin = 5; // Configurable win condition
 
     public void ShowWinScreen()
@@ -56,7 +57,6 @@ public class WinLoseScreen : MonoBehaviour
 
         if (rewardSystem != null)
         {
-            // Update win/lose status text
             TextMeshProUGUI statusText = GameObject.Find("StatusText")?.GetComponent<TextMeshProUGUI>();
             if (statusText != null)
             {
@@ -70,7 +70,6 @@ public class WinLoseScreen : MonoBehaviour
                 }
             }
 
-            // Update stats
             TextMeshProUGUI winMoneyText = GameObject.Find("MoneyText")?.GetComponent<TextMeshProUGUI>();
             TextMeshProUGUI winCustomerText = GameObject.Find("CustomerText")?.GetComponent<TextMeshProUGUI>();
 
@@ -85,10 +84,10 @@ public class WinLoseScreen : MonoBehaviour
             }
         }
 
-        // Show the screen
         if (winLoseScreen != null)
         {
             winLoseScreen.SetActive(true);
+            levelUI.SetActive(false);
         }
     }
 }

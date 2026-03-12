@@ -41,6 +41,8 @@ public class Customer : MonoBehaviour
     [Header ("Order Visuals")]
     [SerializeField] private Image orderImage;
     [SerializeField] private DishSpriteEntry[] dishSprites;
+    [SerializeField] private Transform foodSpawnPoint;
+    private GameObject _spawnedFood;
     
     [Header("Events")]    
     [SerializeField] private UnityEvent hasFinishedEating;
@@ -149,6 +151,11 @@ public class Customer : MonoBehaviour
             currentState = CustomerStates.SERVED;
             orderImage.enabled = false;
             _animator.SetBool("Eat", true);
+            GameObject foodPrefab = GetPrefabForDish(desiredDish);
+            if (foodPrefab != null)
+            {
+                _spawnedFood = Instantiate(foodPrefab, foodSpawnPoint.position, Quaternion.identity);
+            }
             _animator.SetBool("Sit", false);
             Debug.Log("Customer received food!");
             StartCoroutine(EatThenLeave());
@@ -189,7 +196,8 @@ public class Customer : MonoBehaviour
     IEnumerator EatThenLeave()
     {
         yield return new WaitForSeconds(5f);
-
+        if (_spawnedFood != null)
+            Destroy(_spawnedFood);
         currentState = CustomerStates.LEAVING;
         customerWaypoints = _waypointToLeave.waypointToLeave;
 
@@ -236,11 +244,23 @@ public class Customer : MonoBehaviour
         return null;
     }
     
+    private GameObject GetPrefabForDish(DishType dish)
+    {
+        foreach (var entry in dishSprites)
+        {
+            if (entry.dishType == dish)
+                return entry.foodPrefab;
+        }
+
+        return null;
+    }
+    
     [System.Serializable]
     public class DishSpriteEntry
     {
         public DishType dishType;
         public Sprite sprite;
+        public GameObject foodPrefab;
     }
     
     private void GetMoney()
