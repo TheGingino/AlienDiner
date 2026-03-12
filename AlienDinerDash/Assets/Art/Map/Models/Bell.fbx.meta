@@ -3,7 +3,12 @@ guid: 71395dda209be7c4a9d9fa911ce45a9e
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Bell
+    second: {fileID: 2100000, guid: a5a67fe3456872743b7a296cdd161837, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
