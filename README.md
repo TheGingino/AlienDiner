@@ -658,11 +658,8 @@ Heel erg simpel model als de grond voor de scene.
 
 ### Milkshake 
 
-### Neutral alien
-
-### Impatient alien
-
-### Patient alien
+### Aliens (main, patient, neutral, impatient)
+<img width="500" height="300" alt="image" src="https://github.com/user-attachments/assets/5509faed-795e-4ca6-98ab-3992297adf12" />
 
 ### Enviroment 
 
