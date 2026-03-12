@@ -1,9 +1,14 @@
 fileFormatVersion: 2
-guid: 9923ab3354f696c438903184660696a8
+guid: d1ec04863dfb32b4e972fa9dd3ee1aee
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Eiland
+    second: {fileID: 2100000, guid: 316caf2423e80ae49bfb3f64eb1da9fd, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
