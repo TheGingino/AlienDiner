@@ -583,18 +583,22 @@ Voor het spel zijn er minstens 3 klanten nodig en 1 main character. Daarvan heb 
 
 ### Main character
 Dit is de main character. Met deze character speelt de speler en kan de speler klanten bedienen. 
+
 <img width="200" height="350" alt="Screenshot 2026-03-12 224757" src="https://github.com/user-attachments/assets/0087f1bd-05d7-4dcf-b8de-607371bfbcfa" />
 
 ### Neutral klant
 Deze klant is de basis-type klant. Hij ziet er neutraal uit en gedraagt zich ook zo.
+
 <img width="325" height="355" alt="Screenshot 2026-03-12 224735" src="https://github.com/user-attachments/assets/ecc646d5-b6bc-4126-bb23-56ff8bd861fc" />
 
 ### Geduldige klant
 Dit is een klant die langer wacht op hun bestellingen en minder snel boos wordt. Ik heb ronde vormen gebruikt om een vriendelijkere uitstraling te geven.
+
 <img width="325" height="350" alt="Screenshot 2026-03-12 224840" src="https://github.com/user-attachments/assets/28e456ba-149a-469a-bd1a-b37272aa77e2" />
 
 ### Ongeduldige klant
 Deze klant zal erg snel boos worden en sneller weglopen uit het restaurant. Ik heb hem een driehoekige bouw gegeven en een boos gezicht zodat hij ongeduldigheid uitstraalt.
+
 <img width="325" height="350" alt="Screenshot 2026-03-12 224855" src="https://github.com/user-attachments/assets/9372b681-d83c-4396-a2f9-1dc3cf373c47" />
 
 ## Character animations by Bo 
@@ -612,10 +616,12 @@ Dit is de animatie van de aliens die eten.
 
 ### Drive through window
 Dit is het raam waardoor aliens in een UFO eten kunnen bestellen. 
+
 <img width="300" height="250" alt="Screenshot 2026-03-12 224603" src="https://github.com/user-attachments/assets/4fcf85c0-486f-4259-b46a-18210a889e43" />
 
 ### UFO 
 Dit is het model van de UFO. In dit model zit de alien die bij de drive through besteld. 
+
 <img width="200" height="165" alt="Screenshot 2026-03-12 224134" src="https://github.com/user-attachments/assets/e208f3da-406d-4dd1-8ff3-5b0db649e0ad" /> <img width="330" height="255" alt="Screenshot 2026-03-12 224127" src="https://github.com/user-attachments/assets/b704bb82-00b7-4ca0-942e-92960d7aa292" />
 
 
