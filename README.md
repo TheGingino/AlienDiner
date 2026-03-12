@@ -54,7 +54,7 @@ Robin van Wandelen:
 
  Gui
  * Alle textures
- * Fries/milkshake model
+ * Food models
 
 Min van der Veen:
  * Blockout
