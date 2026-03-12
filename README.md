@@ -571,7 +571,7 @@ Dit is het raam waardoor aliens in een UFO eten kunnen bestellen.
 
 ### UFO 
 Dit is het model van de UFO. In dit model zit de alien die bij de drive through besteld. 
-<img width="813" height="475" alt="Screenshot 2026-03-12 224134" src="https://github.com/user-attachments/assets/e208f3da-406d-4dd1-8ff3-5b0db649e0ad" /> <img width="767" height="510" alt="Screenshot 2026-03-12 224127" src="https://github.com/user-attachments/assets/b704bb82-00b7-4ca0-942e-92960d7aa292" />
+<img width="406" height="235" alt="Screenshot 2026-03-12 224134" src="https://github.com/user-attachments/assets/e208f3da-406d-4dd1-8ff3-5b0db649e0ad" /> <img width="767" height="510" alt="Screenshot 2026-03-12 224127" src="https://github.com/user-attachments/assets/b704bb82-00b7-4ca0-942e-92960d7aa292" />
 
 
 
