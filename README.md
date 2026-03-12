@@ -38,10 +38,8 @@ Kiana Hiemstra:
   * [Timer V1](https://github.com/TheGingino/AlienDiner/blob/Develop/AlienDinerDash/Assets/Scripts/Timer/LevelTimer.cs)
 
 Bo Bakker:
- * Character Model
- * Customer Models
- * UFO model
- * Drive through model
+ * Character Models
+ * Drive through models
  * Character animations
  *  all particle systems
  
@@ -532,3 +530,33 @@ Decoratief model. Ik heb beide ronde en vierkante stenen geprobeerd. Ik heb geko
   
 ### Eiland
 Heel erg simpel model als de grond voor de scene.
+
+
+
+## Character models by Bo
+Voor het spel zijn er minstens 3 klanten nodig en 1 main character. Daarvan heb ik de models en tijdelijke textures gemaakt.
+
+### Main character
+Dit is de main character. Met deze character speelt de speler en kan de speler klanten bedienen. 
+
+### Neutral klant
+Deze klant is de basis-type klant. Hij ziet er neutraal uit en gedraagt zich ook zo.
+
+### Geduldige klant
+Dit is een klant die langer wacht op hun bestellingen en minder snel boos wordt. Ik heb ronde vormen gebruikt om een vriendelijkere uitstraling te geven.
+
+### Ongeduldige klant
+Deze klant zal erg snel boos worden en sneller weglopen uit het restaurant. Ik heb hem een driehoekige bouw gegeven en een boos gezicht zodat hij ongeduldigheid uitstraalt.
+
+## Character animations by Bo 
+
+### Walking
+Dit is de alien en de main character die lopen. Het enige verschil tussen de twee is dat de main character een dienblad vast heeft.
+
+### Sitting down
+Dit is de animatie van het gaan zitten. 
+
+### Eating
+Dit is de animatie van de aliens die eten. 
+
+
