@@ -139,7 +139,10 @@ classDiagram
 ## Reward System
 Dit is de manier hoe het hoeveelheid geld dat je hebt gemaakt en de hoeveelheid customers op je scherm staat die zich aanpast als er wat bij komt
 
-### Class Diagram voor Reward System
+## Timer V2
+De timer is er als een tijds limiet voor de speler zodat ze lichtelijk gehaast de klankten moeten serven en geld moeten verzamelen voordat de tijd voorbij is
+
+### Class Diagram voor Timer V2
 ```mermaid
 classDiagram
     class RewardSystem {
