@@ -623,16 +623,26 @@ Dit is het model van de UFO. In dit model zit de alien die bij de drive through 
 ### Fryer particle system
 Deze particle system laat zien dat je de fryer aan het gebruiken bent.
 
+![fryer particle](https://github.com/user-attachments/assets/f05a75ad-e029-4d7c-9b47-99a079ca84e1)
+
 ### Stove particle system
 Deze particle system laat zien dat je de stove aan het gebruiken bent.
+
+![stove particle](https://github.com/user-attachments/assets/bbeb74e8-66e0-4b8a-ab17-a9d5a00b3263)
 
 ### Milkshake machine particle system
 Deze particle system laat zien dat je de milkshake machine aan het gebruiken bent.
 
+![milkshake particle](https://github.com/user-attachments/assets/2cef37a2-a2b6-48f5-a717-a21263dd65da)
+
 ### Packing station particle system
 Deze particle system laat zien dat je de packing station aan het gebruiken bent.
 
+![servetjes particle](https://github.com/user-attachments/assets/da27f93c-cff9-433e-a590-e1badd16c418)
+
 ### Jukebox particle system
 Deze particle system laat zien dat de jukebox aan staat en muziek maakt.
+
+![jukebox particle](https://github.com/user-attachments/assets/b5f5a91a-f138-491f-a22e-9372c0516401)
 
 
