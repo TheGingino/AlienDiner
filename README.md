@@ -651,6 +651,7 @@ Heel erg simpel model als de grond voor de scene.
 ### Fries model
 
 De fries worden gemaakt in de fryer en vervolgens geserveerd aan de klanten
+
 <img width="309" height="331" alt="Screenshot 2026-03-12 234603" src="https://github.com/user-attachments/assets/90469176-265c-439c-a340-210f688746f0" />
 
 ### Milkshake model
