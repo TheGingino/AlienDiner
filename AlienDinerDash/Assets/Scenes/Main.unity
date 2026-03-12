@@ -297,62 +297,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Canvas
       objectReference: {fileID: 0}
-    - target: {fileID: 1375455755415673048, guid: 5b1621764272a644b9a39795915ef046, type: 3}
-      propertyPath: m_Layer
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1739715152714312203, guid: 5b1621764272a644b9a39795915ef046, type: 3}
-      propertyPath: m_fontColor.b
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1739715152714312203, guid: 5b1621764272a644b9a39795915ef046, type: 3}
-      propertyPath: m_fontColor.g
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1739715152714312203, guid: 5b1621764272a644b9a39795915ef046, type: 3}
-      propertyPath: m_fontColor.r
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1739715152714312203, guid: 5b1621764272a644b9a39795915ef046, type: 3}
-      propertyPath: m_fontColor32.rgba
-      value: 4294967295
-      objectReference: {fileID: 0}
-    - target: {fileID: 3330892944072335426, guid: 5b1621764272a644b9a39795915ef046, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: -835
-      objectReference: {fileID: 0}
-    - target: {fileID: 3330892944072335426, guid: 5b1621764272a644b9a39795915ef046, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 417
-      objectReference: {fileID: 0}
-    - target: {fileID: 3593044769391180791, guid: 5b1621764272a644b9a39795915ef046, type: 3}
-      propertyPath: m_fontColor.b
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3593044769391180791, guid: 5b1621764272a644b9a39795915ef046, type: 3}
-      propertyPath: m_fontColor.g
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3593044769391180791, guid: 5b1621764272a644b9a39795915ef046, type: 3}
-      propertyPath: m_fontColor.r
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3593044769391180791, guid: 5b1621764272a644b9a39795915ef046, type: 3}
-      propertyPath: m_fontColor32.rgba
-      value: 4294967295
-      objectReference: {fileID: 0}
-    - target: {fileID: 4263775224745742632, guid: 5b1621764272a644b9a39795915ef046, type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 257.6873
-      objectReference: {fileID: 0}
-    - target: {fileID: 4263775224745742632, guid: 5b1621764272a644b9a39795915ef046, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: -366.75647
-      objectReference: {fileID: 0}
-    - target: {fileID: 4263775224745742632, guid: 5b1621764272a644b9a39795915ef046, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -180
-      objectReference: {fileID: 0}
     - target: {fileID: 4681324233730331370, guid: 5b1621764272a644b9a39795915ef046, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -433,25 +377,13 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5904084747659414253, guid: 5b1621764272a644b9a39795915ef046, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: -835
-      objectReference: {fileID: 0}
-    - target: {fileID: 5904084747659414253, guid: 5b1621764272a644b9a39795915ef046, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 417
-      objectReference: {fileID: 0}
-    - target: {fileID: 9037418064707301643, guid: 5b1621764272a644b9a39795915ef046, type: 3}
+    - target: {fileID: 8505150762034736730, guid: 5b1621764272a644b9a39795915ef046, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 257.6873
+      value: 150
       objectReference: {fileID: 0}
-    - target: {fileID: 9037418064707301643, guid: 5b1621764272a644b9a39795915ef046, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: -366.75647
-      objectReference: {fileID: 0}
-    - target: {fileID: 9037418064707301643, guid: 5b1621764272a644b9a39795915ef046, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -120
+    - target: {fileID: 8505150762034736730, guid: 5b1621764272a644b9a39795915ef046, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 150
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3269,6 +3201,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: LevelTimer
       objectReference: {fileID: 0}
+    - target: {fileID: 7081129174044269961, guid: 1d30c3e6f3bdba94d923f7b06a50209b, type: 3}
+      propertyPath: timerText
+      value: 
+      objectReference: {fileID: 393274265}
+    - target: {fileID: 7081129174044269961, guid: 1d30c3e6f3bdba94d923f7b06a50209b, type: 3}
+      propertyPath: clockImage
+      value: 
+      objectReference: {fileID: 1487373076}
     - target: {fileID: 8943448250018946366, guid: 1d30c3e6f3bdba94d923f7b06a50209b, type: 3}
       propertyPath: clockImage
       value: 
