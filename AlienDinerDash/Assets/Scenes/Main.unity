@@ -1205,7 +1205,7 @@ Transform:
   m_GameObject: {fileID: 463298480}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -1.09, y: 0, z: 0}
   m_LocalScale: {x: 1.7305, y: 1, z: 1.0574201}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2757,10 +2757,6 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1232151114345200639, guid: ee708e28e7a9e4747a72a8a48597b53c, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 3.78
-      objectReference: {fileID: 0}
     - target: {fileID: 1302073355015684943, guid: ee708e28e7a9e4747a72a8a48597b53c, type: 3}
       propertyPath: m_Layer
       value: 0
@@ -2808,10 +2804,6 @@ PrefabInstance:
     - target: {fileID: 1817872942245053455, guid: ee708e28e7a9e4747a72a8a48597b53c, type: 3}
       propertyPath: m_Layer
       value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 1896765608865161541, guid: ee708e28e7a9e4747a72a8a48597b53c, type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1908790746501832339, guid: ee708e28e7a9e4747a72a8a48597b53c, type: 3}
       propertyPath: m_Layer
@@ -3237,7 +3229,7 @@ MonoBehaviour:
   m_Center: {x: 0, y: 2, z: 0}
   m_LayerMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 449
   m_UseGeometry: 0
   m_DefaultArea: 0
   m_GenerateLinks: 0
@@ -3248,7 +3240,7 @@ MonoBehaviour:
   m_OverrideVoxelSize: 0
   m_VoxelSize: 0.16666667
   m_MinRegionArea: 4
-  m_NavMeshData: {fileID: 0}
+  m_NavMeshData: {fileID: 23800000, guid: 40d3286ad544b1949b575236d7a9df70, type: 2}
   m_BuildHeightMesh: 1
 --- !u!1 &1227448230 stripped
 GameObject:

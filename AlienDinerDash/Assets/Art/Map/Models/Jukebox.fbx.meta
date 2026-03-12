@@ -3,7 +3,12 @@ guid: 30cd1c97db6a6ff44872f1e61e0a582f
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Jukebox
+    second: {fileID: 2100000, guid: f456a99cf6b103e42aa4e92938c88a99, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
