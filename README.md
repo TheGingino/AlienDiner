@@ -654,38 +654,42 @@ Heel erg simpel model als de grond voor de scene.
 
 ## Textures by Gui
 
-### Fries 
-
-### Milkshake 
+### Food (Milkshake, Burger, Fries)
+<img width="500" height="250" alt="image" src="https://github.com/user-attachments/assets/d337aa82-dfed-4814-89bd-4acf54e1c6cc" />
 
 ### Aliens (main, patient, neutral, impatient)
 <img width="500" height="300" alt="image" src="https://github.com/user-attachments/assets/5509faed-795e-4ca6-98ab-3992297adf12" />
 
 ### Enviroment 
+<img width="400" height="200" alt="image" src="https://github.com/user-attachments/assets/9e7f77b4-2d90-42a9-a654-043997e8c9b3" />
 
-### Oven 
-
-### Milkshake machine 
-
-### Fryer
+### Kitchen appliences (fridge, stove, milkshake, fryer)
+<img width="400" height="200" alt="image" src="https://github.com/user-attachments/assets/5ce1dde7-a8b8-4120-9cf5-352ab1c37a82" />
 
 ### Packingstation
+<img width="500" height="200" alt="image" src="https://github.com/user-attachments/assets/2bd29aa2-9986-44c1-8bae-2b7a3f1aac7c" />
 
 ### Plant
-
-### Fridge
+<img width="250" height="400" alt="image" src="https://github.com/user-attachments/assets/d1f1458d-1a25-42fe-945b-2cbbf9e68ed0" />
 
 ### Bar + Stool
+<img width="400" height="200" alt="image" src="https://github.com/user-attachments/assets/9e7f77b4-2d90-42a9-a654-043997e8c9b3" /> <img width="400" height="200" alt="image" src="https://github.com/user-attachments/assets/5af6efc2-f822-4938-b1cb-af854fa3908d" />
 
 ### Jukebox
+<img width="300" height="430" alt="image" src="https://github.com/user-attachments/assets/3c5e5277-06bd-4ebd-ac0a-67d87a680b30" />
 
 ### Bel
+<img width="300" height="300" alt="image" src="https://github.com/user-attachments/assets/35faf5f9-e0d3-4dde-9e98-d2505290c770" />
 
 ### Outside props
+<img width="500" height="300" alt="image" src="https://github.com/user-attachments/assets/2c3efadc-4a59-4d58-8487-9816b24f3995" />
+<img width="400" height="400" alt="image" src="https://github.com/user-attachments/assets/db8daa94-5655-444b-a7ab-f6ddf2d7f250" /> <img width="400" height="400" alt="image" src="https://github.com/user-attachments/assets/f946a003-09dc-4a79-b900-2b1135ea741c" />
 
 ### Dirty dishes + money 
+<img width="400" height="250" alt="image" src="https://github.com/user-attachments/assets/96aae27e-7fad-4859-bead-316c8b4194f3" />
 
 ### UFO 
+<img width="500" height="250" alt="image" src="https://github.com/user-attachments/assets/3177c4c0-e3cd-41db-a37d-fd6779fc0015" />
 
 
 
