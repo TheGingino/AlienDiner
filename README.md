@@ -581,15 +581,19 @@ Voor het spel zijn er minstens 3 klanten nodig en 1 main character. Daarvan heb 
 
 ### Main character
 Dit is de main character. Met deze character speelt de speler en kan de speler klanten bedienen. 
+<img width="412" height="707" alt="Screenshot 2026-03-12 224757" src="https://github.com/user-attachments/assets/0087f1bd-05d7-4dcf-b8de-607371bfbcfa" />
 
 ### Neutral klant
 Deze klant is de basis-type klant. Hij ziet er neutraal uit en gedraagt zich ook zo.
+<img width="827" height="712" alt="Screenshot 2026-03-12 224735" src="https://github.com/user-attachments/assets/ecc646d5-b6bc-4126-bb23-56ff8bd861fc" />
 
 ### Geduldige klant
 Dit is een klant die langer wacht op hun bestellingen en minder snel boos wordt. Ik heb ronde vormen gebruikt om een vriendelijkere uitstraling te geven.
+<img width="676" height="709" alt="Screenshot 2026-03-12 224840" src="https://github.com/user-attachments/assets/28e456ba-149a-469a-bd1a-b37272aa77e2" />
 
 ### Ongeduldige klant
 Deze klant zal erg snel boos worden en sneller weglopen uit het restaurant. Ik heb hem een driehoekige bouw gegeven en een boos gezicht zodat hij ongeduldigheid uitstraalt.
+<img width="755" height="695" alt="Screenshot 2026-03-12 224855" src="https://github.com/user-attachments/assets/9372b681-d83c-4396-a2f9-1dc3cf373c47" />
 
 ## Character animations by Bo 
 
