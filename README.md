@@ -39,8 +39,8 @@ Kiana Hiemstra:
 
 Bo Bakker:
  * Character Models
- * Drive through models
  * Character animations
+ * Drive through models
  *  all particle systems
  
 
@@ -558,5 +558,30 @@ Dit is de animatie van het gaan zitten.
 
 ### Eating
 Dit is de animatie van de aliens die eten. 
+
+## Drive through models by Bo
+
+### Drive through window
+Dit is het raam waardoor aliens in een UFO eten kunnen bestellen. 
+
+### UFO 
+Dit is het model van de UFO. In dit model zit de alien die bij de drive through besteld. 
+
+## Particle systems by Bo
+
+### Fryer particle system
+Deze particle system laat zien dat je de fryer aan het gebruiken bent.
+
+### Stove particle system
+Deze particle system laat zien dat je de stove aan het gebruiken bent.
+
+### Milkshake machine particle system
+Deze particle system laat zien dat je de milkshake machine aan het gebruiken bent.
+
+### Packing station particle system
+Deze particle system laat zien dat je de packing station aan het gebruiken bent.
+
+### Jukebox particle system
+Deze particle system laat zien dat de jukebox aan staat en muziek maakt.
 
 
