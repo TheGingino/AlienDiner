@@ -44,6 +44,7 @@ Bo Bakker:
  * Character animations
  * Drive through models
  *  all particle systems
+ *  Posters
  
 
 Robin van Wandelen:
@@ -565,6 +566,11 @@ De fries worden gemaakt in de fryer en vervolgens geserveerd aan de klanten
 De milkshake wordt gemaakt in de milkshake machine en vervolgens geserveerd aan de klanten
 
 <img width="209" height="347" alt="Screenshot 2026-03-12 234541" src="https://github.com/user-attachments/assets/0649fdfb-3f89-4c18-b1a7-4abce643184d" /> <img width="250" height="250" alt="Screenshot 2026-03-12 235609" src="https://github.com/user-attachments/assets/2480818d-500c-43ab-a78c-8ade2f066e34" />
+
+## Posters 
+Deze posters hangen als decoratie aan de muur van het restaurant.\
+
+<img width="50" height="260" alt="image" src="https://github.com/user-attachments/assets/c982db4d-06e3-4d90-90b3-14e4857c1441" />
 
 
 ## Textures by Gui
