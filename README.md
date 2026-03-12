@@ -578,28 +578,28 @@ Heel erg simpel model als de grond voor de scene.
 ![example](https://github.com/TheGingino/AlienDiner/blob/d2283807121b68cd6e2676a4860a23806a8e12bb/GitVisuals/Min/Eiland.png)
 
 
-## Character models by Bo
+## Character models + temporary textures by Bo
 Voor het spel zijn er minstens 3 klanten nodig en 1 main character. Daarvan heb ik de models en tijdelijke textures gemaakt.
 
-### Main character
+### Main character 
 Dit is de main character. Met deze character speelt de speler en kan de speler klanten bedienen. 
 
 <img width="200" height="350" alt="Screenshot 2026-03-12 224757" src="https://github.com/user-attachments/assets/0087f1bd-05d7-4dcf-b8de-607371bfbcfa" />
 
-### Neutral klant
+### Neutral klant + Temporary texture
 Deze klant is de basis-type klant. Hij ziet er neutraal uit en gedraagt zich ook zo.
 
 <img width="325" height="355" alt="Screenshot 2026-03-12 224735" src="https://github.com/user-attachments/assets/ecc646d5-b6bc-4126-bb23-56ff8bd861fc" /> <img width="375" height="378" alt="Screenshot 2026-03-12 231345" src="https://github.com/user-attachments/assets/a3c52963-460d-4ef0-b92d-777f7e88970b" />
 
 
 
-### Geduldige klant
+### Geduldige klant + Temporary texture
 Dit is een klant die langer wacht op hun bestellingen en minder snel boos wordt. Ik heb ronde vormen gebruikt om een vriendelijkere uitstraling te geven.
 
 <img width="325" height="350" alt="Screenshot 2026-03-12 224840" src="https://github.com/user-attachments/assets/28e456ba-149a-469a-bd1a-b37272aa77e2" /> <img width="410" height="406" alt="Screenshot 2026-03-12 231320" src="https://github.com/user-attachments/assets/0b88fcbc-1773-4257-bb9a-93ce7e5e03e9" />
 
 
-### Ongeduldige klant
+### Ongeduldige klant + Temporary texture
 Deze klant zal erg snel boos worden en sneller weglopen uit het restaurant. Ik heb hem een driehoekige bouw gegeven en een boos gezicht zodat hij ongeduldigheid uitstraalt.
 
 <img width="325" height="350" alt="Screenshot 2026-03-12 224855" src="https://github.com/user-attachments/assets/9372b681-d83c-4396-a2f9-1dc3cf373c47" /> <img width="448" height="415" alt="Screenshot 2026-03-12 231315" src="https://github.com/user-attachments/assets/09973352-0850-4626-9178-ce1458c00bfd" />
