@@ -40,19 +40,32 @@ Kiana Hiemstra:
 Bo Bakker:
  * Character Model
  * Customer Models
+ * UFO model
+ * Drive through model
+ * Character animations
+ *  all particle systems
+ 
 
 Robin van Wandelen:
- * UI Shenan
- * 
+ * UI onderdelen
+ * Booth models
+ * Ramen/deur model
+ 
 
  Gui
- * IDK
+ * Alle textures
+ * Fries/milkshake model
 
 Min van der Veen:
- * Blockout
- * Keuken instrumenten
- * Props
- * Outside Environment
+ * Keuken Instrumenten
+ * Buiten enviroment models
+ * Jukebox model
+ * Block-out
+ * Dirty dishes model
+ * Burger model
+ * Prullenbak
+ * Bar/barstoelen model
+
 
 ## Customers and Customer SO by Gino Schaap
 
