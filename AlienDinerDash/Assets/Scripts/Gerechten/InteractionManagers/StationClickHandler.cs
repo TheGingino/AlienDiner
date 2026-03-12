@@ -1,9 +1,16 @@
+using System;
 using UnityEngine;
 
 public class StationClickHandler : MonoBehaviour
 {
-    [SerializeField] PlayerInteraction _player;
-    [SerializeField] PlayerMovement _playerMovement;
+    private PlayerInteraction _player;
+    private PlayerMovement _playerMovement;
+
+    private void Awake()
+    {
+        _player = FindObjectOfType<PlayerInteraction>();
+        _playerMovement = FindObjectOfType<PlayerMovement>();
+    }
 
     void OnMouseDown()
     {
@@ -13,7 +20,7 @@ public class StationClickHandler : MonoBehaviour
             return;
         Debug.Log("Holding dish? " + _player.IsHoldingDish);
 
-        // NEW CHECK
+      
         if (_player.IsHoldingDish &&
             station.Type == InteractableObject.StationType.CookingStation)
         {
@@ -28,12 +35,8 @@ public class StationClickHandler : MonoBehaviour
             Debug.Log("Nothing to throw away.");
             return;
         }
-
-       
         
         _playerMovement.MoveToInteraction(station);
-        
-
        
     }
 }

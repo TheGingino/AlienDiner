@@ -13,16 +13,21 @@ public class PlayerMovement : MonoBehaviour
     
     [SerializeField] private LayerMask groundLayer;
     [SerializeField] private TapMarkerPool _tapMarkerPool;
+
+    [SerializeField] private Animator _animator;
     
 
     private void Start()
     {
         _agent = GetComponent<NavMeshAgent>();
+        _animator = GetComponentInChildren<Animator>();
         _camera = Camera.main;
     }
 
     private void Update()
-    {
+    {   
+        bool isMoving = _agent.velocity.sqrMagnitude > 0.01f;
+        _animator.SetBool("Walk", isMoving);
         if (Input.touchCount > 0)
         {
             Touch touch = Input.GetTouch(0);
@@ -30,6 +35,7 @@ public class PlayerMovement : MonoBehaviour
             if (touch.phase == TouchPhase.Began)
             {
                 MoveToPosision(touch.position);
+              
             }
         }
         if (Input.GetMouseButtonDown(0)) // Pc/ editor testing
@@ -67,29 +73,33 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-    public void MoveToInteraction(InteractableObject station)
+    void MoveToTarget(Transform target, Action OnArrive)
     {
         if (_agent == null) return;
 
-        _agent.SetDestination(station.InteractionWaypoint.position);
+        _agent.isStopped = false; 
+        StopAllCoroutines();   
 
-        StartCoroutine(CheckArrival(station));
+        _agent.SetDestination(target.position);
+
+        StartCoroutine(CheckArrival(target, OnArrive));
     }
 
-    IEnumerator CheckArrival(InteractableObject station)
+    IEnumerator CheckArrival(Transform target, Action OnArrive)
     {
         while (_agent.pathPending)
             yield return null;
-        
+
         while (_agent.remainingDistance > _agent.stoppingDistance)
             yield return null;
-        
+
         while (_agent.velocity.sqrMagnitude > 0.01f)
             yield return null;
-        
-        _agent.Warp(station.InteractionWaypoint.position);
+
+        _agent.Warp(target.position);
         _agent.isStopped = true;
-        GetComponent<PlayerInteraction>().StartInteraction(station);
+
+        OnArrive?.Invoke();
     }
     
     public void LockPlayerMovement(bool enabled)
@@ -98,5 +108,21 @@ public class PlayerMovement : MonoBehaviour
 
         _agent.isStopped = !enabled;
 
+    }
+    
+    public void MoveToInteraction(InteractableObject station)
+    {
+        MoveToTarget(station.InteractionWaypoint, () =>
+        {
+            GetComponent<PlayerInteraction>().StartInteraction(station);
+        });
+    }
+    
+    public void MoveToTable(Transform servepoint, Transform tableTransform)
+    {
+        MoveToTarget(servepoint, () =>
+        {
+            GetComponent<PlayerInteraction>().TryServeCustomersAtTable(tableTransform);
+        });
     }
 }

@@ -9,24 +9,16 @@ public class InteractableObject : MonoBehaviour
     [SerializeField]  Transform _interactionWaypoint;
     [SerializeField] StationType _stationType;
     [SerializeField] DishType _dishType;
-    [SerializeField] GameObject _dishPrefab;
-
-  
-
-
+    
     GameObject _currentProgressBar;
     Image _progressImage;
     Renderer _renderer;
 
     public float InteractionDuration => _interactionDuration;
     public Transform InteractionWaypoint => _interactionWaypoint;
-    public GameObject DishPrefab => _dishPrefab;
+   
     public StationType Type => _stationType;
-
-
-
-
-
+    
     private void Awake()
     {
         _renderer = GetComponent<Renderer>();
@@ -86,7 +78,6 @@ public class InteractableObject : MonoBehaviour
     public enum StationType
     {
         CookingStation,
-        PackingStation,
         TrashCan
     }
 
@@ -97,29 +88,8 @@ public class InteractableObject : MonoBehaviour
             case StationType.CookingStation:
                 return _dishType;
             
-            case StationType.PackingStation:
-                return  GetPackedVersion(inputDish);
-            
             case StationType.TrashCan:
                 return DishType.None;
-            
-            default:
-                return DishType.None;
-        }
-    }
-
-    DishType GetPackedVersion(DishType dish)
-    {
-        switch (dish)
-        {
-            case DishType.Burger:
-                return DishType.PackedBurger;
-            
-            case DishType.Fries:
-                return DishType.PackedFries;
-            
-            case DishType.Milkshake:
-                return DishType.PackedMilkshake;
             
             default:
                 return DishType.None;

@@ -9,6 +9,8 @@ public class Customer : MonoBehaviour
 {
     [Header("Customer Settings")] [SerializeField]
     private CustomerSO customerSO;
+
+    private CustomerSeating _customerSeating;
     public CustomerSO CustomerSO => customerSO;
     
     public enum CustomerStates
@@ -37,29 +39,30 @@ public class Customer : MonoBehaviour
     private Slider customerTimerSlider;
     private float _sliderTime;
     
+    [Header ("Order Visuals")]
+    [SerializeField] private Image orderImage;
+    [SerializeField] private DishSpriteEntry[] dishSprites;
+    
     [Header("Events")]    
     [SerializeField] private UnityEvent hasFinishedEating;
     [SerializeField] private UnityEvent hasLeftAngry;
-
-    
+    public UnityEvent HasLeftAngry => hasLeftAngry;
     
     [SerializeField] private Animator _animator;
     private void Start()
     {
         _waypointToLeave = FindObjectOfType<WaypointToLeave>();
         customerTimerSlider = FindObjectOfType<Slider>();
+        _customerSeating = GetComponent<CustomerSeating>();
+        orderImage.enabled = false;
         
         _animator = GetComponent<Animator>();
-        if (!_animator)
-        {
-            Debug.LogError("Animator component not assigned in the inspector.");
-        }
-        
         customerWaypoints = _waypointToLeave.insideWaypointToLeave;
         
-        customerTimerSlider.maxValue = customerSO.customerTimer + customerSO.customerFoodTimer;
-        customerTimerSlider.value = customerSO.customerTimer + customerSO.customerFoodTimer;
-        //Debug.Log(customerTimerSlider.value);
+        customerTimerSlider.maxValue = 10;
+        customerTimerSlider.value = 10;
+        
+        Timer.RegisterCustomer(this);
     }
 
     private void Update()
@@ -78,15 +81,15 @@ public class Customer : MonoBehaviour
         {
             case CustomerType.ANNOYING:
                 yield return StartCoroutine(AnnoyingCustomer(_sliderTime));
-                Debug.Log("Annoying customer finished waiting." + _sliderTime);
+                //Debug.Log("Annoying customer finished waiting." + _sliderTime);
                 break;
             case CustomerType.AVERAGE:
                 yield return StartCoroutine(NormalCustomer(_sliderTime));
-                Debug.Log("Average customer finished waiting." + _sliderTime);
+                //Debug.Log("Average customer finished waiting." + _sliderTime);
                 break;
             case CustomerType.PATIENT:
                 yield return StartCoroutine(PatientCustomer(_sliderTime));
-                Debug.Log("Patient customer finished waiting." + _sliderTime);
+                //Debug.Log("Patient customer finished waiting." + _sliderTime);
                 break;
         }
     }
@@ -133,6 +136,11 @@ public class Customer : MonoBehaviour
             }
         }
     }
+    
+    public bool IsWaitingFor(DishType dish)
+    {
+        return currentState == CustomerStates.HUNGRY && desiredDish == dish;
+    }
 
     public void ServeFood()
     {
@@ -140,16 +148,15 @@ public class Customer : MonoBehaviour
         {
             hasBeenServed = true;
             currentState = CustomerStates.SERVED;
+            orderImage.enabled = false;
             Debug.Log("Customer received food!");
+            StartCoroutine(EatThenLeave());
         }
     }
 
     [ContextMenu("Testing the ability to leave the restaurant")]
     private void LeaveRestaurant()
     {
-        Debug.Log("Customer is leaving");
-        DroppingMoney droppingMoney = GetComponent<DroppingMoney>();
-        droppingMoney.DropMoney();
         StartCoroutine(MoveToExit());
     }
 
@@ -177,13 +184,70 @@ public class Customer : MonoBehaviour
         Destroy(gameObject);
     }
     
+    IEnumerator EatThenLeave()
+    {
+        yield return new WaitForSeconds(5f);
 
+        currentState = CustomerStates.LEAVING;
+        customerWaypoints = _waypointToLeave.waypointToLeave;
+
+        GetMoney();
+        LeaveRestaurant();
+    }
+    
     private void DecreaseSliderValue()
     {
+        if (_customerSeating != null && _customerSeating.IsSeated)
+            return;
+        
         if (customerTimerSlider.value >= 0) 
         {
             customerTimerSlider.value -= Time.deltaTime;
         }
         //Debug.Log("Customer timer: " + customerTimerSlider.value);
+    }
+    
+    private DishType desiredDish;
+
+    [ContextMenu("Set desired dish for testing")]
+    public void SetDesiredDish(DishType dish)
+    {
+        desiredDish = dish;
+
+        if (orderImage != null)
+        {
+            orderImage.sprite = GetSpriteForDish(dish);
+            orderImage.enabled = true;
+        }
+
+        Debug.Log($"Customer {name} wants: {desiredDish}");
+    }
+    
+    private Sprite GetSpriteForDish(DishType dish)
+    {
+        foreach (var entry in dishSprites)
+        {
+            if (entry.dishType == dish)
+                return entry.sprite;
+        }
+
+        return null;
+    }
+    
+    [System.Serializable]
+    public class DishSpriteEntry
+    {
+        public DishType dishType;
+        public Sprite sprite;
+    }
+    
+    private void GetMoney()
+    {
+        int moneyValue = customerSO.customerMoney;
+        Debug.Log(moneyValue + " money value from customerSO.");
+        RewardSystem rewardSystem = FindObjectOfType<RewardSystem>();
+        
+        rewardSystem.AddMoney(moneyValue);
+        rewardSystem.IncrementCustomerServed();
     }
 }
