@@ -49,7 +49,10 @@ Robin van Wandelen:
  * IDK
 
 Min van der Veen:
- * Keuken Instrumenten
+ * Blockout
+ * Keuken instrumenten
+ * Props
+ * Outside Environment
 
 ## Customers and Customer SO by Gino Schaap
 
@@ -458,3 +461,64 @@ Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots 
 Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.
 
 ![example](https://user-images.githubusercontent.com/1262745/189135129-34d15823-0311-46b5-a041-f0bbfede9e78.png)
+
+## Blockout by Min
+
+Robin had een paar schetsen gemaakt van layouts van een diner. De gekozen layout daarvan heb ik snel een blockout van gemaakt en goed opgelet op scale. Ik heb me goed aan de schets gehouden. 
+
+## Keuken Instrumenten by Min
+In het begin had ik Robin de keuze gegeven tussen de diner en de keuken kant. Het maakte mij niet uit en Robin koos voor de diner kant dus ik dee de keuken kant. Dat houd in: Koelkast, fornuis, frituur, milkshame machine, werkbank 1 en 2, drive through packing station, bar vloer, bar, barstoel. We moeten alles aan een 1950 retero thema houden.
+
+### Koelkast
+Ik begon met het koelkast model. Mid priority voor de keuken, heeft geen interactie met de speler of customer. 
+
+### Fornuis
+Na de koelkast ben ik begonnen met de high priority models. Je kan er mee interacten als speler want daar kook je de burger. 
+
+### Frituur
+Met dit model kan de speler interacten want daar maak je de frietjes.
+  
+### Milkshake Machine
+Met dit model kan de speler interacten want daar maak je de milkshake.
+  
+### Werkbank 1 en 2
+Naast de interactable modellen heb ik meer surfaces nodig. Op werkbank 1 staat de milkshake machine en op werkbank 2 staat de drive through packing station.
+  
+### Drive through packing station
+Wij hadden als twist een drive through. Dus er moest ook een packing station waar de speler het eten moet inpakken. Met dit model kan de speler interacten want daar pak je het eten in. 
+ 
+### Bar vloer, Bar en de Barstoel
+Je hebt een klein opstapje in de vloer om de area van de keuken en diner area uit elkaar te houden. Daarnaast moest de bar en de barstoelen. De customer kan interacten om daar te zitten en eten.
+ 
+## Props by Min
+Daarnaas had ik nog 1,5 weken over nadat ik de blockout en keuken allemaal af had had ik ook een paar props gedaan voor de diner kant. 
+
+### Burger
+We hebben 3 gerechten. Ik heb de burger gekozen. Het is een hersen burger met een plakje kaas
+  
+### Dirty dishes + geld
+Als de customer klaar is met eten dan lopen ze weg. Ze laten dan wel een vies bord met geld achter.
+  
+### Prullenbak 
+Als je eten heb gemaakt wat verkeerd is/ niet het goede gerecht dan kan je het hier weg gooien. Met dit model kan de speler interacten want je kan gerechten weggooien
+  
+### Juke box
+Decoratief model waar de background music uit komt.
+  
+### Bell
+Decoratief model wat ringt als er een customer binnen komt.
+  
+## Outside Environmnet by Min
+Ik was snel klaar met de props dus op het laatst wist ik even niet meer wat ik zou doen. Niet voor lang want Bo had me verteld dat er ook nog een outside environment worden zouden gemodeld. Dus ik heb zelf designs gemaakt wat een beetje Alien environment is.
+
+### Boom
+Decoratief model. Ik had een paar bloem en planten modellen gemaakt. Ik heb dan een boomstam gemaakt en alles een beetje geprobeerd welke compositie het best past. 
+  
+### Struik
+Decoratief model. Ik had een paar bloem en planten modellen gemaakt. Ik heb dan een boomstam gemaakt en alles een beetje geprobeerd welke compositie het best past.   
+
+### Stenen
+Decoratief model. Ik heb beide ronde en vierkante stenen geprobeerd. Ik heb gekozen voor de vierkante stenen.
+  
+### Eiland
+Heel erg simpel model als de grond voor de scene.
