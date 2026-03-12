@@ -646,5 +646,49 @@ Heel erg simpel model als de grond voor de scene.
 
 <img width="650" height="324" alt="Eiland" src="https://github.com/user-attachments/assets/5a5b98b5-55e6-4548-b9ec-1d2949f25a2d" />
 
+## Food models by Gui
+
+### Fries model
+
+### Milkshake model
+
+## Textures by Gui
+
+### Fries 
+
+### Milkshake 
+
+### Neutral alien
+
+### Impatient alien
+
+### Patient alien
+
+### Enviroment 
+
+### Oven 
+
+### Milkshake machine 
+
+### Fryer
+
+### Packingstation
+
+### Plant
+
+### Fridge
+
+### Bar + Stool
+
+### Jukebox
+
+### Bel
+
+### Outside props
+
+### Dirty dishes + money 
+
+### UFO 
+
 
 
