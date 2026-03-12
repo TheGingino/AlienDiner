@@ -687,7 +687,7 @@ Animator:
   m_GameObject: {fileID: 7941733993384797956}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: bb84f92e0e8d0864dbdfa398e515fc21, type: 2}
+  m_Controller: {fileID: 9100000, guid: 55662c5c8842dfe49ae0fed8c157cda4, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -711,9 +711,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   customerSO: {fileID: 11400000, guid: 5ad90d1ed3c7909418e4f4fb3a7d5faf, type: 2}
-  hasFinishedEating:
-    m_PersistentCalls:
-      m_Calls: []
   hasBeenServed: 0
   speed: 5
   reachDistance: 0.1
@@ -723,9 +720,15 @@ MonoBehaviour:
   - dishType: 1
     sprite: {fileID: 21300000, guid: 061f8c70bc785a4448774516c43a51f4, type: 3}
   - dishType: 2
-    sprite: {fileID: 10911, guid: 0000000000000000f000000000000000, type: 0}
+    sprite: {fileID: 21300000, guid: 5d429d27d3a04bb40b820c49c538ea85, type: 3}
   - dishType: 3
     sprite: {fileID: 21300000, guid: b69a46ec0058bfb41b3619f4944e4519, type: 3}
+  hasFinishedEating:
+    m_PersistentCalls:
+      m_Calls: []
+  hasLeftAngry:
+    m_PersistentCalls:
+      m_Calls: []
   _animator: {fileID: 0}
 --- !u!114 &2338846183964618269
 MonoBehaviour:
@@ -791,6 +794,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  _animator: {fileID: 0}
+  IsSeated: 0
 --- !u!114 &-2557239801202082710
 MonoBehaviour:
   m_ObjectHideFlags: 0

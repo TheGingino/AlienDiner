@@ -148,6 +148,8 @@ public class Customer : MonoBehaviour
             hasBeenServed = true;
             currentState = CustomerStates.SERVED;
             orderImage.enabled = false;
+            _animator.SetBool("Eat", true);
+            _animator.SetBool("Sit", false);
             Debug.Log("Customer received food!");
             StartCoroutine(EatThenLeave());
         }
@@ -161,6 +163,7 @@ public class Customer : MonoBehaviour
 
     private IEnumerator MoveToExit()
     {
+        _animator.SetBool("Eat", false);
         _animator.SetBool("Walk", true);
         while (_nextWaypointIndex < customerWaypoints.Length)
         {
