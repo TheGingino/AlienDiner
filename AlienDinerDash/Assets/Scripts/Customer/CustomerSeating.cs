@@ -15,12 +15,15 @@ public class CustomerSeating : MonoBehaviour
     private bool _canBeDragged = true;
     
     [SerializeField] private UnityEvent hasBeenSeated;
+
+    [SerializeField] Animator _animator;
     public bool IsSeated;
 
     private void Start()
     {
         _originPosition = transform.position;
         _originRotation = transform.rotation;
+        _animator = GetComponent<Animator>();
     }
 
     private void Update() // seating test to see if the seat is given free when customer leaves
@@ -47,14 +50,25 @@ public class CustomerSeating : MonoBehaviour
     public void SnapToSeat(Transform seat, Table table)
     {
         IsSeated = true;
+        _animator.SetBool("Sit", true);
         _currentSeat = seat;
         _currentTable = table;
 
         transform.position = seat.position;
-        transform.rotation = seat.rotation;
+
+        Vector3 directionToTable = table.transform.position - seat.position;
+        directionToTable.y = 0f;
+        
+        if (directionToTable != Vector3.zero)
+            transform.rotation = Quaternion.LookRotation(directionToTable);
+        else
+        {
+            transform.rotation = seat.rotation;
+        }
 
         _canBeDragged = false;
         hasBeenSeated.Invoke();
+        
     }
 
     public void ReturnToOrigin()
@@ -68,6 +82,7 @@ public class CustomerSeating : MonoBehaviour
         if (_currentTable != null && _currentSeat != null)
         {
             IsSeated = false;
+            _animator.SetBool("Sit", false);
             _currentTable.FreeSeat(_currentSeat); 
            
             _currentSeat = null;

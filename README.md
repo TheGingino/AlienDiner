@@ -1,11 +1,9 @@
 # AlienDiner
-Aliens in een Diner
 
-In deze repository vind je de informatie over het examen project.
+### Beschrijving
+De opracht is dat we een Mobile game moeten maken waar 3 keuzes voor gegeven werden. We moeten de gekozen game maken met onze eigen style met bepaalde kriteria en we moeten onze eigen twist brengen aan het spel.
 
-Omschrijf de examenopdracht evt de klant en wat het doel voor de klant is.
-Omschrijf ook beknopt wat het idee van je game is. 
-Een complete en uitgebreide beschrijving komt in het functioneel ontwerp (onderdeel van de [wiki](https://github.com/erwinhenraat/VoorbeeldExamenRepo/wiki))
+Wij kozen de game Diner Dash waar we als een serveerster spelen om klanten te serveren en dan geld te verdienen en blije klanten te hebben. Dus wij kozen ervoor om de ruimte te gebruiken als locatie en thema. Onze twist is dat je een Drive Through hebt die je in de gaten moet houden omdat daar een nieuw soort klant spawnt die ook eten wilt. De kriteria is dat wij 3 klanten soorten hebben, audio voor het spel, visuele feedback en een manier om eten te bereiden.
 
 # Geproduceerde Game Onderdelen
 
@@ -15,10 +13,12 @@ Maak ook een overzicht van alle onderdelen met een link naar de map waarin deze 
 Bijv..
 
 Gino Schaap:
-  * [Customer Types](https://github.com/erwinhenraat/VoorbeeldExamenRepo/tree/master/src/some)
-  * [Customer Spawning](https://github.com/erwinhenraat/VoorbeeldExamenRepo/tree/master/src/mechanic_x)
-  * [Customer Behavior](https://github.com/erwinhenraat/VoorbeeldExamenRepo/tree/master/src/mechanic_y)
-  * [LevelTimer V2] 
+  * [Customer Types](https://github.com/TheGingino/AlienDiner/blob/Develop/AlienDinerDash/Assets/Scripts/Customer/CustomerSO.cs)
+  * [Customer Spawning](https://github.com/TheGingino/AlienDiner/blob/Develop/AlienDinerDash/Assets/Scripts/Customer/CustomerSpawner.cs)
+  * [DriveThrough Customer Spawning](https://github.com/TheGingino/AlienDiner/blob/Develop/AlienDinerDash/Assets/Scripts/Customer/DriveThroughCustomer.cs)
+  * [Customer Behavior](https://github.com/TheGingino/AlienDiner/blob/Develop/AlienDinerDash/Assets/Scripts/Customer/Customer.cs)
+  * [LevelTimer V2](https://github.com/TheGingino/AlienDiner/blob/Develop/AlienDinerDash/Assets/Scripts/Timer/LevelTimer.cs)
+  * [WinLoseScreen](https://github.com/TheGingino/AlienDiner/blob/Develop/AlienDinerDash/Assets/Scripts/UI/WinLoseScreen.cs)
 
 Julie Jaasma:
   * [Some beautifull script](https://github.com/erwinhenraat/VoorbeeldExamenRepo/tree/master/src/beautifull)
@@ -51,7 +51,7 @@ Latin professor at Hampden-Sydney College in Virginia, looked up one of the more
 
 ![Animation](https://user-images.githubusercontent.com/1262745/217570184-90dc4701-d60d-4816-80d0-5007fdd3f6be.gif)
 
-### flowchart voor CustomerSO:
+### Flowchart voor CustomerSO:
 ```mermaid
 classDiagram
     class CustomerSO {
@@ -127,7 +127,7 @@ flowchart TD
     style V fill:#9C27B0,color:#fff
 ```
 
-### class diagram voor game entities:
+### Class Diagram voor de Waypoints:
 
 ```mermaid
 classDiagram
