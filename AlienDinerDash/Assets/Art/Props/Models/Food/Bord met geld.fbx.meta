@@ -3,7 +3,12 @@ guid: e59118fed211c6b43837401e7e2bd883
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Bord met geld_
+    second: {fileID: 2100000, guid: 720048e764d92f84fb5ad00035bbbf5a, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
