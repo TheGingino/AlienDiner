@@ -5,7 +5,10 @@ using UnityEngine;
 
 public class DriveThroughCustomer : MonoBehaviour
 {
+    [Header("Customer Settings")] [SerializeField]
     private CustomerSO customerSO;
+    public CustomerSO CustomerSO => customerSO;
+
 
     [Header("Waypoint to leave")]
     private WaypointToLeave _waypointToLeave;
@@ -48,7 +51,8 @@ public class DriveThroughCustomer : MonoBehaviour
         hasBeenServed = true;
 
         Debug.Log("Drive-through order served");
-
+        
+        DriveGetMoney();
         StartCoroutine(LeaveDriveThrough());
     }
 
@@ -78,5 +82,21 @@ public class DriveThroughCustomer : MonoBehaviour
         }
 
         Destroy(gameObject);
+    }
+    
+    private void DriveGetMoney()
+    {
+        int moneyValue = customerSO.customerMoney;
+        Debug.Log(moneyValue + " money value from customerSO.");
+        RewardSystem rewardSystem = FindObjectOfType<RewardSystem>();
+        
+        if (rewardSystem == null)
+        {
+            Debug.LogError("RewardSystem not found in scene!");
+            return;
+        }
+        
+        rewardSystem.AddMoney(moneyValue);
+        rewardSystem.IncrementCustomerServed();
     }
 }

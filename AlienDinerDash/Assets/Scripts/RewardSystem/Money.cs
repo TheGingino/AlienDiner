@@ -11,6 +11,7 @@ public class Money : MonoBehaviour
     private void Start()
     {
         Customer customer = FindObjectOfType<Customer>();
+        DriveThroughCustomer driveThroughCustomer = FindObjectOfType<DriveThroughCustomer>();
         if (customer == null)
         {
             Debug.LogError("No Customer found in scene (FindObjectOfType<Customer>() returned null).");
@@ -19,6 +20,8 @@ public class Money : MonoBehaviour
 
         customerSO = customer.CustomerSO;
         moneyValue = customerSO.customerMoney;
+        
+        customerSO = driveThroughCustomer.CustomerSO;
 
         Debug.Log("Added " + moneyValue + " money!");
     }
