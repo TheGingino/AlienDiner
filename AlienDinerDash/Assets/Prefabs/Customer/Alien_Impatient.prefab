@@ -75,6 +75,37 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!1 &598586818913801536
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8810184673336558143}
+  m_Layer: 9
+  m_Name: FoodPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8810184673336558143
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 598586818913801536}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 1.276, z: 0.42}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 41019528134613658}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1296897270389352622
 GameObject:
   m_ObjectHideFlags: 0
@@ -249,8 +280,8 @@ RectTransform:
   m_GameObject: {fileID: 2532485033870120613}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2.2669, y: 2.2669, z: 2}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 3, y: 3, z: 2.6467862}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 585672773210100060}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -641,6 +672,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: fd14665725a79ba488f28b271a98a37f, type: 3}
       insertIndex: 0
       addedObject: {fileID: 585672773210100060}
+    - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: fd14665725a79ba488f28b271a98a37f, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 8810184673336558143}
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: fd14665725a79ba488f28b271a98a37f, type: 3}
       insertIndex: -1
@@ -718,11 +752,15 @@ MonoBehaviour:
   orderImage: {fileID: 3592874775393164351}
   dishSprites:
   - dishType: 1
-    sprite: {fileID: 21300000, guid: 061f8c70bc785a4448774516c43a51f4, type: 3}
+    sprite: {fileID: 21300000, guid: 02acc10cab14b7840aff7388f0faa1fa, type: 3}
+    foodPrefab: {fileID: 919132149155446097, guid: 8f46158299b8ea94f9d73618afd1642b, type: 3}
   - dishType: 2
-    sprite: {fileID: 10911, guid: 0000000000000000f000000000000000, type: 0}
+    sprite: {fileID: 21300000, guid: d5984852e3a00da4b9f71112b241d057, type: 3}
+    foodPrefab: {fileID: 919132149155446097, guid: e003c6e47a262de4d9c8d97166421184, type: 3}
   - dishType: 3
-    sprite: {fileID: 21300000, guid: b69a46ec0058bfb41b3619f4944e4519, type: 3}
+    sprite: {fileID: 21300000, guid: 8073a0432f96dd9489b14c648db2f49a, type: 3}
+    foodPrefab: {fileID: 919132149155446097, guid: 86f69524c3c53dc4381f5695a275b7c9, type: 3}
+  foodSpawnPoint: {fileID: 8810184673336558143}
   hasFinishedEating:
     m_PersistentCalls:
       m_Calls: []
@@ -814,6 +852,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  _animator: {fileID: 0}
   IsSeated: 0
 --- !u!114 &5900424934335886239
 MonoBehaviour:

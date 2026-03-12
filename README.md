@@ -1,35 +1,41 @@
 # AlienDiner
-Aliens in een Diner
 
-In deze repository vind je de informatie over het examen project.
+### Beschrijving
+De opracht is dat we een Mobile game moeten maken waar 3 keuzes voor gegeven werden. We moeten de gekozen game maken met onze eigen style met bepaalde kriteria en we moeten onze eigen twist brengen aan het spel.
 
-Omschrijf de examenopdracht evt de klant en wat het doel voor de klant is.
-Omschrijf ook beknopt wat het idee van je game is. 
-Een complete en uitgebreide beschrijving komt in het functioneel ontwerp (onderdeel van de [wiki](https://github.com/erwinhenraat/VoorbeeldExamenRepo/wiki))
+Wij kozen de game Diner Dash waar we als een serveerster spelen om klanten te serveren en dan geld te verdienen en blije klanten te hebben. Dus wij kozen ervoor om de ruimte te gebruiken als locatie en thema. Onze twist is dat je een Drive Through hebt die je in de gaten moet houden omdat daar een nieuw soort klant spawnt die ook eten wilt. De kriteria is dat wij 3 klanten soorten hebben, audio voor het spel, visuele feedback en een manier om eten te bereiden.
 
 # Geproduceerde Game Onderdelen
 
-Geef per teammember aan welke game onderdelen je hebt geproduceerd. Doe dit met behulp van omschrijvingen visual sheets en screenshots.
-Maak ook een overzicht van alle onderdelen met een link naar de map waarin deze terug te vinden zijn.
-
-Bijv..
-
 Gino Schaap:
-  * [Customer Types](https://github.com/erwinhenraat/VoorbeeldExamenRepo/tree/master/src/some)
-  * [Customer Spawning](https://github.com/erwinhenraat/VoorbeeldExamenRepo/tree/master/src/mechanic_x)
-  * [Customer Behavior](https://github.com/erwinhenraat/VoorbeeldExamenRepo/tree/master/src/mechanic_y)
-  * [LevelTimer V2] 
+  * [Customer Types](https://github.com/TheGingino/AlienDiner/blob/Develop/AlienDinerDash/Assets/Scripts/Customer/CustomerSO.cs)
+  * [Customer Spawning](https://github.com/TheGingino/AlienDiner/blob/Develop/AlienDinerDash/Assets/Scripts/Customer/CustomerSpawner.cs)
+  * [DriveThrough Customer Spawning](https://github.com/TheGingino/AlienDiner/blob/Develop/AlienDinerDash/Assets/Scripts/Customer/DriveThroughCustomer.cs)
+  * [Customer Behavior](https://github.com/TheGingino/AlienDiner/blob/Develop/AlienDinerDash/Assets/Scripts/Customer/Customer.cs)
+  * [LevelTimer V2](https://github.com/TheGingino/AlienDiner/blob/Develop/AlienDinerDash/Assets/Scripts/Timer/LevelTimer.cs)
+  * [WinLoseScreen](https://github.com/TheGingino/AlienDiner/blob/Develop/AlienDinerDash/Assets/Scripts/UI/WinLoseScreen.cs)
 
 Julie Jaasma:
-  * [Some beautifull script](https://github.com/erwinhenraat/VoorbeeldExamenRepo/tree/master/src/beautifull)
-  * Some other Game object
+  * [Cooking stations](https://github.com/TheGingino/AlienDiner/blob/Develop/AlienDinerDash/Assets/Scripts/Gerechten/InteractionManagers/InteractableObject.cs)
+  * [Player Interactions](https://github.com/TheGingino/AlienDiner/blob/Develop/AlienDinerDash/Assets/Scripts/Gerechten/InteractionManagers/PlayerInteraction.cs)
+  * [Station Clikcer](https://github.com/TheGingino/AlienDiner/blob/Develop/AlienDinerDash/Assets/Scripts/Gerechten/InteractionManagers/StationClickHandler.cs)
+  * [Customer Order](https://github.com/TheGingino/AlienDiner/blob/Develop/AlienDinerDash/Assets/Scripts/Gerechten/OrderingFood.cs)
+     
 
 Nikki van Wijngaarden:
- * Audio
- * 
+ * [PlayerMovement](https://github.com/TheGingino/AlienDiner/blob/Develop/AlienDinerDash/Assets/Scripts/Character/PlayerMovement.cs)
+ * [TapMarker](https://github.com/TheGingino/AlienDiner/blob/Develop/AlienDinerDash/Assets/Scripts/Character/TapMarker.cs)
+ * [tapMarkerPool](https://github.com/TheGingino/AlienDiner/blob/Develop/AlienDinerDash/Assets/Scripts/Character/TapMarkerPool.cs)
+ * [CustomerDragManager](https://github.com/TheGingino/AlienDiner/blob/Develop/AlienDinerDash/Assets/Scripts/Customer/CustomerDragManager.cs)
+ * [CustomerSeating](https://github.com/TheGingino/AlienDiner/edit/Develop/README.md)
+ * [CustomerVisualFeedback](https://github.com/TheGingino/AlienDiner/blob/Develop/AlienDinerDash/Assets/Scripts/Customer/CustomerVisualFeedback.cs)
+ * [Table](https://github.com/TheGingino/AlienDiner/blob/Develop/AlienDinerDash/Assets/Scripts/Customer/Table.cs)
+ * [SeatHoverManager](https://github.com/TheGingino/AlienDiner/blob/Develop/AlienDinerDash/Assets/Scripts/Customer/SeatHoverManager.cs)
+ * [SeatHighLight](https://github.com/TheGingino/AlienDiner/blob/Develop/AlienDinerDash/Assets/Scripts/Customer/SeatHighLight.cs)
+
 Kiana Hiemstra:
-  * Water Shader
-  * [Some textured and rigged model](https://github.com/erwinhenraat/VoorbeeldExamenRepo/tree/master/assets/monsters)
+  * Audio
+  * [Timer V1](https://github.com/TheGingino/AlienDiner/blob/Develop/AlienDinerDash/Assets/Scripts/Timer/LevelTimer.cs)
 
 Bo Bakker:
  * Character Model
@@ -45,13 +51,14 @@ Robin van Wandelen:
 Min van der Veen:
  * Keuken Instrumenten
 
-## Customers and Customer SO
+## Customers and Customer SO by Gino Schaap
 
-Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line.
+de CustomerSO is waar de soorten klanten worden in staan en er staat in hoeveel wachttijd hij heeft en hoeveel geld hij geeft.
+In de Customer script staat zijn gedrag in. Wanneer hij kiest om weg te lopen of dat hij eten wilt en uiteindelijk weg gaat en geld achterlaat.
 
-![Animation](https://user-images.githubusercontent.com/1262745/217570184-90dc4701-d60d-4816-80d0-5007fdd3f6be.gif)
+![Animation]("gif van de klanten")
 
-### flowchart voor CustomerSO:
+### Flowchart voor CustomerSO:
 ```mermaid
 classDiagram
     class CustomerSO {
@@ -75,7 +82,7 @@ classDiagram
 
 ```
 
-### Flowchart Customer
+### Flowchart Customer by Gino Schaap
 ```mermaid
 flowchart TD
     A([Customer Spawned]) --> B[Start]
@@ -126,8 +133,10 @@ flowchart TD
     style P fill:#FF9800,color:#fff
     style V fill:#9C27B0,color:#fff
 ```
+## Waypoints by Gino Schaap
+De waypoints zijn er voor de klanten om het gebouw te kunnen verlaten. de eerste is voor een van de klanten soorten om het gebouw vervroegd te verlaten en de inside is voor de normale klant als ze klaar zijn met eten en de drive through voor de drivethrough klant om weg te gaan
 
-### class diagram voor game entities:
+### Class Diagram voor de Waypoints:
 
 ```mermaid
 classDiagram
@@ -138,8 +147,13 @@ classDiagram
     }
 
 ```
+## Reward System by Gino Schaap
+Dit is de manier hoe het hoeveelheid geld dat je hebt gemaakt en de hoeveelheid customers op je scherm staat die zich aanpast als er wat bij komt
 
-### Class Diagram voor Reward System
+## Timer V2 by Gino Schaap
+De timer is er als een tijds limiet voor de speler zodat ze lichtelijk gehaast de klankten moeten serven en geld moeten verzamelen voordat de tijd voorbij is
+
+### Class Diagram voor Timer V2 by Gino Schaap
 ```mermaid
 classDiagram
     class RewardSystem {
@@ -177,24 +191,255 @@ classDiagram
     RewardSystem ..> Customer : tracks served
 ```
 
+## Win Lose Screen by Gino Schaap
+Dit scherm komt naar boven als de timer om is en hij laat het verdiende geld zien, of je genoeg klanten hebt geserveerd en er staat of je hebt gewonnen of hebt verloren.
 
-## Some other Mechanic X by Student X
+###
+```mermaid
+---
+config:
+  layout: elk
+---
+flowchart TD
+    A([CheckWinLoseCondition called]) --> B[Find RewardSystem]
+    B --> C{rewardSystem != null?}
+    C -->|No| D([Do nothing])
+    C -->|Yes| E{customerServed >=\ncustomersNeededToWin?}
 
-Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.
+    E -->|Yes| F[ShowWinScreen]
+    E -->|No| G[ShowLoseScreen]
 
-![example](https://user-images.githubusercontent.com/1262745/189135129-34d15823-0311-46b5-a041-f0bbfede9e78.png)
+    F --> H[UpdateWinScreenStats\nTime.timeScale = 0]
+    G --> I[UpdateWinScreenStats\nTime.timeScale = 0]
 
-## Some other Mechanic Y by Student X
+    H & I --> J[Find RewardSystem again]
+    J --> K{rewardSystem != null?}
+    K -->|No| L[Skip stats update]
+    K -->|Yes| M{customerServed >=\ncustomersNeededToWin?}
 
-Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.
+    M -->|Yes| N[StatusText = YOU WIN!]
+    M -->|No| O[StatusText = YOU LOSE!]
 
-![example](https://user-images.githubusercontent.com/1262745/189135129-34d15823-0311-46b5-a041-f0bbfede9e78.png)
+    N & O --> P[Update MoneyText\nUpdate CustomerText]
+    L & P --> Q[winLoseScreen.SetActive true]
+
+    R([MainMenu called]) --> S[Time.timeScale = 1\nLoad StartScreen]
+    T([ReloadLevel called]) --> U[Time.timeScale = 1\nLoad Main]
+
+    style A fill:#2196F3,color:#fff
+    style D fill:#9E9E9E,color:#fff
+    style N fill:#4CAF50,color:#fff
+    style O fill:#f44336,color:#fff
+    style R fill:#9C27B0,color:#fff
+    style T fill:#9C27B0,color:#fff
+    style S fill:#9C27B0,color:#fff
+    style U fill:#9C27B0,color:#fff
+```
+
+
+## PlayerMovement by Nikki van Wijngaarden
+
+Een NavMesh based movementsysteem dat spelers overal op de grond laat klicken om daarnatoe te lopen, en ook kort laat zien waar je hebt geklickt.
+
+#gifje?
+
+## Flowchart — PlayerMovement
+
+```mermaid
+flowchart TD
+    A([Speler tikt / klikt]) --> B[ScreenPointToRay]
+    B --> C{Raycast raakt\nInteractableObject?}
+    C -- Ja --> Z([Negeer invoer])
+    C -- Nee --> D{Raycast raakt\nGround layer?}
+    D -- Nee --> Z
+    D -- Ja --> E{Geldig NavMesh\npunt gevonden?}
+    E -- Nee --> Z
+    E -- Ja --> F[agent.SetDestination]
+    F --> G[TapMarker spawnen\nop bestemming]
+    G --> H[TapMarker animeert\nen keert terug naar pool]
+    F --> I[Agent loopt naar bestemming]
+    I --> J{Beweging\nvia script?}
+    J -- Nee --> K{velocity\ngroter dan 0.01?}
+    K -- Ja --> L[Animator Walk = true]
+    K -- Nee --> M[Animator Walk = false]
+    J -- Ja --> N[Wacht op aankomst]
+    N --> O[Warp naar exacte positie\nisStopped = true]
+    O --> P{Aanroeper}
+    P -- MoveToInteraction --> Q[StartInteraction]
+    P -- MoveToTable --> R[TryServeCustomersAtTable]
+```
+
+---
+
+## classDiagram - PlayerMovement
+
+```mermaid
+classDiagram
+    class PlayerMovement {
+        -NavMeshAgent _agent
+        -Camera _camera
+        -LayerMask groundLayer
+        -TapMarkerPool _tapMarkerPool
+        -Animator _animator
+        -MoveToPosision(screenPosition)
+        -MoveToTarget(target, OnArrive)
+        -CheckArrival(target, OnArrive)
+        +LockPlayerMovement(enabled)
+        +MoveToInteraction(station)
+        +MoveToTable(servepoint, tableTransform)
+    }
+
+    class TapMarkerPool {
+        -GameObject tapMarkerPrefab
+        -int poolSize
+        -Queue~GameObject~ _pool
+        +GetMarker() GameObject
+    }
+
+    class TapMarker {
+        -float lifetime
+        -AnimationCurve scaleCurve
+        -float timer
+    }
+
+    class InteractableObject {
+        +Transform InteractionWaypoint
+    }
+
+    class PlayerInteraction {
+        +StartInteraction(station)
+        +TryServeCustomersAtTable(tableTransform)
+    }
+
+    PlayerMovement --> TapMarkerPool : gebruikt
+    PlayerMovement --> InteractableObject : raycasts en negeert
+    PlayerMovement --> PlayerInteraction : triggert via callback
+    TapMarkerPool --> TapMarker : beheert pool van
+```
+
+## CustomerSeating by Nikki van Wijngaarden
+
+Een drag-and-drop systeem waarmee customers kunt op pakken en neer zetten bij een tavel, waarna ze gaan zitten op de stoel dichts bij waar je ze neer hebt gezet. Met visual feedback op de customer bij het oppakken en bij het hoveren boven een stoel.
+
+#gifje?
+
+## Flowchart - CustomerSeating
+
+```mermaid
+flowchart TD
+    A([Speler klikt / tikt]) --> B[Raycast op CustomerLayer]
+    B --> C{Customer geraakt?}
+    C -- Nee --> Z([Negeer invoer])
+    C -- Ja --> D{CanBeDragged?}
+    D -- Nee --> Z
+    D -- Ja --> E[_draggedCustomer instellen\nOnDragStart schaalanimatie]
+
+    E --> F[Speler beweegt vinger / muis]
+    F --> G[Raycast op GroundLayer]
+    G --> H[SetDraggedPosition\nmet hoogte offset]
+    H --> I[SeatHoverManager.UpdateHover]
+    I --> J{Vrije stoel geraakt?}
+    J -- Ja --> K[SeatHighLight.Show]
+    J -- Nee --> L[SeatHighLight.Hide]
+    H --> F
+
+    E --> M([Speler laat los])
+    M --> N[Raycast op TableLayer]
+    N --> O{Tafel geraakt?}
+    O -- Nee --> P[ReturnToOrigin]
+    O -- Ja --> Q{HasFreeSeat?}
+    Q -- Nee --> P
+    Q -- Ja --> R[TrySeatCustomer\ndichtstbijzijnde vrije stoel]
+    R --> S{Stoel gevonden?}
+    S -- Nee --> P
+    S -- Ja --> T[occupied = true\nSnapToSeat]
+    T --> U[Draai naar tafel\ncanBeDragged = false\nhasBeenSeated.Invoke]
+
+    P --> V[OnDragEnd animatie\nClearHighLight\n_draggedCustomer = null]
+    U --> V
+```
+
+---
+
+## Class Diagram
+
+```mermaid
+classDiagram
+    class CustomerDragManager {
+        -SeatHoverManager _seatHoverManager
+        -LayerMask customerLayer
+        -LayerMask tableLayer
+        -LayerMask groundLayer
+        -Camera _camera
+        -CustomerSeating _draggedCustomer
+        -StartDrag(screenpos)
+        -Drag(screenpos)
+        -EndDrag(screenpos)
+    }
+
+    class CustomerSeating {
+        -Transform _currentSeat
+        -Table _currentTable
+        -Vector3 _originPosition
+        -bool _canBeDragged
+        +bool IsSeated
+        +UnityEvent hasBeenSeated
+        +CanBeDragged() bool
+        +SetDraggedPosition(pos)
+        +SnapToSeat(seat, table)
+        +ReturnToOrigin()
+        +LeaveSeat()
+    }
+
+    class CustomerVisualFeedback {
+        -float dragScaleMultiplier
+        -float scaleSpeed
+        -Vector3 _OrginalScale
+        +OnDragStart()
+        +OnDragEnd()
+    }
+
+    class Table {
+        -List~Transform~ seats
+        -bool[] _occupied
+        +HasFreeSeat() bool
+        +TrySeatCustomer(customer, dropPosition) bool
+        +IsSeatOccupied(seat) bool
+        +FreeSeat(seat)
+    }
+
+    class SeatHoverManager {
+        -LayerMask seatLayer
+        -SeatHighLight _currentHighLight
+        +UpdateHover(screenPosition)
+        +ClearHighLight()
+    }
+
+    class SeatHighLight {
+        -GameObject highLightVisual
+        -Table _table
+        -Transform _seat
+        +CanHighLight() bool
+        +Show()
+        +Hide()
+    }
+
+    CustomerDragManager --> CustomerSeating : sleept
+    CustomerDragManager --> SeatHoverManager : gebruikt
+    CustomerDragManager --> Table : raycasts
+    CustomerSeating --> Table : referentie
+    CustomerSeating --> CustomerVisualFeedback : GetComponent
+    SeatHoverManager --> SeatHighLight : beheert
+    SeatHighLight --> Table : IsSeatOccupied
+    Table --> CustomerSeating : SnapToSeat
+```
+
 
 ## Water Shader by Student Y
 
 Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.
 
-![example](https://user-images.githubusercontent.com/1262745/189135129-34d15823-0311-46b5-a041-f0bbfede9e78.png)
+![](https://user-images.githubusercontent.com/1262745/189135129-34d15823-0311-46b5-a041-f0bbfede9e78.png)
 
 ## Some textured and rigged model by Student Y
 
