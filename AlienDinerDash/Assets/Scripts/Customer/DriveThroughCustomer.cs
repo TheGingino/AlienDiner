@@ -18,6 +18,8 @@ public class DriveThroughCustomer : MonoBehaviour
 
     [SerializeField] private bool hasBeenServed;
 
+    [SerializeField] private AudioSource flyingSFX;
+
     private DishType _desiredDish;
 
     private void Awake()
@@ -50,6 +52,8 @@ public class DriveThroughCustomer : MonoBehaviour
 
         hasBeenServed = true;
 
+        flyingSFX.Play();
+
         Debug.Log("Drive-through order served");
         
         DriveGetMoney();
@@ -61,6 +65,9 @@ public class DriveThroughCustomer : MonoBehaviour
     {
         while (_nextWaypointIndex < _waypointToLeave.driveThroughWaypointToLeave.Length)
         {
+
+            
+
             Vector3 targetPosition =
                 _waypointToLeave.driveThroughWaypointToLeave[_nextWaypointIndex].transform.position;
 

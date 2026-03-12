@@ -15,6 +15,8 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private TapMarkerPool _tapMarkerPool;
 
     [SerializeField] private Animator _animator;
+
+    [SerializeField] private AudioSource walkingSFX;
     
 
     private void Start()
@@ -28,6 +30,26 @@ public class PlayerMovement : MonoBehaviour
     {   
         bool isMoving = _agent.velocity.sqrMagnitude > 0.01f;
         _animator.SetBool("Walk", isMoving);
+
+        bool isMoving = _agent.velocity.sqrMagnitude > 0.01f;
+        _animator.SetBool("Walk", isMoving);
+
+        if (isMoving)
+        {
+            if (!walkingSFX.isPlaying)
+            {
+                walkingSFX.loop = true;
+                walkingSFX.Play();
+            }
+        }
+        else
+        {
+            if (walkingSFX.isPlaying)
+            {
+                walkingSFX.Stop();
+            }
+        }
+
         if (Input.touchCount > 0)
         {
             Touch touch = Input.GetTouch(0);
@@ -76,6 +98,8 @@ public class PlayerMovement : MonoBehaviour
     void MoveToTarget(Transform target, Action OnArrive)
     {
         if (_agent == null) return;
+
+
 
         _agent.isStopped = false; 
         StopAllCoroutines();   

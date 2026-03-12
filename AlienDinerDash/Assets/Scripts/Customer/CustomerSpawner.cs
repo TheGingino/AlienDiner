@@ -10,9 +10,11 @@ public class CustomerSpawner : MonoBehaviour
     
     [SerializeField] private Transform spawnPoint;
     [SerializeField] private Transform driveThroughSpawnPoint;
+    [SerializeField] private AudioSource _sfxSource;
     
     private void Start()
     {
+        _sfxSource = GetComponent<AudioSource>();
         if (customerSO == null || customerSO.Length == 0)
         {
             customerSO = GetComponentsInChildren<Customer>();
@@ -32,6 +34,7 @@ public class CustomerSpawner : MonoBehaviour
 
     private void SpawnCustomer()
     {
+        _sfxSource.Play();
         if (customerSO == null || customerSO.Length == 0) return;
         
         var index = Random.Range(0, customerSO.Length);

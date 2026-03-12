@@ -10,6 +10,9 @@ public class WinLoseScreen : MonoBehaviour
     [SerializeField] private GameObject levelUI;
     [SerializeField] private int customersNeededToWin = 5; // Configurable win condition
 
+    [SerializeField] private AudioClip[] winLoseSFX;
+    [SerializeField] private AudioSource sfxSource;
+
     public void ShowWinScreen()
     {
         UpdateWinScreenStats();
@@ -24,11 +27,16 @@ public class WinLoseScreen : MonoBehaviour
         {
             if (rewardSystem.customerServed >= customersNeededToWin)
             {
+                sfxSource.clip = winLoseSFX[0];
                 ShowWinScreen();
+                sfxSource.Play();
+
             }
             else
             {
-                ShowLoseScreen();
+                sfxSource.clip = winLoseSFX[1];
+                ShowLoseScreen(); 
+                sfxSource.Play();
             }
         }
     }
