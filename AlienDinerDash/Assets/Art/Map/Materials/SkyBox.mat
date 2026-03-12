@@ -94,7 +94,7 @@ Material:
     - _AtmosphereSize: 1.05
     - _AtmosphereThickness: 2.1
     - _BumpScale: 1
-    - _ColorBanding: 10.5
+    - _ColorBanding: 14.7
     - _ColorLevels: 8
     - _Cutoff: 0.5
     - _DetailNormalMapScale: 1
@@ -112,22 +112,22 @@ Material:
     - _Metallic: 0
     - _MirrorOnBack: 0
     - _Mode: 0
-    - _NebulaIntensity: 1.03
-    - _NebulaScale: 1.15
+    - _NebulaIntensity: 0.73
+    - _NebulaScale: 1.8
     - _OcclusionStrength: 1
     - _Parallax: 0.02
     - _Pixelation: 0.2
-    - _PixelationAmount: 209
+    - _PixelationAmount: 157
     - _RimIntensity: 5
     - _RimPower: 0.78
     - _Rotation: 0
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
     - _SrcBlend: 1
-    - _StarDensity: 51
+    - _StarDensity: 87
     - _StarSize: 5
-    - _StarTwinkleAmount: 0.952
-    - _StarTwinkleSpeed: 5.59
+    - _StarTwinkleAmount: 1
+    - _StarTwinkleSpeed: 7.6
     - _SunDisk: 2
     - _SunSize: 0.387
     - _SunSizeConvergence: 1
