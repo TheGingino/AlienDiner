@@ -115,6 +115,10 @@ public class Customer : MonoBehaviour
     
     private IEnumerator CustomerBehavior(float waitTime)
     {
+        sfxSource.clip = _customerSFX[1];
+
+        sfxSource.Play();
+
         while (waitTime > 0)
         {
             DecreaseSliderValue();
@@ -134,6 +138,12 @@ public class Customer : MonoBehaviour
             if (customerSO.customerType == CustomerType.ANNOYING)
             {
                 Debug.Log("Customer got tired of waiting and left!");
+
+                sfxSource.clip = _customerSFX[2];
+
+                sfxSource.Play();
+
+
                 currentState = CustomerStates.LEAVING;
                 customerWaypoints = _waypointToLeave.waypointToLeave;
                 hasLeftAngry.Invoke();
@@ -178,6 +188,7 @@ public class Customer : MonoBehaviour
     private IEnumerator MoveToExit()
     {
         _animator.SetBool("Eat", false);
+
         sfxSource.clip = _customerSFX[0];
 
         sfxSource.loop = true;
@@ -207,10 +218,12 @@ public class Customer : MonoBehaviour
     
     IEnumerator EatThenLeave()
     {
-
-        sfxSource.clip = _customerSFX[3];
+        PlayEatingSFX();
 
         yield return new WaitForSeconds(5f);
+
+        sfxSource.Stop();
+
         if (_spawnedFood != null)
             Destroy(_spawnedFood);
         currentState = CustomerStates.LEAVING;
@@ -286,5 +299,26 @@ public class Customer : MonoBehaviour
         
         rewardSystem.AddMoney(moneyValue);
         rewardSystem.IncrementCustomerServed();
+    }
+
+    private void PlayEatingSFX()
+    {
+        switch (desiredDish)
+        {
+            case DishType.Fries:
+                sfxSource.clip = _customerSFX[3];
+                break;
+
+            case DishType.Burger:
+                sfxSource.clip = _customerSFX[3];
+                break;
+
+            case DishType.Milkshake:
+                sfxSource.clip = _customerSFX[4];
+                break;
+        }
+
+        sfxSource.loop = true;
+        sfxSource.Play();
     }
 }
