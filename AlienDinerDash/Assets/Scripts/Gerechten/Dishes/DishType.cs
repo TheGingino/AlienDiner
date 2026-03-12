@@ -5,7 +5,5 @@ public enum DishType
     Burger,
     Milkshake,
 
-    PackedFries,
-    PackedBurger,
-    PackedMilkshake
+    PackedFood
 }

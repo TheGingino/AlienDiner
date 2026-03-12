@@ -62,7 +62,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: df1a6af9539c24944aed8a9774ee2e4f, type: 2}
+  - {fileID: 2100000, guid: c7cf2e2ed08e7a141bffb43aa4cee33e, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -99,7 +99,25 @@ MonoBehaviour:
   lifetime: 1
   scaleCurve:
     serializedVersion: 2
-    m_Curve: []
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0.7539673
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 0.9901608
+      value: -0.0012233257
+      inSlope: -1.6468111
+      outSlope: -1.6468111
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.073561735
+      outWeight: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4

@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class CustomerSeating : MonoBehaviour
 {
@@ -12,6 +13,9 @@ public class CustomerSeating : MonoBehaviour
     private Quaternion _originRotation;
 
     private bool _canBeDragged = true;
+    
+    [SerializeField] private UnityEvent hasBeenSeated;
+    public bool IsSeated;
 
     private void Start()
     {
@@ -42,6 +46,7 @@ public class CustomerSeating : MonoBehaviour
     }
     public void SnapToSeat(Transform seat, Table table)
     {
+        IsSeated = true;
         _currentSeat = seat;
         _currentTable = table;
 
@@ -49,6 +54,7 @@ public class CustomerSeating : MonoBehaviour
         transform.rotation = seat.rotation;
 
         _canBeDragged = false;
+        hasBeenSeated.Invoke();
     }
 
     public void ReturnToOrigin()
@@ -61,6 +67,7 @@ public class CustomerSeating : MonoBehaviour
     {
         if (_currentTable != null && _currentSeat != null)
         {
+            IsSeated = false;
             _currentTable.FreeSeat(_currentSeat); 
            
             _currentSeat = null;
