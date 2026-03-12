@@ -463,29 +463,11 @@ Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots 
 
 ![](https://user-images.githubusercontent.com/1262745/189135129-34d15823-0311-46b5-a041-f0bbfede9e78.png)
 
-## Some textured and rigged model by Student Y
-
-Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.
-
-![example](https://user-images.githubusercontent.com/1262745/189135129-34d15823-0311-46b5-a041-f0bbfede9e78.png)
-
-## Some beautifull script by Student Z
-
-Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.
-
-![example](https://user-images.githubusercontent.com/1262745/189135129-34d15823-0311-46b5-a041-f0bbfede9e78.png)
-
-## Some other Game object by Student Z
-
-Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.
-
-![example](https://user-images.githubusercontent.com/1262745/189135129-34d15823-0311-46b5-a041-f0bbfede9e78.png)
-
 ## Blockout by Min
 
 Robin had een paar schetsen gemaakt van layouts van een diner. De gekozen layout daarvan heb ik snel een blockout van gemaakt en goed opgelet op scale. Ik heb me goed aan de schets gehouden.
 
-![example](https://github.com/TheGingino/AlienDiner/blob/a5e0d8ca64fd295598d2a6987804b9de64ff244c/GitVisuals/Min/Blockout.png)
+<img width="650" height="324" alt="Blockout" src="https://github.com/user-attachments/assets/7b919c64-7b48-4e4a-9d79-c0b22a22d2ec" />
 
 ## Keuken Instrumenten by Min
 In het begin had ik Robin de keuze gegeven tussen de diner en de keuken kant. Het maakte mij niet uit en Robin koos voor de diner kant dus ik dee de keuken kant. Dat houd in: Koelkast, fornuis, frituur, milkshame machine, werkbank 1 en 2, drive through packing station, bar vloer, bar, barstoel. We moeten alles aan een 1950 retero thema houden.
@@ -493,89 +475,89 @@ In het begin had ik Robin de keuze gegeven tussen de diner en de keuken kant. He
 ### Koelkast
 Ik begon met het koelkast model. Mid priority voor de keuken, heeft geen interactie met de speler of customer. 
 
-![example](https://github.com/TheGingino/AlienDiner/blob/fddb86c7bcb46472bb6f68d69645d3fe3b3a2ee1/GitVisuals/Min/Koelkast.png)
+<img width="650" height="324" alt="Koelkast" src="https://github.com/user-attachments/assets/a32ebbcf-867d-4e64-9666-9b920c9bd6ee" />
 
 ### Fornuis
 Na de koelkast ben ik begonnen met de high priority models. Je kan er mee interacten als speler want daar kook je de burger. 
 
-![example](https://github.com/TheGingino/AlienDiner/blob/fddb86c7bcb46472bb6f68d69645d3fe3b3a2ee1/GitVisuals/Min/Fornuis.png)
+<img width="650" height="324" alt="Fornuis" src="https://github.com/user-attachments/assets/19471a64-cf1f-4fab-b93f-9dc185753bd5" />
 
 ### Frituur
 Met dit model kan de speler interacten want daar maak je de frietjes.
 
-![example](https://github.com/TheGingino/AlienDiner/blob/fddb86c7bcb46472bb6f68d69645d3fe3b3a2ee1/GitVisuals/Min/Frituur.png)
+<img width="650" height="324" alt="Frituur" src="https://github.com/user-attachments/assets/2068b2b6-f321-4ad9-8de5-83f38921e49e" />
 
 ### Milkshake Machine
 Met dit model kan de speler interacten want daar maak je de milkshake.
 
-![example](https://github.com/TheGingino/AlienDiner/blob/fddb86c7bcb46472bb6f68d69645d3fe3b3a2ee1/GitVisuals/Min/Milkshake%20machine.png)
-  
+<img width="650" height="324" alt="Milkshake machine" src="https://github.com/user-attachments/assets/23408433-2b78-4a9b-9b2b-0c7d3eb085a1" />
+
 ### Werkbank 1 en 2
 Naast de interactable modellen heb ik meer surfaces nodig. Op werkbank 1 staat de milkshake machine en op werkbank 2 staat de drive through packing station.
 
-![example](https://github.com/TheGingino/AlienDiner/blob/fddb86c7bcb46472bb6f68d69645d3fe3b3a2ee1/GitVisuals/Min/Werkbank%201.png)
-![example](https://github.com/TheGingino/AlienDiner/blob/fddb86c7bcb46472bb6f68d69645d3fe3b3a2ee1/GitVisuals/Min/Werkbank%202.png)
-  
+<img width="650" height="324" alt="Werkbank 1" src="https://github.com/user-attachments/assets/656d4a15-57fa-41c7-a168-e313674f3d75" />
+<img width="650" height="324" alt="Werkbank 2" src="https://github.com/user-attachments/assets/3907cb52-f4f5-42ce-93ec-08cecfcf50ca" />
+
 ### Drive through packing station
 Wij hadden als twist een drive through. Dus er moest ook een packing station waar de speler het eten moet inpakken. Met dit model kan de speler interacten want daar pak je het eten in. 
 
-![example](https://github.com/TheGingino/AlienDiner/blob/d0eb05e7e86c9f88571b5380fa4c0d4a45965d7b/GitVisuals/Min/Packing%20station.png)
- 
+<img width="650" height="324" alt="Packing station" src="https://github.com/user-attachments/assets/bfee8eee-a798-4d98-be76-a58e31c5dfe2" />
+
 ### Bar vloer, Bar en de Barstoel
 Je hebt een klein opstapje in de vloer om de area van de keuken en diner area uit elkaar te houden. Daarnaast moest de bar en de barstoelen. De customer kan interacten om daar te zitten en eten.
 
-![example](https://github.com/TheGingino/AlienDiner/blob/d0eb05e7e86c9f88571b5380fa4c0d4a45965d7b/GitVisuals/Min/Bar%2C%20vloer%20en%20barstoel.png)
- 
+<img width="650" height="324" alt="Bar, vloer en barstoel" src="https://github.com/user-attachments/assets/3791b87d-987c-4145-b8e0-e390cea446ac" />
+
 ## Props by Min
 Daarnaas had ik nog 1,5 weken over nadat ik de blockout en keuken allemaal af had had ik ook een paar props gedaan voor de diner kant. 
 
 ### Burger
 We hebben 3 gerechten. Ik heb de burger gekozen. Het is een hersen burger met een plakje kaas.
 
-![example](https://github.com/TheGingino/AlienDiner/blob/9e0bac80c999ad32988393c762097d10ef630a75/GitVisuals/Min/Burger.png)
-  
+<img width="650" height="324" alt="Burger" src="https://github.com/user-attachments/assets/46abb109-ac86-4104-ae0d-eae162677469" />
+
 ### Dirty dishes + geld
 Als de customer klaar is met eten dan lopen ze weg. Ze laten dan wel een vies bord met geld achter.
 
-![example](https://github.com/TheGingino/AlienDiner/blob/9e0bac80c999ad32988393c762097d10ef630a75/GitVisuals/Min/Bord%20met%20geld.png)
-  
+<img width="750" height="324" alt="Bord met geld" src="https://github.com/user-attachments/assets/35999666-76d1-49a5-bd18-10021f2faee1" />
+
 ### Prullenbak 
 Als je eten heb gemaakt wat verkeerd is/ niet het goede gerecht dan kan je het hier weg gooien. Met dit model kan de speler interacten want je kan gerechten weggooien.
 
-![example](https://github.com/TheGingino/AlienDiner/blob/9e0bac80c999ad32988393c762097d10ef630a75/GitVisuals/Min/Prullenbak.png)
-  
+<img width="650" height="324" alt="Prullenbak" src="https://github.com/user-attachments/assets/2001b8d9-1c23-40f5-88b9-bb03f9544f36" />
+
 ### Juke box
 Decoratief model waar de background music uit komt.
 
-![example](https://github.com/TheGingino/AlienDiner/blob/0c82d3196dc05c579197a6aec28207bea2b675e7/GitVisuals/Min/Juke%20box.png)
-  
+<img width="650" height="324" alt="Juke box" src="https://github.com/user-attachments/assets/0ba67e87-cb3b-45e7-a2a3-7bb291b9a94e" />
+
 ### Deur bell
 Decoratief model wat ringt als er een customer binnen komt.
 
-![example](https://github.com/TheGingino/AlienDiner/blob/0c82d3196dc05c579197a6aec28207bea2b675e7/GitVisuals/Min/Deur%20bel.png)
-  
+<img width="650" height="324" alt="Deur bel" src="https://github.com/user-attachments/assets/a9870bc4-b6da-48d1-9de3-4ebd15c48388" />
+
 ## Outside Environmnet by Min
 Ik was snel klaar met de props dus op het laatst wist ik even niet meer wat ik zou doen. Niet voor lang want Bo had me verteld dat er ook nog een outside environment worden zouden gemodeld. Dus ik heb zelf designs gemaakt wat een beetje Alien environment is.
 
 ### Boom
 Decoratief model. Ik had een paar bloem en planten modellen gemaakt. Ik heb dan een boomstam gemaakt en alles een beetje geprobeerd welke compositie het best past. 
 
-![example](https://github.com/TheGingino/AlienDiner/blob/0c82d3196dc05c579197a6aec28207bea2b675e7/GitVisuals/Min/Boom.png)
-  
+<img width="650" height="324" alt="Boom" src="https://github.com/user-attachments/assets/8c8ac493-212b-41ca-9c03-3f928fcaf398" />
+
 ### Struik
 Decoratief model. Ik had een paar bloem en planten modellen gemaakt. Ik heb dan een boomstam gemaakt en alles een beetje geprobeerd welke compositie het best past.   
 
-![example](https://github.com/TheGingino/AlienDiner/blob/ccc58ca2afd7dff9a7d329f72f6828b0bf510e51/GitVisuals/Min/Struik.png)
+<img width="650" height="324" alt="Struik" src="https://github.com/user-attachments/assets/d2c1d13f-1239-450b-b5a0-4d9987916213" />
 
 ### Stenen
 Decoratief model. Ik heb beide ronde en vierkante stenen geprobeerd. Ik heb gekozen voor de vierkante stenen.
 
-![example](https://github.com/TheGingino/AlienDiner/blob/3e83031fc376445640b6d47ce448918e3aa78631/GitVisuals/Min/Stenen.png)
-  
+<img width="850" height="324" alt="Stenen" src="https://github.com/user-attachments/assets/726ca362-c4db-47fd-8bd5-d4b756ef96a7" />
+
 ### Eiland
 Heel erg simpel model als de grond voor de scene.
 
-![example](https://github.com/TheGingino/AlienDiner/blob/d2283807121b68cd6e2676a4860a23806a8e12bb/GitVisuals/Min/Eiland.png)
+<img width="650" height="324" alt="Eiland" src="https://github.com/user-attachments/assets/5a5b98b5-55e6-4548-b9ec-1d2949f25a2d" />
 
 
 ## Character models + temporary textures by Bo
