@@ -7,11 +7,6 @@ Wij kozen de game Diner Dash waar we als een serveerster spelen om klanten te se
 
 # Geproduceerde Game Onderdelen
 
-Geef per teammember aan welke game onderdelen je hebt geproduceerd. Doe dit met behulp van omschrijvingen visual sheets en screenshots.
-Maak ook een overzicht van alle onderdelen met een link naar de map waarin deze terug te vinden zijn.
-
-Bijv..
-
 Gino Schaap:
   * [Customer Types](https://github.com/TheGingino/AlienDiner/blob/Develop/AlienDinerDash/Assets/Scripts/Customer/CustomerSO.cs)
   * [Customer Spawning](https://github.com/TheGingino/AlienDiner/blob/Develop/AlienDinerDash/Assets/Scripts/Customer/CustomerSpawner.cs)
@@ -28,8 +23,8 @@ Nikki van Wijngaarden:
  * Audio
  * 
 Kiana Hiemstra:
-  * Water Shader
-  * [Some textured and rigged model](https://github.com/erwinhenraat/VoorbeeldExamenRepo/tree/master/assets/monsters)
+  * Audio
+  * [Timer V1](https://github.com/TheGingino/AlienDiner/blob/Develop/AlienDinerDash/Assets/Scripts/Timer/LevelTimer.cs)
 
 Bo Bakker:
  * Character Model
@@ -47,9 +42,10 @@ Min van der Veen:
 
 ## Customers and Customer SO
 
-Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line.
+de CustomerSO is waar de soorten klanten worden in staan en er staat in hoeveel wachttijd hij heeft en hoeveel geld hij geeft.
+In de Customer script staat zijn gedrag in. Wanneer hij kiest om weg te lopen of dat hij eten wilt en uiteindelijk weg gaat en geld achterlaat.
 
-![Animation](https://user-images.githubusercontent.com/1262745/217570184-90dc4701-d60d-4816-80d0-5007fdd3f6be.gif)
+![Animation]("gif van de klanten")
 
 ### Flowchart voor CustomerSO:
 ```mermaid
@@ -126,6 +122,8 @@ flowchart TD
     style P fill:#FF9800,color:#fff
     style V fill:#9C27B0,color:#fff
 ```
+## Waypoints
+De waypoints zijn er voor de klanten om het gebouw te kunnen verlaten. de eerste is voor een van de klanten soorten om het gebouw vervroegd te verlaten en de inside is voor de normale klant als ze klaar zijn met eten en de drive through voor de drivethrough klant om weg te gaan
 
 ### Class Diagram voor de Waypoints:
 
@@ -138,6 +136,8 @@ classDiagram
     }
 
 ```
+## Reward System
+Dit is de manier hoe het hoeveelheid geld dat je hebt gemaakt en de hoeveelheid customers op je scherm staat die zich aanpast als er wat bij komt
 
 ### Class Diagram voor Reward System
 ```mermaid
@@ -175,6 +175,51 @@ classDiagram
 
     Timer --> Customer : listens to HasLeftAngry
     RewardSystem ..> Customer : tracks served
+```
+
+## Win Lose Screen
+Dit scherm komt naar boven als de timer om is en hij laat het verdiende geld zien, of je genoeg klanten hebt geserveerd en er staat of je hebt gewonnen of hebt verloren.
+
+###
+```mermaid
+---
+config:
+  layout: elk
+---
+flowchart TD
+    A([CheckWinLoseCondition called]) --> B[Find RewardSystem]
+    B --> C{rewardSystem != null?}
+    C -->|No| D([Do nothing])
+    C -->|Yes| E{customerServed >=\ncustomersNeededToWin?}
+
+    E -->|Yes| F[ShowWinScreen]
+    E -->|No| G[ShowLoseScreen]
+
+    F --> H[UpdateWinScreenStats\nTime.timeScale = 0]
+    G --> I[UpdateWinScreenStats\nTime.timeScale = 0]
+
+    H & I --> J[Find RewardSystem again]
+    J --> K{rewardSystem != null?}
+    K -->|No| L[Skip stats update]
+    K -->|Yes| M{customerServed >=\ncustomersNeededToWin?}
+
+    M -->|Yes| N[StatusText = YOU WIN!]
+    M -->|No| O[StatusText = YOU LOSE!]
+
+    N & O --> P[Update MoneyText\nUpdate CustomerText]
+    L & P --> Q[winLoseScreen.SetActive true]
+
+    R([MainMenu called]) --> S[Time.timeScale = 1\nLoad StartScreen]
+    T([ReloadLevel called]) --> U[Time.timeScale = 1\nLoad Main]
+
+    style A fill:#2196F3,color:#fff
+    style D fill:#9E9E9E,color:#fff
+    style N fill:#4CAF50,color:#fff
+    style O fill:#f44336,color:#fff
+    style R fill:#9C27B0,color:#fff
+    style T fill:#9C27B0,color:#fff
+    style S fill:#9C27B0,color:#fff
+    style U fill:#9C27B0,color:#fff
 ```
 
 
