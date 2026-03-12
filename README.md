@@ -48,11 +48,15 @@ Bo Bakker:
  
 
 Robin van Wandelen:
- * Start Scherm
-Dit word aan de speler laten zien om het spel te laten starten
-  <img width="1920" height="1080" alt="StartScreen" src="https://github.com/user-attachments/assets/fb7ec1bc-fdbe-460f-9b2c-d5bbcfab98e9" />
+ Dit word aan de speler laten zien om het spel te laten starten hierbij is de start knop apart gemaakt zodat ze interactable zijn.
+  <img width="960" height="540" alt="StartScreen" src="https://github.com/user-attachments/assets/fb7ec1bc-fdbe-460f-9b2c-d5bbcfab98e9" />
+  <img width="223" height="102" alt="Start" src="https://github.com/user-attachments/assets/98e7ab89-5b2d-49ab-b6e1-6960beaa47d3" />
 
- *
+  * Win/Lose Screen UI
+  Hierbij word het scherm gebruikt om aan te geven of de speler het level heeft gehaald of gefaalt
+<img width="263" height="263" alt="Tutorial" src="https://github.com/user-attachments/assets/4a73b349-43ba-49b5-8784-acfec87162c8" />
+<img width="223" height="102" alt="hOME" src="https://github.com/user-attachments/assets/749fb301-f02d-4f94-a75d-87f5b8a867fe" />
+<img width="223" height="102" alt="retry" src="https://github.com/user-attachments/assets/85f87f5e-282d-47b1-a19d-bd2540b4afa5" />
  
  * Burger UI
    Dit word gebruikt voor als de klanten een burger bestellen.
