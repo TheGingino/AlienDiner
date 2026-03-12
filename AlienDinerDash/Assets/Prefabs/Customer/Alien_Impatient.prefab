@@ -280,8 +280,8 @@ RectTransform:
   m_GameObject: {fileID: 2532485033870120613}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2.2669, y: 2.2669, z: 2}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 3, y: 3, z: 2.6467862}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 585672773210100060}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -749,13 +749,13 @@ MonoBehaviour:
   orderImage: {fileID: 3592874775393164351}
   dishSprites:
   - dishType: 1
-    sprite: {fileID: 21300000, guid: 061f8c70bc785a4448774516c43a51f4, type: 3}
+    sprite: {fileID: 21300000, guid: 02acc10cab14b7840aff7388f0faa1fa, type: 3}
     foodPrefab: {fileID: 919132149155446097, guid: 8f46158299b8ea94f9d73618afd1642b, type: 3}
   - dishType: 2
-    sprite: {fileID: 21300000, guid: 5d429d27d3a04bb40b820c49c538ea85, type: 3}
+    sprite: {fileID: 21300000, guid: d5984852e3a00da4b9f71112b241d057, type: 3}
     foodPrefab: {fileID: 919132149155446097, guid: e003c6e47a262de4d9c8d97166421184, type: 3}
   - dishType: 3
-    sprite: {fileID: 21300000, guid: b69a46ec0058bfb41b3619f4944e4519, type: 3}
+    sprite: {fileID: 21300000, guid: 8073a0432f96dd9489b14c648db2f49a, type: 3}
     foodPrefab: {fileID: 919132149155446097, guid: 86f69524c3c53dc4381f5695a275b7c9, type: 3}
   foodSpawnPoint: {fileID: 8810184673336558143}
   hasFinishedEating:
