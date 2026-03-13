@@ -35,7 +35,7 @@ Nikki van Wijngaarden:
  * [SeatHoverManager](https://github.com/TheGingino/AlienDiner/blob/Develop/AlienDinerDash/Assets/Scripts/Customer/SeatHoverManager.cs)
  * [SeatHighLight](https://github.com/TheGingino/AlienDiner/blob/Develop/AlienDinerDash/Assets/Scripts/Customer/SeatHighLight.cs)
 
-Kiana Hiemstra:
+Kiana (Jasper) Hiemstra:
   * [Timer V1](https://github.com/TheGingino/AlienDiner/blob/Develop/AlienDinerDash/Assets/Scripts/Timer/LevelTimer.cs)
   * [Audio](https://github.com/TheGingino/AlienDiner/tree/Develop/AlienDinerDash/Assets/Audio)
   * Audio Implementatie
