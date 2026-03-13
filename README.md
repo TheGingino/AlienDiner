@@ -36,8 +36,16 @@ Nikki van Wijngaarden:
  * [SeatHighLight](https://github.com/TheGingino/AlienDiner/blob/Develop/AlienDinerDash/Assets/Scripts/Customer/SeatHighLight.cs)
 
 Kiana Hiemstra:
-  * Audio
   * [Timer V1](https://github.com/TheGingino/AlienDiner/blob/Develop/AlienDinerDash/Assets/Scripts/Timer/LevelTimer.cs)
+  * [Audio](https://github.com/TheGingino/AlienDiner/tree/Develop/AlienDinerDash/Assets/Audio)
+  * Audio Implementatie
+  * [Customer](https://github.com/TheGingino/AlienDiner/blob/main/AlienDinerDash/Assets/Scripts/Customer/Customer.cs)
+  * [Drivethrough](https://github.com/TheGingino/AlienDiner/blob/main/AlienDinerDash/Assets/Scripts/Customer/DriveThroughCustomer.cs)
+  * [Spawning](https://github.com/TheGingino/AlienDiner/blob/main/AlienDinerDash/Assets/Scripts/Customer/CustomerSpawner.cs)
+  * [Player](https://github.com/TheGingino/AlienDiner/blob/main/AlienDinerDash/Assets/Scripts/Character/PlayerMovement.cs)
+  * [Interactables](https://github.com/TheGingino/AlienDiner/blob/main/AlienDinerDash/Assets/Scripts/Gerechten/InteractionManagers/InteractableObject.cs)
+  * [Endscreen](https://github.com/TheGingino/AlienDiner/blob/main/AlienDinerDash/Assets/Scripts/UI/WinLoseScreen.cs)
+  * Menu SFX, Buttons
 
 Bo Bakker:
  * Character Models
