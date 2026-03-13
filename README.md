@@ -309,6 +309,9 @@ W --> X[End]
 
 ```
 
+## Hier kookt de speler
+![Cook](https://github.com/user-attachments/assets/1cef7a92-e54e-4b3e-ba42-b5e9a945d832)
+
 ### Class diagram Player interaction
 ```mermaid
 classDiagram
