@@ -619,6 +619,77 @@ OrderingFood --> UnityEvent : invokes events
 ![Order](https://github.com/user-attachments/assets/acfd4066-64c8-4a72-b1cc-1e48a3961725)
 
 
+## Station click handler by Julie Jaasma
+
+De speler kan natuurlijk niet altijd koken, dat kan verschillende redenen hebben. Hier regelen we wanneer een speler wel of niet kan interacten met een cooking station
+
+```mermaid
+flowchart TD
+
+A[Player Clicks Station] --> B[OnMouseDown Triggered]
+
+B --> C[Get InteractableObject Component]
+
+C --> D{Player Is Busy}
+
+D -->|Yes| E[Return]
+D -->|No| F[Check If Holding Dish]
+
+F --> G{Holding Dish AND Station Is CookingStation}
+
+G -->|Yes| H[Show Message Hands Full]
+H --> E
+
+G -->|No| I{Not Holding Dish AND Station Is TrashCan}
+
+I -->|Yes| J[Show Message Nothing To Throw Away]
+J --> E
+
+I -->|No| K[Move Player To Station]
+
+K --> L[PlayerMovement MoveToInteraction]
+
+L --> M[Player Walks To Station]
+
+M --> N[Interaction Starts]
+```
+```mermaid
+classDiagram
+
+class StationClickHandler{
+-PlayerInteraction player
+-PlayerMovement playerMovement
+
++OnMouseDown()
++Awake()
+}
+
+class PlayerInteraction{
++bool IsBusy
++bool IsHoldingDish
+}
+
+class PlayerMovement{
++MoveToInteraction(InteractableObject station)
+}
+
+class InteractableObject{
++StationType Type
+}
+
+class StationType{
+<<enumeration>>
+CookingStation
+TrashCan
+}
+
+StationClickHandler --> PlayerInteraction : checks state
+StationClickHandler --> PlayerMovement : moves player
+StationClickHandler --> InteractableObject : reads station
+InteractableObject --> StationType : defines type
+```
+
+
 ## PlayerMovement by Nikki van Wijngaarden
 
 Een NavMesh based movementsysteem dat spelers overal op de grond laat klicken om daarnatoe te lopen, en ook kort laat zien waar je hebt geklickt.
