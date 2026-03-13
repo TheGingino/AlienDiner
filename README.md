@@ -526,6 +526,99 @@ InteractableObject --> StationType : type
 
 ```
 
+## Klant bestelling By Julie Jaasma
+
+Voordat de speler een gerecht klaar kan maken, moet hij natuurlijk eerst weten welk gerecht de klant wilt. Hier laat ik zien hoe dat in zijn werk gaat.
+Het moment dat de klant gaat zitten word een event afgevuurd waar er random word gekozen tussen beschikbare gerechten voor het type klant. Als dat gebeurd is word er nog een event afgevuurd wat er voor zorgt dat de order image van de klant de juiste UI afbeeld.
+Hier is de flowchart en class diagram
+
+```mermaid
+flowchart TD
+
+A[Game Starts] --> B[Awake Called]
+
+B --> C[Find Customer In Parent]
+C --> D[Find DriveThroughCustomer On Object]
+
+D --> E[Update Loop Running]
+
+E --> F{Key E Pressed}
+
+F -->|No| E
+F -->|Yes| G{Customer Exists}
+
+G -->|No| E
+G -->|Yes| H[OrderFood Called]
+
+H --> I{Already Ordered}
+
+I -->|Yes| J[Return]
+I -->|No| K{Orderable Dishes Available}
+
+K -->|No| J
+K -->|Yes| L[Pick Random Dish]
+
+L --> M{Customer Or DriveThrough}
+
+M -->|Customer| N[Set Desired Dish On Customer]
+M -->|DriveThrough| O[Set Desired Dish On DriveThroughCustomer]
+
+N --> P[Invoke Food Ordered Event]
+O --> P
+
+P --> Q[Set HasOrdered True]
+
+Q --> R[Waiting For Player]
+
+R --> S{Player Enters Trigger}
+
+S -->|Yes| T[Invoke Food Served Event]
+T --> U[End]
+```
+
+
+```mermaid
+classDiagram
+
+class OrderingFood{
+-Customer customer
+-DriveThroughCustomer driveThroughCustomer
+-bool hasOrdered
+-DishType orderableDishes
+
++OrderFood()
++Awake()
++Update()
++OnTriggerEnter()
+}
+
+class Customer{
++SetDesiredDish(DishType dish)
+}
+
+class DriveThroughCustomer{
++SetDesiredDish(DishType dish)
+}
+
+class DishType{
+<<enumeration>>
+}
+
+class UnityEvent{
+<<event>>
+}
+
+OrderingFood --> Customer : sets order
+OrderingFood --> DriveThroughCustomer : sets order
+OrderingFood --> DishType : chooses dish
+OrderingFood --> UnityEvent : invokes events
+```
+
+## visueel ziet dat er zo uit 
+
+![Order](https://github.com/user-attachments/assets/acfd4066-64c8-4a72-b1cc-1e48a3961725)
+
+
 ## PlayerMovement by Nikki van Wijngaarden
 
 Een NavMesh based movementsysteem dat spelers overal op de grond laat klicken om daarnatoe te lopen, en ook kort laat zien waar je hebt geklickt.
