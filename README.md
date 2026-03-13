@@ -407,7 +407,7 @@ InteractableObject --> DishType : processes
 
 ## Player interactions by Julie Jaasma
 
-Dit is hoe wij de gerechten bereiden voor de klant 
+Dit is hoe wij de speler om gaat met interactions. De speler word met zijn gezicht de juist kant op gedraaid en vastgezet op zijn plaats tot de interaction klaar is. 
 
 ### Flowchart Playerinteraction
 ```mermaid
