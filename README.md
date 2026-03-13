@@ -256,6 +256,126 @@ flowchart TD
     style U fill:#9C27B0,color:#fff
 ```
 
+## Station interactions by Julie Jaasma
+
+Dit is hoe wij de gerechten bereiden voor de klant 
+
+### Flowchart Playerinteraction
+```mermaid
+flowchart TD
+
+A[StartInteraction Called] --> B{Is Player Busy}
+
+B -->|Yes| C[Return]
+B -->|No| D[Start Coroutine InteractionRoutine]
+
+D --> E[Set isBusy = true]
+
+E --> F[Lock Player]
+F --> G[Face Station]
+G --> H[Show Progress Bar]
+
+H --> I[Timer = 0]
+
+I --> J{Timer < Interaction Duration}
+
+J -->|Yes| K[Timer plus deltaTime]
+K --> L[normalized = timer / duration]
+L --> M[Update Progress]
+M --> J
+
+J -->|No| N[Hide Progress]
+
+N --> O[Interaction Complete]
+
+O --> P[Process Dish heldDish]
+
+P --> Q{Station Type}
+
+Q -->|TrashCan| R[Clear Dish]
+
+Q -->|Other| S{Result not None}
+
+S -->|Yes| T[Give Dish Result]
+S -->|No| U[Do Nothing]
+
+R --> V[Unlock Player]
+T --> V
+U --> V
+
+V --> W[isBusy = false]
+
+W --> X[End]
+
+```
+
+## Hier kookt de speler
+![Cook](https://github.com/user-attachments/assets/1cef7a92-e54e-4b3e-ba42-b5e9a945d832)
+
+### Class diagram Player interaction
+```mermaid
+classDiagram
+
+class PlayerInteraction{
++bool IsBusy
++bool IsHoldingDish
++StartInteraction(InteractableObject station)
++GiveDish(DishType dish)
++TryServeCustomersAtTable(Transform table)
+-ClearDish()
+-GetPrefabForDish(DishType dish)
+-FaceStation(InteractableObject station)
+}
+
+class InteractableObject{
++float InteractionDuration
++Transform InteractionWaypoint
++StationType Type
++ShowProgress()
++UpdateProgress(float normalizedValue)
++HideProgress()
++OnInteractionComplete()
++ProcessDish(DishType inputDish)
+}
+
+class DishPrefabEntry{
++DishType dishType
++GameObject prefab
+}
+
+class PlayerMovement{
++LockPlayerMovement(bool allowMovement)
+}
+
+class Customer{
++IsWaitingFor(DishType dish)
++ServeFood()
+}
+
+class DriveThroughCustomer{
++IsWaitingFor(DishType dish)
++ServeFood()
+}
+
+class DishType{
+<<enumeration>>
+}
+
+class StationType{
+<<enumeration>>
+}
+
+PlayerInteraction --> InteractableObject : interacts
+PlayerInteraction --> DishPrefabEntry : uses
+PlayerInteraction --> PlayerMovement : controls
+PlayerInteraction --> DishType : holds
+PlayerInteraction --> Customer : serves
+PlayerInteraction --> DriveThroughCustomer : serves
+
+InteractableObject --> DishType : processes
+InteractableObject --> StationType : type
+
+```
 
 ## PlayerMovement by Nikki van Wijngaarden
 
