@@ -148,7 +148,6 @@ flowchart TD
 De waypoints zijn er voor de klanten om het gebouw te kunnen verlaten. de eerste is voor een van de klanten soorten om het gebouw vervroegd te verlaten en de inside is voor de normale klant als ze klaar zijn met eten en de drive through voor de drivethrough klant om weg te gaan
 
 ### Class Diagram voor de Waypoints:
-
 ```mermaid
 classDiagram
     class WaypointToLeave {
@@ -159,8 +158,49 @@ classDiagram
 
 ```
 ## Reward System by Gino Schaap
-Dit is de manier hoe het hoeveelheid geld dat je hebt gemaakt en de hoeveelheid customers op je scherm staat die zich aanpast als er wat bij komt
+Dit is de manier hoe het hoeveelheid geld dat je hebt gemaakt en de hoeveelheid customers op je scherm staat die zich aanpast als er wat bij komt.
 
+### Flowchart Reward System
+```mermaid
+---
+config:
+  layout: elk
+---
+flowchart TD
+    A([CheckWinLoseCondition called]) --> B[Find RewardSystem]
+    B --> C{rewardSystem != null?}
+    C -->|No| D([Do nothing])
+    C -->|Yes| E{customerServed >=\ncustomersNeededToWin?}
+
+    E -->|Yes| F[ShowWinScreen]
+    E -->|No| G[ShowLoseScreen]
+
+    F --> H[UpdateWinScreenStats\nTime.timeScale = 0]
+    G --> I[UpdateWinScreenStats\nTime.timeScale = 0]
+
+    H & I --> J[Find RewardSystem again]
+    J --> K{rewardSystem != null?}
+    K -->|No| L[Skip stats update]
+    K -->|Yes| M{customerServed >=\ncustomersNeededToWin?}
+
+    M -->|Yes| N[StatusText = YOU WIN!]
+    M -->|No| O[StatusText = YOU LOSE!]
+
+    N & O --> P[Update MoneyText\nUpdate CustomerText]
+    L & P --> Q[winLoseScreen.SetActive true]
+
+    R([MainMenu called]) --> S[Time.timeScale = 1\nLoad StartScreen]
+    T([ReloadLevel called]) --> U[Time.timeScale = 1\nLoad Main]
+
+    style A fill:#2196F3,color:#fff
+    style D fill:#9E9E9E,color:#fff
+    style N fill:#4CAF50,color:#fff
+    style O fill:#f44336,color:#fff
+    style R fill:#9C27B0,color:#fff
+    style T fill:#9C27B0,color:#fff
+    style S fill:#9C27B0,color:#fff
+    style U fill:#9C27B0,color:#fff
+```
 ## Failure Consequence
 Als speler gaat er tijd van je klok af als een klant boos weg loopt als een negatief effect in het spel
 
