@@ -1047,17 +1047,26 @@ Deze posters hangen als decoratie aan de muur van het restaurant.
   <img width="163" height="163" alt="Underlayer_Timerpng" src="https://github.com/user-attachments/assets/ace764dd-cea9-41b5-9625-63587387c628" />
 
 ## Booth models by Robin
+Hier gaan de aliens zitten en kunnen geserved worden
 
+![booth models](https://github.com/TheGingino/AlienDiner/blob/Develop/GitVisuals/Robin/BoothBigModel.png)
+![Booth UV](https://github.com/TheGingino/AlienDiner/blob/Develop/GitVisuals/Robin/BoothBigUV.png)
+![Booth Textures](https://github.com/TheGingino/AlienDiner/blob/Develop/GitVisuals/Robin/Boothsbigtextures.png)
+![Small Booth model](https://github.com/TheGingino/AlienDiner/blob/Develop/GitVisuals/Robin/Boothsmallmodel.png)
+![Small Booth UV](https://github.com/TheGingino/AlienDiner/blob/Develop/GitVisuals/Robin/Boothsmalluv.png)
+![Small Booth Textures](https://github.com/TheGingino/AlienDiner/blob/Develop/GitVisuals/Robin/Boothsmalltexture.png)
 ## Ramen/deur models by robin
 
 ### Ramen
-
 Hier kun je zien of er een UFO aankomt bij de drive through
+![window model](https://github.com/TheGingino/AlienDiner/blob/Develop/GitVisuals/Robin/WindowModel.png)
+![windowsUV](https://github.com/TheGingino/AlienDiner/blob/Develop/GitVisuals/Robin/WindowUV.png)
 
 ### Deur
 
 Hier lopen de customers naar binnen en buiten
- 
+![Door Model](https://github.com/TheGingino/AlienDiner/blob/Develop/GitVisuals/Robin/DoorModel.png)
+![Door UV](https://github.com/TheGingino/AlienDiner/blob/Develop/GitVisuals/Robin/doorUV.png)
 
 ## Food models by Gui
 
