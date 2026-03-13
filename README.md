@@ -336,15 +336,13 @@ classDiagram
     PlayerMovement --> PlayerInteraction : triggert via callback
     TapMarkerPool --> TapMarker : beheert pool van
 ```
+## CustomerDrag by Nikki van Wijngaarden
 
-## CustomerSeating by Nikki van Wijngaarden
-
-Een drag-and-drop systeem waarmee customers kunt op pakken en neer zetten bij een tavel, waarna ze gaan zitten op de stoel dichts bij waar je ze neer hebt gezet. Met visual feedback op de customer bij het oppakken en bij het hoveren boven een stoel.
+Een drag-and-drop systeem waarmee customers kunnen worden opgepakt en naar een tafel gesleept. Tijdens het slepen wordt visuele feedback gegeven op de customer en lichten vrije stoelen op bij het hoveren.
 
 #gifje?
 
-## Flowchart - CustomerSeating
-
+## Flowchart — CustomerDrag
 ```mermaid
 flowchart TD
     A([Speler klikt / tikt]) --> B[Raycast op CustomerLayer]
@@ -363,26 +361,13 @@ flowchart TD
     J -- Nee --> L[SeatHighLight.Hide]
     H --> F
 
-    E --> M([Speler laat los])
-    M --> N[Raycast op TableLayer]
-    N --> O{Tafel geraakt?}
-    O -- Nee --> P[ReturnToOrigin]
-    O -- Ja --> Q{HasFreeSeat?}
-    Q -- Nee --> P
-    Q -- Ja --> R[TrySeatCustomer\ndichtstbijzijnde vrije stoel]
-    R --> S{Stoel gevonden?}
-    S -- Nee --> P
-    S -- Ja --> T[occupied = true\nSnapToSeat]
-    T --> U[Draai naar tafel\ncanBeDragged = false\nhasBeenSeated.Invoke]
-
-    P --> V[OnDragEnd animatie\nClearHighLight\n_draggedCustomer = null]
-    U --> V
+    F --> M([Speler laat los])
+    M --> N[OnDragEnd animatie\nClearHighLight\n_draggedCustomer = null]
 ```
 
 ---
 
-## Class Diagram
-
+## Class Diagram — CustomerDrag
 ```mermaid
 classDiagram
     class CustomerDragManager {
@@ -397,35 +382,12 @@ classDiagram
         -EndDrag(screenpos)
     }
 
-    class CustomerSeating {
-        -Transform _currentSeat
-        -Table _currentTable
-        -Vector3 _originPosition
-        -bool _canBeDragged
-        +bool IsSeated
-        +UnityEvent hasBeenSeated
-        +CanBeDragged() bool
-        +SetDraggedPosition(pos)
-        +SnapToSeat(seat, table)
-        +ReturnToOrigin()
-        +LeaveSeat()
-    }
-
     class CustomerVisualFeedback {
         -float dragScaleMultiplier
         -float scaleSpeed
         -Vector3 _OrginalScale
         +OnDragStart()
         +OnDragEnd()
-    }
-
-    class Table {
-        -List~Transform~ seats
-        -bool[] _occupied
-        +HasFreeSeat() bool
-        +TrySeatCustomer(customer, dropPosition) bool
-        +IsSeatOccupied(seat) bool
-        +FreeSeat(seat)
     }
 
     class SeatHoverManager {
@@ -444,16 +406,68 @@ classDiagram
         +Hide()
     }
 
-    CustomerDragManager --> CustomerSeating : sleept
-    CustomerDragManager --> SeatHoverManager : gebruikt
-    CustomerDragManager --> Table : raycasts
-    CustomerSeating --> Table : referentie
-    CustomerSeating --> CustomerVisualFeedback : GetComponent
+    CustomerDragManager --> CustomerVisualFeedback : schaalanimatie
+    CustomerDragManager --> SeatHoverManager : UpdateHover tijdens drag
     SeatHoverManager --> SeatHighLight : beheert
     SeatHighLight --> Table : IsSeatOccupied
-    Table --> CustomerSeating : SnapToSeat
 ```
 
+## CustomerSeating by Nikki van Wijngaarden
+
+Een systeem dat customers automatisch op de dichtstbijzijnde vrije stoel plaatst wanneer ze bij een tafel worden neergezet. Wanneer de customer wegloopt wordt de stoel automatisch weer vrijgegeven.
+
+#gifje?
+
+## Flowchart — CustomerSeating
+```mermaid
+flowchart TD
+    A([Speler laat customer los]) --> B[Raycast op TableLayer]
+    B --> C{Tafel geraakt?}
+    C -- Nee --> D[ReturnToOrigin]
+    C -- Ja --> E{HasFreeSeat?}
+    E -- Nee --> D
+    E -- Ja --> F[TrySeatCustomer\ndichtstbijzijnde vrije stoel]
+    F --> G{Stoel gevonden?}
+    G -- Nee --> D
+    G -- Ja --> H[occupied = true\nSnapToSeat]
+    H --> I[Draai naar tafel\nSit animatie aan\ncanBeDragged = false\nhasBeenSeated.Invoke]
+
+    I --> J([Customer verlaat stoel])
+    J --> K[LeaveSeat]
+    K --> L[FreeSeat in Table\nSit animatie uit\nreferenties leeg]
+```
+
+---
+
+## Class Diagram — CustomerSeating
+```mermaid
+classDiagram
+    class CustomerSeating {
+        -Transform _currentSeat
+        -Table _currentTable
+        -Vector3 _originPosition
+        -bool _canBeDragged
+        +bool IsSeated
+        +UnityEvent hasBeenSeated
+        +CanBeDragged() bool
+        +SetDraggedPosition(pos)
+        +SnapToSeat(seat, table)
+        +ReturnToOrigin()
+        +LeaveSeat()
+    }
+
+    class Table {
+        -List~Transform~ seats
+        -bool[] _occupied
+        +HasFreeSeat() bool
+        +TrySeatCustomer(customer, dropPosition) bool
+        +IsSeatOccupied(seat) bool
+        +FreeSeat(seat)
+    }
+
+    CustomerSeating --> Table : FreeSeat bij vertrek
+    Table --> CustomerSeating : SnapToSeat bij plaatsen
+```
 
 ## Character models + temporary textures by Bo
 Voor het spel zijn er minstens 3 klanten nodig en 1 main character. Daarvan heb ik de models en tijdelijke textures gemaakt.
