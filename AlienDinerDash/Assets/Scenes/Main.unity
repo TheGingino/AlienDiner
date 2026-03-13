@@ -565,6 +565,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1950106222}
     - target: {fileID: 8200940648612527659, guid: 13bae4b44f8fe7e4381e1aea9ed7b009, type: 3}
+      propertyPath: walkingSFX
+      value: 
+      objectReference: {fileID: 2001779269}
+    - target: {fileID: 8200940648612527659, guid: 13bae4b44f8fe7e4381e1aea9ed7b009, type: 3}
       propertyPath: _tapMarkerPool
       value: 
       objectReference: {fileID: 165108203}
