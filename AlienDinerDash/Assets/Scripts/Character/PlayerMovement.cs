@@ -31,9 +31,6 @@ public class PlayerMovement : MonoBehaviour
         bool isMoving = _agent.velocity.sqrMagnitude > 0.01f;
         _animator.SetBool("Walk", isMoving);
 
-        bool isMoving = _agent.velocity.sqrMagnitude > 0.01f;
-        _animator.SetBool("Walk", isMoving);
-
         if (isMoving)
         {
             if (!walkingSFX.isPlaying)
