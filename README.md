@@ -296,7 +296,116 @@ flowchart TD
     style U fill:#9C27B0,color:#fff
 ```
 
-## Station interactions by Julie Jaasma
+## Cooking Stations by Julie Jaasma
+
+De flowchart laat zien wat er achter de schermen gebeurd als de speler op een station klikt. 
+Er word een progress bar aangeroepen, er speelt geluid en een particle effect en als de progress bar vol is word er een gerecht ingespawned of juist verwijderd.
+
+```mermaid
+flowchart TD
+
+A[Game Starts] --> B[Awake Called]
+
+B --> C[Get Renderer Component]
+C --> D[Stop Particles]
+
+D --> E{Player Starts Interaction}
+
+E -->|Yes| F[Show Progress]
+
+F --> G{Progress Bar Prefab Exists}
+
+G -->|No| H[Return]
+
+G -->|Yes| I[Calculate Spawn Position]
+
+I --> J[Instantiate Progress Bar]
+
+J --> K[Find Image Component]
+
+K --> L[Set Fill Amount To Zero]
+
+L --> M[Play Prepare Sound]
+
+M --> N[Play Particles]
+
+N --> O[Interaction Running]
+
+O --> P[Update Progress]
+
+P --> Q[Update Fill Amount]
+
+Q --> R{Interaction Finished}
+
+R -->|No| O
+
+R -->|Yes| S[Hide Progress]
+
+S --> T[Destroy Progress Bar]
+
+T --> U[Stop Particles]
+
+U --> V[Interaction Complete]
+
+V --> W[Process Dish]
+
+W --> X{Station Type}
+
+X -->|CookingStation| Y[Return Cooked Dish]
+
+X -->|TrashCan| Z[Return None]
+
+Y --> AA[End]
+Z --> AA
+
+```
+
+Dit is de class diagram
+
+```mermaid
+classDiagram
+
+class InteractableObject{
+-float interactionDuration
+-float heightOffsetY
+-GameObject progressBarPrefab
+-Transform interactionWaypoint
+-ParticleSystem interactionParticles
+-StationType stationType
+-DishType dishType
+-AudioSource prepareSFX
+
++float InteractionDuration
++Transform InteractionWaypoint
++StationType Type
+
++ShowProgress()
++UpdateProgress(float normalizedValue)
++HideProgress()
++OnInteractionComplete()
++ProcessDish(DishType inputDish)
+
+-GetTopCenterPosition()
+-PlayParticles()
+-StopParticles()
+}
+
+class StationType{
+<<enumeration>>
+CookingStation
+TrashCan
+}
+
+class DishType{
+<<enumeration>>
+}
+
+InteractableObject --> StationType : uses
+InteractableObject --> DishType : processes
+
+```
+
+## Player interactions by Julie Jaasma
 
 Dit is hoe wij de gerechten bereiden voor de klant 
 
