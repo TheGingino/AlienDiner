@@ -381,7 +381,7 @@ InteractableObject --> StationType : type
 
 Een NavMesh based movementsysteem dat spelers overal op de grond laat klicken om daarnatoe te lopen, en ook kort laat zien waar je hebt geklickt.
 
-#gifje?
+![PlayerMovement gif](https://github.com/TheGingino/AlienDiner/blob/Develop/GitVisuals/Nikki/PlayerMovement.gif)
 
 ## Flowchart — PlayerMovement
 
@@ -460,7 +460,7 @@ classDiagram
 
 Een drag-and-drop systeem waarmee customers kunnen worden opgepakt en naar een tafel gesleept. Tijdens het slepen wordt visuele feedback gegeven op de customer en lichten vrije stoelen op bij het hoveren.
 
-#gifje?
+![customerDrag gif](https://github.com/TheGingino/AlienDiner/blob/Develop/GitVisuals/Nikki/CustomerDrag.gif)
 
 ## Flowchart — CustomerDrag
 ```mermaid
@@ -536,7 +536,7 @@ classDiagram
 
 Een systeem dat customers automatisch op de dichtstbijzijnde vrije stoel plaatst wanneer ze bij een tafel worden neergezet. Wanneer de customer wegloopt wordt de stoel automatisch weer vrijgegeven.
 
-#gifje?
+![cutomerSeating gif](https://github.com/TheGingino/AlienDiner/blob/Develop/GitVisuals/Nikki/CustomerSeating.gif)
 
 ## Flowchart — CustomerSeating
 ```mermaid
